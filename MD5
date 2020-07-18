@@ -1,0 +1,16 @@
+68fbc42ea261a7bf6b094f7a6efddf7e *DESCRIPTION
+9a21237eb6d0763c8c6815aadd3b8799 *NAMESPACE
+21ba86058c3bb9bd2af9ee536e198d23 *NEWS.md
+8f4a1596ab5fbaad74bd5aef1c22e60a *R/SEMsens-package.R
+e609f7e1980cba2f63866c807148d6bf *R/gen.sens.pars.R
+8c9b1ebe82ffabfff2f8958e7b637629 *R/sa.aco.R
+95b7c3f4858deeda9981a1a2ecd35fdf *R/sens.tables.R
+9ed147a215176d9e8d8f9845f40fbdbc *build/vignette.rds
+6f53b6cf61022a2a190a04f4642662d9 *inst/doc/SEMsens.R
+10bd533b9aac0d12fa40865d07315d57 *inst/doc/SEMsens.Rmd
+5c731a7cc8ad5958c3e0ff091babab85 *inst/doc/SEMsens.html
+40585361064cf500f185c0ad09a7a29e *man/SEMsens-package.Rd
+6530382218f2ab00aeacf9acc14a4a33 *man/gen.sens.pars.Rd
+e1d12eaee9541a677ec409eca716e411 *man/sa.aco.Rd
+f3d125c576d9ee2d117712b4599620ea *man/sens.tables.Rd
+10bd533b9aac0d12fa40865d07315d57 *vignettes/SEMsens.Rmd
