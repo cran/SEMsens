@@ -4,23 +4,31 @@
 \alias{gen.sens.pars}
 \title{Generate Sensitivity Parameters}
 \usage{
-gen.sens.pars(dist.mean, dist.rank, n.of.ants, nl, q = 1e-04, k = 50, xi = 0.5)
+gen.sens.pars(
+  dist.mean,
+  dist.rank,
+  n.of.ants,
+  nl,
+  q = 1e-04,
+  k = 500,
+  xi = 0.5
+)
 }
 \arguments{
 \item{dist.mean}{List of means - coordinates}
 
-\item{dist.rank}{Rank of the archived values of optimization object}
+\item{dist.rank}{Rank of the archived values of objective function}
 
 \item{n.of.ants}{Number of ants used in each iteration after the initialization
-of k length, default value is 10.}
+of k converged sensitivity analysis models, default value is 10.}
 
 \item{nl}{Neighborhood of the search area}
 
-\item{q}{Locality of the search (0,1), default is 0.0001}
+\item{q}{Locality of the search (0,1), default is 0.0001.}
 
-\item{k}{Size of the solution archive, default is 50.}
+\item{k}{Size of the solution archive, default is 100.}
 
-\item{xi}{Convergence pressure (0,Inf), suggested: (0,1), default is 0.5}
+\item{xi}{Convergence pressure (0, Inf), suggested: (0,1), default is 0.5.}
 }
 \value{
 Generated sensitivity parameter values (i.e., a matrix with n.of.ants
@@ -50,7 +58,11 @@ my.sens.pars
 
 }
 \references{
-Socha, K., & Dorigo, M. (2008). Ant colony optimization for
+Leite, W., & Shen, Z., Marcoulides, K., Fish, C., & Harring, J. (in press).
+  Using ant colony optimization for sensitivity analysis in structural equation modeling.
+  Structural Equation Modeling: A Multidisciplinary Journal.
+
+  Socha, K., & Dorigo, M. (2008). Ant colony optimization for
   continuous domains. European Journal of Operational Research,
   185(3), 1155-1173.
 

@@ -1,0 +1,219 @@
+---
+title: "A Sensitivity Analysis of a Model for Parenting Risk and Resilience, Social-emotional Readiness, and Reading Achievement in Kindergarten Children from Low-income Families Model by Smith-Adcock, Leite, Kaya and Amatea"
+author: "Jia Quan (University of Florida) & Huibin Zhang (University of Florida)"
+date: "`r Sys.Date()`"
+output:
+ pdf_document
+
+  
+vignette: > 
+
+  %\VignetteIndexEntry{Smith-Adcock, Leite, Kaya & Amatea 2019} 
+
+  %\VignetteEngine{knitr::rmarkdown} 
+
+  %\VignetteEncoding{UTF-8} 
+---
+
+**BASED ON PAPER:** A Model for Parenting Risk and Resilience, Social-emotional Readiness, and Reading Achievement in Kindergarten Children from Low-income Families Model 
+
+Author(s): Sondra Smith-Adcock, Walter Leite, Yasemine Kaya & Ellen Amatea.
+
+**Source:** Journal of Child and Family Studies, vol 28(Oct., 2019), pp. 2826-2841
+
+Published by: Springer Nature in Journal of Child and Family studies
+DOI:<https://doi.org/10.1007/s10826-019-01462-0>
+
+# SENSITIVITY ANALYSIS USING SEMsens 
+
+This example sensitivity analysis uses the published data and model from Smith-Adcock, Leite, Kaya & Amatea(2019). 
+We use the original data with categorical variables, set up the lavaan models for their original model and the sensitivity model, run the analysis, and view the results.
+
+
+``````{r, message=FALSE, warning=FALSE}
+# Load lavaan and SEMsens packages
+require(lavaan)
+require(SEMsens)
+```
+
+## Step 1 : Load data with names and indicate categorical variables
+
+Smith-Adcock et. al (2019) shared the raw data and codebook, so we load the data with their names, and create names for categorical variables. 
+
+```{r}
+
+smith10.use <- data(smith19.use, package = "SEMsens")
+
+#Indicate the ordinal variables and then factorize these variables
+factornames <- c("P2BEPARN", "P2CHDOES","P2HRDWRM","P2FLTRAP","P2FEELAN","P2CHHARD",
+                 "P2MOREWK", "P2HITCHO","P2HITAPO","P2HITPRV","P2HITWAR","P2ATTENB",
+                 "P2ATTENP", "P2PARADV","P2PARGRP","P2ATTENS","P2VOLUNT","P2FUNDRS",
+                 "P2TVRULE", "P2TVRUL3","P2TVRUL2","P1TELLST","P1SINGSO","P1HELPAR",
+                 "P1CHORES", "P1GAMES","P1NATURE","P1BUILD","P1SPORT","P2LIBRAR",
+                 "P2CONCRT", "P2MUSEUM","P2ZOO")
+
+```
+
+## Step 2: Define the models
+
+The SEMsens package requires both an original model and a sensitivity model using the lavaan model syntax. We first mimic the original Mplus model based on the article, and then adding phantom variables (phantom1, phantom2, etc.) for every latent variable into that model to create sensitivity model.
+
+**Note:** Since we have categorical variables in the model, while the `lavaan` package did not allow for multiple imputation for missing data with categorical variables, so we have a close mimic model, but not a perfect replication of the model in the original article. 
+
+```{r}
+#A model mimicked from the original model in Smith-Adcock et al. (2019). 
+model1 <- "   
+           # regressions
+          C2RSCALE~T2LEARN+T2EXTERN+T2INTERN+T2CONTRO+T2INTERP+f1+f2+f3+f4+f5+f6
+          T2LEARN~f1 +f2 +f3 +f4 +f5 +f6
+          T2EXTERN~f1 +f2 +f3 +f4 +f5 +f6
+          T2INTERN~f1 +f2 +f3 +f4 +f5 +f6
+          T2CONTRO~f1 +f2 +f3 +f4 +f5 +f6
+          T2INTERP~f1 +f2 +f3 +f4 +f5 +f6
+
+           # latent variables
+          f1=~P2BEPARN+P2CHDOES+P2HRDWRM+P2FLTRAP+P2FEELAN+P2CHHARD+P2MOREWK
+          f2=~P2HITCHO+P2HITAPO+P2HITPRV+P2HITWAR
+          f3=~P2ATTENB+P2ATTENP+P2PARADV+P2PARGRP+P2ATTENS+P2VOLUNT+P2FUNDRS
+          f4=~P2TVRULE+P2TVRUL3+P2TVRUL2
+      	  f5=~P1TELLST+P1SINGSO+P1HELPAR+P1CHORES+P1GAMES+P1NATURE+P1BUILD+P1SPORT
+      	  f6=~P2LIBRAR+P2CONCRT+P2MUSEUM+P2ZOO
+            
+      	    # residual correlations
+      	  T2LEARN ~~ T2EXTERN+T2INTERN+T2CONTRO+T2INTERP
+          T2EXTERN ~~ T2INTERN+T2CONTRO+T2INTERP
+          T2INTERN ~~ T2CONTRO+T2INTERP
+          T2CONTRO ~~ T2INTERP
+
+          f1 ~~ f2+f3+f4+f5+f6
+          f2 ~~ f3+f4+f5+f6
+          f3 ~~ f4+f5+f6
+          f4 ~~ f5+f6
+          f5 ~~ f6
+         "
+
+#The sensitivity model 
+#This sensitivity model used 6 phantom variables for a quicker result
+sens.model1 <- '
+            # regressions
+          C2RSCALE~T2LEARN+T2EXTERN+T2INTERN+T2CONTRO+T2INTERP+f1+f2+f3+f4+f5+f6
+          T2LEARN~f1 +f2 +f3 +f4 +f5 +f6
+          T2EXTERN~f1 +f2 +f3 +f4 +f5 +f6
+          T2INTERN~f1 +f2 +f3 +f4 +f5 +f6
+          T2CONTRO~f1 +f2 +f3 +f4 +f5 +f6
+          T2INTERP~f1 +f2 +f3 +f4 +f5 +f6
+
+            # latent variable definitions
+          f1=~P2BEPARN+P2CHDOES+P2HRDWRM+P2FLTRAP+P2FEELAN+P2CHHARD+P2MOREWK
+          f2=~P2HITCHO+P2HITAPO+P2HITPRV+P2HITWAR
+          f3=~P2ATTENB+P2ATTENP+P2PARADV+P2PARGRP+P2ATTENS+P2VOLUNT+P2FUNDRS
+          f4=~P2TVRULE+P2TVRUL3+P2TVRUL2
+          f5=~P1TELLST+P1SINGSO+P1HELPAR+P1CHORES+P1GAMES+P1NATURE+P1BUILD+P1SPORT
+          f6=~P2LIBRAR+P2CONCRT+P2MUSEUM+P2ZOO
+
+            # residual correlations
+          T2LEARN ~~ T2EXTERN+T2INTERN+T2CONTRO+T2INTERP
+          T2EXTERN ~~ T2INTERN+T2CONTRO+T2INTERP
+          T2INTERN ~~ T2CONTRO+T2INTERP
+          T2CONTRO ~~ T2INTERP
+
+          f1 ~~ f2+f3+f4+f5+f6
+          f2 ~~ f3+f4+f5+f6
+          f3 ~~ f4+f5+f6
+          f4 ~~ f5+f6
+          f5 ~~ f6
+          
+            # phantom variables 
+          T2LEARN ~ phantom1*phantom
+          T2EXTERN ~ phantom2*phantom
+          C2RSCALE ~ phantom3*phantom
+          
+          f3 ~ phantom4*phantom
+          f4 ~ phantom5*phantom
+          f5 ~ phantom6*phantom
+
+          phantom =~ 0   # added for mean of zero
+          phantom ~~ 1*phantom   # added for unit variance
+          '
+
+```
+
+## Step 3: Identify paths of interest
+
+Before running the analysis, it is recommended to identify the rows in the lavaan parameter table that include the paths we are interested in looking at in the analysis. The rows that we are interested will be used for the next step. 
+```{r}
+old.model = model1
+old.out  = sem(model = model1, data = smith19.use, estimator="WLSMV",ordered = factornames)
+summary(old.out, standardized=TRUE)
+old.model.par <- standardizedSolution(old.out,type = "std.all")
+old.model.par
+#The lines that we are interested are line 1 to line 11
+```
+
+## Step 4: Run sensitivity analysis with the SEMsen package
+In the SEMsen package, the `sa.aco` function is used to run the sensitivity analysis.
+The original model is complicated, and for illustration purpose, we analyzed 6 phantom variables, and paths for the `C2RSCALE`. 
+```{r eval=FALSE, message=FALSE, warning=FALSE }
+my.sa1 <- sa.aco(data= smith19.use,
+                 model = model1,
+                 sens.model = sens.model1,
+                 k = 10,
+                 opt.fun = quote(1/abs(new.par$pvalue[9]-0.05)),
+                 rate.of.conv = .05,
+                 paths = c(1:11),
+                 seed=119,
+                 max.iter = 100,
+                 estimator="WLSMV",
+                 ordered = factornames)
+#15 out of 175 evaluations converged. 
+
+```
+In the sa.aco function, we specified the data(`data`) we are using, original model (`model1`), the sensitivity model (`sens.model1`), the optimization function (`opt.fun`), the convergence rate threshold (`rate.of.conv`)the paths that we are interested from the previous step (`paths`), a seed for reproducibility (`seed`), the estimator we used to conduct the analysis (`estimator`;using the `lavaan` package format), and the variables that are ordinal(`ordered`; using the `lavaan` package format).  
+
+**Note:** We only used `k = 10` and `max.iter = 100` so the analysis would run quickly for illustration purposes. For actual analyses, please specify these parameters as larger numbers (e.g., default value of `k = 100` and `max.iter = 1000`). In addition, the convergence rate is set to be (`rate.of.conv = .05`) in this example as the model is complicated. An error message may show up like below:
+```{r, eval=FALSE, echo=T} 
+#error message 
+Error in sa.aco(data= smith19.use,
+                 model = model1,
+                 sens.model = sens.model1,
+                 k = 10,rate.of.conv = .1, : 
+                  
+                Sensitivity analysis models do not reach the specified convergence rate. 
+                Please set a lower convergence rate threshold (i.e., rate. of. conv) or 
+                reduce model complexicity)
+
+```
+
+
+
+## Step 5: Results
+
+The `sens.tables` function helps summarize the results of a sensitivity analysis. 
+
+```{r eval=FALSE}
+my.sa.table = sens.tables(my.sa1) # get results
+```
+
+```{r echo=FALSE} 
+load("smith19_6_my.sa.table.rdata")
+```
+The `sens.summary` table provides estimates and p-values for each path in the original model. 
+The `phan.paths` table  provides the minimum, mean and maximum value of sensitivity parameters that we described in our sensitivity model at Step 2. 
+The `phan.min` table provides the sensitivity parameters lead to the minimum coefficient for each path from `sa.aco`. 
+The `phan.max` table provides the sensitivity parameters lead to the maximum coefficient for each path estimates from `sa.aco`.
+The `p.paths` table provides sensitivity parameters lead to change in significance foe each path. The `NA` indicates there is no change in p-value and meaningful sensitivity parameters that can change p-value. 
+
+```{r }
+my.sa.table$sens.summary
+my.sa.table$phan.paths
+my.sa.table$phan.min
+my.sa.table$phan.max
+my.sa.table$p.paths
+```
+
+# References
+Leite, W.,  Shen, Z., Marcoulides, K., Fish, C., & Harring, J. (in press). 
+    Using ant colony optimization for sensitivity analysis in 
+    structural equation modeling. 
+    Structural Equation Modeling: A Multidisciplinary Journal. 
+

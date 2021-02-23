@@ -1,0 +1,154 @@
+---
+title: "A sensitivity analysis of predicting continued use of online teacher professional development and the influence of social presence and sociability by  Jo A. Smith and Stephen A. Sivo"
+
+author: "Gail Fish (University of Florida) & YongSeok Lee (University of Florida)"
+
+date: "`r Sys.Date()`"
+
+output:
+  pdf_document:
+    fig_caption: no
+
+vignette: > 
+
+  %\VignetteIndexEntry{Smith & Sivo 2012} 
+
+  %\VignetteEngine{knitr::rmarkdown} 
+
+  %\VignetteEncoding{UTF-8} 
+---
+#####Original Paper: Smith,J.A.,& Sivo,S.A.(2012). Predicting continued use of online teacher professional development and the influence of social presence and sociability. *British Journal of Educational Technology, 43*(6), 871-882. doi:10.1111/j.1467-8535.2011.01223.x
+
+# SENSITIVITY ANALYSIS USING SEMsens 
+
+This document provides a simple example analysis of a path analysis dataset, a survey of teachers enrolled in a statewide online reading course. The study examines how a Technology Acceptance Model (TAM) could predict teachers' intentions to continue using e-learning for professional development based on perceived  ease of use and usefulness, as well as examine mediating influences of social presence and sociability in e-learning professional development.
+
+The dataset has six manifest variables: Perceived Usefulness (PU), Perceived Ease of Use (PEU), Teachers' Reading Knowledge Assessment gains (Gains), Social Presence (SP), Sociability (SOC), and Continuance Intention (CI).
+
+In addition to the `SEMsens` package, this vignette also makes use of `lavaan`.
+
+```{r message=F}
+#Load the packages
+require(SEMsens)
+require(lavaan)
+```
+
+## Step 1: Original Path Model & Estimation
+
+Here, we reproduce the the correlation matrix found in the article. First we create the lower diagonal and then convert to a covariance matrix and label the variables with `getCov()` from `lavaan`.
+```{r}
+#Set a correlation matrix
+lower = '
+1.00
+0.68 1.00
+0.54 0.55 1.00
+0.65 0.63 0.67 1.00
+0.33 0.37 0.68 0.54 1.00
+-0.01 0.00 0.03 -0.04 0.07 1.00'
+
+#convert to full covariance matrix, using function from lavaan
+full = getCov(lower, sds= c(4.61,5.37,7.25,3.44,8.91,8.80),
+              names = c("PU", "PEU", "SP", "CI","SOC","Gains"))
+
+```
+
+We next set up the path model from the article, using `lavaan` model syntax with `sem` function. Through this code, we can get the result of (standardized) path coefficients and model fit indices. Standardized coefficient and model fit of this test almost exactly reproduces the results of the original paper (Smith & Sivo,2012). Slight differences are a result of using different statistical software (R or LISREL).
+
+```{r}
+# Original model
+lav_model <-  'SP~SOC
+Gains~SP
+PU~SP+PEU
+PEU~SP
+CI~SP+PU+PEU+SOC
+Gains ~~ 0*CI 
+'
+# Fit the original model with sem function
+modelFit <-  sem(lav_model, sample.nobs=517, sample.cov=full, fixed.x=TRUE, std.lv=TRUE)
+summary(modelFit, standardized = TRUE) #look at Std.all
+fitMeasures(modelFit)
+```
+
+We can get same results by using `lavannify`,`lavaan` and the `standardizedsolution` functions. These are all in the `lavaan` package and present more focused results for standardized path coefficients and their standard error and p-values. Depending on users' research questions, it is possible to select results for individual pathways in the model.
+
+```{r}
+smith_original <- lavaan::lavaanify(model = lav_model, auto = TRUE, model.type = "sem", fixed.x = TRUE)
+smith_original <- lavaan::lavaan(model = smith_original, sample.cov = full, sample.nobs = 517)
+smith_original_par <- lavaan::standardizedSolution(smith_original, type = "std.all")
+smith_original_par #4th row and 7th column of table : smith_original_par[1:4,1:7]
+```
+
+## Step 2: Construct the Sensitivity Model
+
+After checking the original path model, we then create the sensitivity model using a **Phantom Variable**. A phantom variable is modeled with paths to all other variables to see the trajectory of estimates in the original model affected by specification of the Phantom variable. As shown in the code below, the phantom variable follows the normal distribution which has mean of zero and variance of one.   
+
+```{r}
+
+# Sensitivity model, with sensitivity parameters for all variables
+sens_model <-  'SP~SOC
+    Gains ~ SP
+    PU ~ SP+PEU
+    PEU ~ SP
+    CI ~ SP+PU+PEU+SOC
+    Gains ~~ 0*CI
+    SP ~ phantom1*phantom
+    Gains ~ phantom2*phantom
+    PU ~ phantom3*phantom
+    PEU ~ phantom4*phantom
+    CI ~ phantom5*phantom
+    SOC ~ phantom6*phantom
+    phantom =~ 0  #mean of zero
+    phantom ~~ 1*phantom  # variance of one'
+```
+
+## Step 3: Conducting Sensitivity Analysis
+
+Based on the specified `sens_model`, we can run the sensitivity analysis through `sa.aco()` function in `SEMsens` package. Note that we run with the parameters `k = 5` and `max.iter = 20` for a simple illustration. The default values for these parameters are `k = 50` and `max.iter = 1000`. For the other options, see the paper or vignette of `SEMsens` package (https://cran.r-project.org/web/packages/SEMsens/index.html). 
+
+```{r}
+smith_example <- sa.aco(
+  sample.cov = full,
+  sample.nobs = 517,
+  model = lav_model,
+  sens.model = sens_model, 
+  opt.fun = 1,
+  paths = c(1:9), 
+  max.iter = 20, 
+  k = 5)
+```
+
+## Step 4: Sensitivity Analysis Results
+We can get the sensitivity analysis results after 5 iterations. The **sens.tables** function helps us to summarize of sensitivity analysis. In the smith_tables results, the **sens.summary** table contains estimates and p-values for each path in the original model information suggested in Step 1. It also provides the minimum, mean and maximum path estimates during sensitivity analysis.
+
+```{r}
+smith_tables <- sens.tables(smith_example)
+smith_tables$sens.summary
+```
+
+The result of **phan.paths** suggests the minimum, mean and maximum value of sensitivity parameters which were formed in the relationship between phantom variable and each variables in the path model during the iteration of Ant Colony Optimization (ACO).
+```{r}
+smith_tables$phan.paths
+```
+
+The table of **phan.min** indicates the sensitivity parameters for each path that led to smallest size of path estimates during the iteration process of ACO.
+```{r}
+smith_tables$phan.min
+```
+
+Similar to phan.min case, **phan.max** table provides the sensitivity parameters for each path that resulted in the largest size of path estimates during the process of ACO.
+```{r}
+smith_tables$phan.max
+```
+
+The final **p.paths** table covers not only the p-values of original model's path estimates at the first column (default significance level: 0.05) but the final p-value of each path estimates that reverse the null-hypothesis decision of original path estimates. From the third column of table, sensitivity parameters are suggested that leads to the change of p-value. An **NA** result in the table occurs if there is no change in p-value and meaningful sensitivity parameters that changed p-value in the `sa.aco` function.  
+
+```{r}
+smith_tables$p.paths
+```
+
+
+# References
+Leite, W.,  Shen, Z., Marcoulides, K., Fish, C., & Harring, J. (in press). 
+    Using ant colony optimization for sensitivity analysis in 
+    structural equation modeling. 
+    Structural Equation Modeling: A Multidisciplinary Journal. 

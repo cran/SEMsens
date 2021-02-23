@@ -1,8 +1,10 @@
-## -----------------------------------------------------------------------------
-library(lavaan)
-library(SEMsens)
+## ---- message=FALSE, warning=FALSE--------------------------------------------
+# Load lavaan and SEMsens packages
+require(lavaan)
+require(SEMsens)
 
 ## -----------------------------------------------------------------------------
+# STEP 1: Prepare data:
 # Lower diagonal correlation matrix in the study by Kim & Schatschneider (2017)
 lower = '
 1.00
@@ -30,7 +32,8 @@ sample.cov = getCov(lower, sds = c(5.64,14.68,6.57,6.07,3.39,10.16,6.11,4.91,15.
                         "Sentence_copying",
                         "One_day",
                         "Castle"))
-
+ 
+# STEP 2: Set up analytic model and sensitivity anaysis model
   # The original analytic model
 model <-'Vocabulary~Working_memory
   Grammar~Working_memory
@@ -54,8 +57,9 @@ model <-'Vocabulary~Working_memory
   Discourse~~Spelling
   Spelling~~Sentence_copying'
 
-  # A sensitivity analysis model template, which additionally includes paths from a phantom
-  #    variable to a set of variables (= number of sensitivity parameters) in the analytic model.
+  # A sensitivity analysis model template, which additionally includes paths
+  #  from a phantom variable to a set of variables (= number of sensitivity parameters)
+  #   in the analytic model.
 sens.model <- 'Vocabulary~Working_memory
   Grammar~Working_memory
   Inference~Vocabulary+Grammar+Working_memory
@@ -90,30 +94,41 @@ sens.model <- 'Vocabulary~Working_memory
   phantom =~ 0 # added for mean of zero
   phantom ~~ 1*phantom'
 
-  # Perform sensitivity analysis
-my.sa <-sa.aco(model = model, sens.model = sens.model, sample.cov = sample.cov,
-               sample.nobs = 193, n.of.sens.pars = 9, k = 5, max.value= 2000, max.iter = 10,
-               opt.fun = 4, ## to just significant
-               paths = c(1:18), seed = 1, verbose = FALSE)
-# Note: We run with k = 5 and max.iter = 10 for illustration purpose in 5 seconds, 
-# please specify them as larger numbers (e.g., default value of k = 50 and mat.iter = 1000)
+# STEP 3: Set up the paths of interest to be evaluated in sensitivity analysis.
+  paths <- 'Vocabulary~Working_memory
+  Grammar~Working_memory
+  Inference~Vocabulary+Grammar+Working_memory
+  ToM~Vocabulary+Grammar+Working_memory
+  Spelling~Working_memory
+  Sentence_copying~Working_memory
+  Discourse~Inference+ToM+Vocabulary+Grammar+Working_memory
+  Writing~Spelling+Sentence_copying+Discourse'
 
+  # STEP 4: Perform sensitivity analysis.
+my.sa <-sa.aco(model = model, sens.model = sens.model, sample.cov = sample.cov,
+               sample.nobs = 193, k = 50, max.value= 2000, max.iter = 100,
+               opt.fun = 4, ## from significant to just significant
+               paths = paths, seed = 1, verbose = FALSE)
+# We set up a max iteration of 100 and solution archive length of 50 for 
+# illustration purpose. Please specify a larger number of iteration (e.g., 1000),
+#  and a larger k (e.g., 100).
 
 
 ## -----------------------------------------------------------------------------
-# Summary of the sensitivity analysis for each path
-sens.tables(my.sa)[[1]]
+my.table <- sens.tables(my.sa)
+# Table 1: Summary of the sensitivity analysis for each path
+my.table[[1]]
 
-# Summary of the sensitivity parameters
-sens.tables(my.sa)[[2]]
+# Table 2:  Summary of the sensitivity parameters
+my.table[[2]]
 
-# The sensitivity parameters lead to the minimum coefficient for each
-sens.tables(my.sa)[[3]]
+# Table 3: The sensitivity parameters lead to the minimum coefficient for each
+my.table[[3]]
 
-# The sensitivity parameters lead to the maximum coefficient for each path
-sens.tables(my.sa)[[4]]
+# Table 4: The sensitivity parameters lead to the maximum coefficient for each path
+my.table[[4]]
 
-# The sensitivity parameters lead to change in significance for each path
-sens.tables(my.sa)[[5]]
+# Table 5: The sensitivity parameters lead to change in significance for each path
+my.table[[5]]
 
 

@@ -4,17 +4,33 @@
 \alias{sens.tables}
 \title{Summary of sensitivity analysis results}
 \usage{
-sens.tables(expr = NULL, sig.level = 0.05, choice = NULL)
+sens.tables(expr = NULL, sig.level = 0.05, path = TRUE, sort = TRUE)
 }
 \arguments{
 \item{expr}{Returned object of \code{\link{sa.aco}} function.}
 
 \item{sig.level}{Significance level, default value is 0.05.}
 
-\item{choice}{Set up the length of summary; default is all.}
+\item{path}{Logical, if TRUE, the function only present results for structural paths.
+If FALSE, the function will present results for all paths (including
+structural paths and measurement paths). Default value is TRUE.}
+
+\item{sort}{Logical, if TRUE, the function will present sorted results.
+If FALSE, the function will present unsorted results. Default value is TRUE.}
 }
 \value{
-List of summary tables
+Lists of 5 summary tables. The first table (sens.summary) provides
+    analytic model results (model path coefficient/model.est, p value/pvalue),
+    mean, minimum, and maximum values of estimated path coefficients across
+    all sensitivity analysis models (mean.est.sens, min.est.sens, and max.est.sens).
+    The second table (phan.paths) provides the summary of sensitivity parameters,
+    including the mean, minimum, and maximum values of each sensitivity parameters (
+    mean.phan, min.phan, max.phan). The third table (phan.min) provides the sensitivity
+    parameters that lead to the minimum path coefficient estimation in a sensitivity
+    analysis model. The fourth table (phan.max) provides the sensitivity
+    parameters that lead to the maximum path coefficient estimation in a sensitivity
+    analysis model. The fifth table (p.paths) provides the sensitivity parameters, if
+    any, that lead to the change of p value across the significance level.
 }
 \description{
 This function can summarize the sensitivity analysis results from
@@ -23,4 +39,10 @@ This function can summarize the sensitivity analysis results from
 \examples{
 # see examples in the \code{\link{sa.aco}} function
 
+
+}
+\references{
+Leite, W., & Shen, Z., Marcoulides, K., Fish, C., & Harring, J. (in press).
+  Using ant colony optimization for sensitivity analysis in structural equation modeling.
+  Structural Equation Modeling: A Multidisciplinary Journal.
 }
