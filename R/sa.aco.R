@@ -237,7 +237,7 @@ sa.aco <- function(data = NULL, sample.cov, sample.nobs, model, sens.model,
     } else {
       new.out = try(lavaan::sem(model = new.model, data = data, ...), silent = TRUE)
     }
-    if(isTRUE(class(new.out)=="try-error")) { next }
+    if(isTRUE(class(new.out)=="try-error")) {next}
     on.exit(options(warnings))
 
     new.par = lavaan::standardizedSolution(new.out, type="std.all")
@@ -418,6 +418,7 @@ sa.aco <- function(data = NULL, sample.cov, sample.nobs, model, sens.model,
       max.X <- sens.pars[which.max(outcome), ]
       colnames(max.X) <- c(phan.names, "eval")
       last.impr <- eval}
+
 
     if ((abs(max.y - max.value) < abs(e.rel * max.value + e.abs)) |
           (max.y > max.value)) {

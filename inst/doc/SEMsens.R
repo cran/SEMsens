@@ -2,6 +2,7 @@
 # Load lavaan and SEMsens packages
 require(lavaan)
 require(SEMsens)
+set.seed(1)
 
 ## -----------------------------------------------------------------------------
 # STEP 1: Prepare data:

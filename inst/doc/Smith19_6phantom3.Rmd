@@ -17,23 +17,22 @@ vignette: >
 
 **BASED ON PAPER:** A Model for Parenting Risk and Resilience, Social-emotional Readiness, and Reading Achievement in Kindergarten Children from Low-income Families Model 
 
-Author(s): Sondra Smith-Adcock, Walter Leite, Yasemine Kaya & Ellen Amatea.
+Author(s): Sondra Smith-Adcock, Walter Leite, Yasemine Kaya, & Ellen Amatea.
 
 **Source:** Journal of Child and Family Studies, vol 28(Oct., 2019), pp. 2826-2841
 
-Published by: Springer Nature in Journal of Child and Family studies
-DOI:<https://doi.org/10.1007/s10826-019-01462-0>
+Published by: Springer Nature in Journal of Child and Family studies, <doi:10.1007/s10826-019-01462-0>
 
 # SENSITIVITY ANALYSIS USING SEMsens 
 
 This example sensitivity analysis uses the published data and model from Smith-Adcock, Leite, Kaya & Amatea(2019). 
 We use the original data with categorical variables, set up the lavaan models for their original model and the sensitivity model, run the analysis, and view the results.
 
-
-``````{r, message=FALSE, warning=FALSE}
+```{r, message=FALSE, warning=FALSE}
 # Load lavaan and SEMsens packages
 require(lavaan)
 require(SEMsens)
+set.seed(1)
 ```
 
 ## Step 1 : Load data with names and indicate categorical variables
@@ -173,14 +172,14 @@ In the sa.aco function, we specified the data(`data`) we are using, original mod
 **Note:** We only used `k = 10` and `max.iter = 100` so the analysis would run quickly for illustration purposes. For actual analyses, please specify these parameters as larger numbers (e.g., default value of `k = 100` and `max.iter = 1000`). In addition, the convergence rate is set to be (`rate.of.conv = .05`) in this example as the model is complicated. An error message may show up like below:
 ```{r, eval=FALSE, echo=T} 
 #error message 
-Error in sa.aco(data= smith19.use,
-                 model = model1,
-                 sens.model = sens.model1,
-                 k = 10,rate.of.conv = .1, : 
-                  
-                Sensitivity analysis models do not reach the specified convergence rate. 
-                Please set a lower convergence rate threshold (i.e., rate. of. conv) or 
-                reduce model complexicity)
+# Error in sa.aco(data= smith19.use,
+#                  model = model1,
+#                  sens.model = sens.model1,
+#                  k = 10,rate.of.conv = .1, : 
+#                   
+#                 Sensitivity analysis models do not reach the specified convergence rate. 
+#                 Please set a lower convergence rate threshold (i.e., rate. of. conv) or 
+#                 reduce model complexicity)
 
 ```
 

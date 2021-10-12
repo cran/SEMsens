@@ -2,6 +2,7 @@
 # Load lavaan and SEMsens packages
 require(lavaan)
 require(SEMsens)
+set.seed(1)
 
 ## -----------------------------------------------------------------------------
 
@@ -118,14 +119,14 @@ old.model.par
 
 ## ---- eval=FALSE, echo=T------------------------------------------------------
 #  #error message
-#  Error in sa.aco(data= smith19.use,
-#                   model = model1,
-#                   sens.model = sens.model1,
-#                   k = 10,rate.of.conv = .1, :
-#  
-#                  Sensitivity analysis models do not reach the specified convergence rate.
-#                  Please set a lower convergence rate threshold (i.e., rate. of. conv) or
-#                  reduce model complexicity)
+#  # Error in sa.aco(data= smith19.use,
+#  #                  model = model1,
+#  #                  sens.model = sens.model1,
+#  #                  k = 10,rate.of.conv = .1, :
+#  #
+#  #                 Sensitivity analysis models do not reach the specified convergence rate.
+#  #                 Please set a lower convergence rate threshold (i.e., rate. of. conv) or
+#  #                 reduce model complexicity)
 #  
 
 ## ----eval=FALSE---------------------------------------------------------------

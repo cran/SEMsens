@@ -31,6 +31,7 @@ In addition to the `SEMsens` package, this vignette also makes use of `lavaan`.
 #Load the packages
 require(SEMsens)
 require(lavaan)
+set.seed(1)
 ```
 
 ## Step 1: Original Path Model & Estimation

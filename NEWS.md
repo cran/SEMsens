@@ -1,3 +1,11 @@
+  
+   Changes in version 1.0.2
+
+==============
+ An issue in a vignette was fixed;
+ Reference doi added.
+ 
+ 
  
    Changes in version 1.0.1
 

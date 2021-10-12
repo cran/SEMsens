@@ -49,6 +49,7 @@ The example is from: Kim, Y. S. G., & Schatschneider, C. (2017). Expanding the d
 # Load lavaan and SEMsens packages
 require(lavaan)
 require(SEMsens)
+set.seed(1)
 ```
 
 ```{r}

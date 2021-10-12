@@ -7,6 +7,11 @@
 #'  Published by: Springer Nature in Journal of Child and Family studies
 #'  DOI:<https://doi.org/10.1007/s10826-019-01462-0>
 #'
+#'  The dataset was taken from the public-use data of
+#'  the Early Childhood Longitudinal Study – Kindergarten Class of 1998-99 of
+#'  the National Center for Educational Statistics (https://nces.ed.gov/ecls/kindergarten.asp/).
+#'  This dataset should not be combined with other data for the purpose of identifying participants.
+#'
 #' @format A data frame with 3444 observations and 39 variables
 
 "smith19.use"

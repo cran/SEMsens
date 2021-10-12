@@ -2,6 +2,7 @@
 #Load the packages
 require(SEMsens)
 require(lavaan)
+set.seed(1)
 
 ## -----------------------------------------------------------------------------
 #Set a correlation matrix
