@@ -2,8 +2,8 @@
 % Please edit documentation in R/sa.aco.R
 \name{sa.aco}
 \alias{sa.aco}
-\title{Sensitivity Analysis for Structural Equation Modeling Using
-colony optimization (ACO)}
+\title{Sensitivity Analysis for Structural Equation Modeling Using Ant
+Colony Optimization (ACO)}
 \usage{
 sa.aco(
   data = NULL,

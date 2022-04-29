@@ -1,3 +1,8 @@
+
+   Changes in version 1.0.3
+==============
+Fixed a bug by deleting a space in the package documentation.
+
   
    Changes in version 1.0.2
 

@@ -27,6 +27,6 @@ The package covers sensitivity analysis using ant colony optimization and
 \author{
 Walter Leite, Zuchao Shen
 
-Maintainer: Walter Leite \href{mailto: walter.leite@coe.ufl.edu}{walter.leite@coe.ufl.edu}
+Maintainer: Walter Leite \href{mailto:walter.leite@coe.ufl.edu}{walter.leite@coe.ufl.edu}
     (University of Florida)
 }

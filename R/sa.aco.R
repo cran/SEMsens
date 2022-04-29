@@ -1,5 +1,5 @@
-#' Sensitivity Analysis for Structural Equation Modeling Using
-#' colony optimization (ACO)
+#' Sensitivity Analysis for Structural Equation Modeling Using Ant
+#' Colony Optimization (ACO)
 #'
 #' @description This function can perform sensitivity analysis for
 #'     structural equation modeling using ant colony optimization (ACO).
