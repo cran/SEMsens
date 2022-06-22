@@ -1,11 +1,16 @@
 
+
+   Changes in version 1.0.5
+==============
+Fixed an error associated with rebuilding vignettes.
+
+
    Changes in version 1.0.3
 ==============
 Fixed a bug by deleting a space in the package documentation.
 
   
    Changes in version 1.0.2
-
 ==============
  An issue in a vignette was fixed;
  Reference doi added.

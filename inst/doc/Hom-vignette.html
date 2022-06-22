@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Eric Wright (University of Florida) &amp; Sanaz Nazari (University of Florida)" />
+
+<meta name="date" content="2022-06-22" />
+
+<title>A Sensitivity Analysis of Toward a Greater Understanding of How Dissatisfaction Drives Employee Turnover by Peter W. Hom and Angelo J. Kinicki</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">A Sensitivity Analysis of Toward a Greater
+Understanding of How Dissatisfaction Drives Employee Turnover by Peter
+W. Hom and Angelo J. Kinicki</h1>
+<h4 class="author">Eric Wright (University of Florida) &amp; Sanaz
+Nazari (University of Florida)</h4>
+<h4 class="date">2022-06-22</h4>
+
+
+
+<div id="sensitivity-analysis-using-semsens" class="section level1">
+<h1>SENSITIVITY ANALYSIS USING SEMsens</h1>
+<p><strong>BASED ON PAPER:</strong> Toward a Greater Understanding of
+How Dissatisfaction Drives Employee Turnover Author(s): Peter W. Hom and
+Angelo J. Kinicki.</p>
+<p><strong>Source:</strong> The Academy of Management Journal, Vol. 44,
+No. 5 (Oct., 2001), pp. 975-987 Published by: Academy of Management.</p>
+<p>Stable URL: <a href="https://www.jstor.org/stable/3069441">https://www.jstor.org/stable/3069441</a></p>
+<p>This example sensitivity analysis uses the published data and model
+from Hom and Kinicki (2001). We create a covariance matrix from their
+data, set up lavaan models for their original model and the sensitivity
+model, run the analysis, and view the results.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load lavaan and SEMsens packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(lavaan)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(SEMsens)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span></code></pre></div>
+<div id="step-1-enter-the-data" class="section level2">
+<h2>Step 1: Enter the data</h2>
+<p>Hom and Kinicki (2001) published correlations and standard deviations
+for all indicator variables, so we use those to create a covariance
+matrix <code>covmat</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlation matrix from published data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>cormat <span class="ot">&lt;-</span> <span class="fu">diag</span>(<span class="dv">1</span>,<span class="dv">29</span>) <span class="co"># start with the diagonal</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>cormat[<span class="fu">lower.tri</span>(cormat)] <span class="ot">&lt;-</span> <span class="fu">c</span>( <span class="co"># add lower triangle data</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">46</span>,.<span class="dv">22</span>,.<span class="dv">30</span>,<span class="sc">-</span>.<span class="dv">20</span>,<span class="sc">-</span>.<span class="dv">30</span>,<span class="sc">-</span>.<span class="dv">20</span>,<span class="sc">-</span>.<span class="dv">22</span>,<span class="sc">-</span>.<span class="dv">33</span>,<span class="sc">-</span>.<span class="dv">19</span>,<span class="sc">-</span>.<span class="dv">25</span>,<span class="sc">-</span>.<span class="dv">63</span>,<span class="sc">-</span>.<span class="dv">60</span>,<span class="sc">-</span>.<span class="dv">48</span>,<span class="sc">-</span>.<span class="dv">17</span>,<span class="sc">-</span>.<span class="dv">42</span>,<span class="sc">-</span>.<span class="dv">09</span>,<span class="sc">-</span>.<span class="dv">36</span>,.<span class="dv">09</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">04</span>,<span class="sc">-</span>.<span class="dv">12</span>,<span class="dv">0</span>,<span class="sc">-</span>.<span class="dv">20</span>,<span class="sc">-</span>.<span class="dv">20</span>,<span class="sc">-</span>.<span class="dv">43</span>,<span class="sc">-</span>.<span class="dv">33</span>,<span class="sc">-</span>.<span class="dv">49</span>,<span class="sc">-</span>.<span class="dv">18</span>,<span class="sc">-</span>.<span class="dv">03</span>,.<span class="dv">21</span>,.<span class="dv">30</span>,<span class="sc">-</span>.<span class="dv">15</span>,<span class="sc">-</span>.<span class="dv">25</span>,<span class="sc">-</span>.<span class="dv">10</span>,<span class="sc">-</span>.<span class="dv">20</span>,<span class="sc">-</span>.<span class="dv">31</span>,<span class="sc">-</span>.<span class="dv">15</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span>.<span class="dv">24</span>,<span class="sc">-</span>.<span class="dv">40</span>,<span class="sc">-</span>.<span class="dv">37</span>,<span class="sc">-</span>.<span class="dv">32</span>,<span class="sc">-</span>.<span class="dv">08</span>,<span class="sc">-</span>.<span class="dv">24</span>,<span class="sc">-</span>.<span class="dv">02</span>,<span class="sc">-</span>.<span class="dv">27</span>,.<span class="dv">06</span>,.<span class="dv">07</span>,<span class="sc">-</span>.<span class="dv">08</span>,<span class="dv">0</span>,<span class="sc">-</span>.<span class="dv">10</span>,<span class="sc">-</span>.<span class="dv">16</span>,<span class="sc">-</span>.<span class="dv">25</span>,<span class="sc">-</span>.<span class="dv">18</span>,<span class="sc">-</span>.<span class="dv">35</span>,<span class="sc">-</span>.<span class="dv">06</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span>.<span class="dv">05</span>,.<span class="dv">04</span>,<span class="sc">-</span>.<span class="dv">05</span>,<span class="sc">-</span>.<span class="dv">09</span>,<span class="sc">-</span>.<span class="dv">12</span>,<span class="sc">-</span>.<span class="dv">10</span>,<span class="sc">-</span>.<span class="dv">01</span>,.<span class="dv">03</span>,.<span class="dv">02</span>,<span class="sc">-</span>.<span class="dv">18</span>,<span class="sc">-</span>.<span class="dv">14</span>,<span class="sc">-</span>.<span class="dv">09</span>,<span class="sc">-</span>.<span class="dv">02</span>,<span class="sc">-</span>.<span class="dv">12</span>,<span class="sc">-</span>.<span class="dv">05</span>,<span class="sc">-</span>.<span class="dv">08</span>,.<span class="dv">03</span>,.<span class="dv">07</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span>.<span class="dv">08</span>,<span class="sc">-</span>.<span class="dv">06</span>,<span class="sc">-</span>.<span class="dv">10</span>,<span class="sc">-</span>.<span class="dv">07</span>,<span class="sc">-</span>.<span class="dv">10</span>,<span class="sc">-</span>.<span class="dv">03</span>,<span class="sc">-</span>.<span class="dv">11</span>,.<span class="dv">04</span>,.<span class="dv">03</span>,<span class="sc">-</span>.<span class="dv">07</span>,<span class="sc">-</span>.<span class="dv">24</span>,<span class="dv">0</span>,<span class="sc">-</span>.<span class="dv">12</span>,<span class="sc">-</span>.<span class="dv">50</span>,<span class="sc">-</span>.<span class="dv">32</span>,<span class="sc">-</span>.<span class="dv">45</span>,<span class="sc">-</span>.<span class="dv">38</span>,<span class="sc">-</span>.<span class="dv">29</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span>.<span class="dv">31</span>,<span class="sc">-</span>.<span class="dv">16</span>,<span class="sc">-</span>.<span class="dv">24</span>,<span class="sc">-</span>.<span class="dv">16</span>,<span class="sc">-</span>.<span class="dv">37</span>,.<span class="dv">12</span>,.<span class="dv">05</span>,<span class="sc">-</span>.<span class="dv">28</span>,<span class="sc">-</span>.<span class="dv">13</span>,<span class="sc">-</span>.<span class="dv">06</span>,<span class="sc">-</span>.<span class="dv">03</span>,<span class="sc">-</span>.<span class="dv">16</span>,<span class="sc">-</span>.<span class="dv">12</span>,<span class="sc">-</span>.<span class="dv">23</span>,<span class="sc">-</span>.<span class="dv">08</span>,.<span class="dv">06</span>,.<span class="dv">29</span>,.<span class="dv">31</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">10</span>,.<span class="dv">08</span>,<span class="sc">-</span>.<span class="dv">02</span>,.<span class="dv">07</span>,.<span class="dv">21</span>,.<span class="dv">24</span>,.<span class="dv">25</span>,.<span class="dv">06</span>,.<span class="dv">09</span>,.<span class="dv">04</span>,.<span class="dv">14</span>,<span class="sc">-</span>.<span class="dv">02</span>,<span class="sc">-</span>.<span class="dv">01</span>,.<span class="dv">10</span>,.<span class="dv">04</span>,.<span class="dv">04</span>,.<span class="dv">13</span>,.<span class="dv">19</span>,.<span class="dv">03</span>,.<span class="dv">18</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">14</span>,<span class="sc">-</span>.<span class="dv">04</span>,.<span class="dv">38</span>,.<span class="dv">41</span>,.<span class="dv">23</span>,.<span class="dv">13</span>,.<span class="dv">22</span>,.<span class="dv">36</span>,.<span class="dv">35</span>,.<span class="dv">35</span>,.<span class="dv">09</span>,.<span class="dv">14</span>,.<span class="dv">11</span>,.<span class="dv">14</span>,<span class="sc">-</span>.<span class="dv">09</span>,<span class="sc">-</span>.<span class="dv">04</span>,.<span class="dv">11</span>,.<span class="dv">04</span>,.<span class="dv">11</span>,.<span class="dv">15</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">30</span>,.<span class="dv">17</span>,.<span class="dv">33</span>,.<span class="dv">12</span>,<span class="sc">-</span>.<span class="dv">02</span>,.<span class="dv">31</span>,.<span class="dv">05</span>,.<span class="dv">03</span>,.<span class="dv">15</span>,.<span class="dv">22</span>,.<span class="dv">20</span>,.<span class="dv">21</span>,<span class="sc">-</span>.<span class="dv">05</span>,.<span class="dv">10</span>,<span class="sc">-</span>.<span class="dv">05</span>,.<span class="dv">03</span>,<span class="sc">-</span>.<span class="dv">04</span>,<span class="sc">-</span>.<span class="dv">06</span>,.<span class="dv">03</span>,.<span class="dv">05</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">03</span>,.<span class="dv">07</span>,.<span class="dv">24</span>,.<span class="dv">19</span>,.<span class="dv">23</span>,.<span class="dv">13</span>,<span class="sc">-</span>.<span class="dv">08</span>,.<span class="dv">17</span>,.<span class="dv">15</span>,.<span class="dv">19</span>,.<span class="dv">28</span>,.<span class="dv">23</span>,.<span class="dv">23</span>,.<span class="dv">04</span>,.<span class="dv">18</span>,.<span class="dv">08</span>,.<span class="dv">10</span>,<span class="sc">-</span>.<span class="dv">09</span>,<span class="sc">-</span>.<span class="dv">06</span>,.<span class="dv">07</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">01</span>,.<span class="dv">11</span>,.<span class="dv">08</span>,.<span class="dv">21</span>,.<span class="dv">20</span>,.<span class="dv">28</span>,.<span class="dv">06</span>,<span class="sc">-</span>.<span class="dv">03</span>,.<span class="dv">43</span>,.<span class="dv">56</span>,.<span class="dv">35</span>,.<span class="dv">32</span>,.<span class="dv">26</span>,.<span class="dv">16</span>,.<span class="dv">27</span>,.<span class="dv">13</span>,.<span class="dv">45</span>,<span class="sc">-</span>.<span class="dv">04</span>,<span class="sc">-</span>.<span class="dv">04</span>,.<span class="dv">16</span>,</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">07</span>,.<span class="dv">14</span>,.<span class="dv">15</span>,.<span class="dv">23</span>,.<span class="dv">12</span>,.<span class="dv">29</span>,.<span class="dv">09</span>,<span class="sc">-</span>.<span class="dv">07</span>,.<span class="dv">67</span>,.<span class="dv">24</span>,.<span class="dv">26</span>,.<span class="dv">27</span>,.<span class="dv">15</span>,.<span class="dv">21</span>,.<span class="dv">13</span>,.<span class="dv">25</span>,<span class="sc">-</span>.<span class="dv">10</span>,<span class="sc">-</span>.<span class="dv">02</span>,.<span class="dv">12</span>,<span class="dv">0</span>,.<span class="dv">12</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">10</span>,.<span class="dv">18</span>,.<span class="dv">21</span>,.<span class="dv">27</span>,.<span class="dv">17</span>,<span class="sc">-</span>.<span class="dv">06</span>,.<span class="dv">36</span>,.<span class="dv">32</span>,.<span class="dv">31</span>,.<span class="dv">11</span>,.<span class="dv">29</span>,.<span class="dv">16</span>,.<span class="dv">40</span>,<span class="sc">-</span>.<span class="dv">10</span>,<span class="sc">-</span>.<span class="dv">05</span>,.<span class="dv">22</span>,.<span class="dv">10</span>,.<span class="dv">17</span>,.<span class="dv">15</span>,.<span class="dv">27</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">23</span>,.<span class="dv">33</span>,.<span class="dv">17</span>,<span class="sc">-</span>.<span class="dv">08</span>,.<span class="dv">78</span>,.<span class="dv">77</span>,.<span class="dv">11</span>,.<span class="dv">49</span>,.<span class="dv">09</span>,.<span class="dv">40</span>,<span class="sc">-</span>.<span class="dv">23</span>,<span class="sc">-</span>.<span class="dv">14</span>,.<span class="dv">19</span>,<span class="sc">-</span>.<span class="dv">07</span>,.<span class="dv">29</span>,.<span class="dv">27</span>,.<span class="dv">57</span>,.<span class="dv">40</span>,.<span class="dv">68</span>,.<span class="dv">27</span>,<span class="dv">0</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">82</span>,.<span class="dv">10</span>,.<span class="dv">57</span>,.<span class="dv">08</span>,.<span class="dv">42</span>,<span class="sc">-</span>.<span class="dv">29</span>,<span class="sc">-</span>.<span class="dv">10</span>,.<span class="dv">13</span>,<span class="sc">-</span>.<span class="dv">12</span>,.<span class="dv">33</span>,.<span class="dv">31</span>,.<span class="dv">66</span>,.<span class="dv">46</span>,.<span class="dv">75</span>,.<span class="dv">32</span>,.<span class="dv">02</span>,.<span class="dv">10</span>,.<span class="dv">49</span>,.<span class="dv">08</span>,.<span class="dv">38</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="sc">-</span>.<span class="dv">31</span>,<span class="sc">-</span>.<span class="dv">11</span>,.<span class="dv">18</span>,<span class="sc">-</span>.<span class="dv">06</span>,.<span class="dv">33</span>,.<span class="dv">34</span>,.<span class="dv">54</span>,.<span class="dv">38</span>,.<span class="dv">67</span>,.<span class="dv">31</span>,<span class="sc">-</span>.<span class="dv">08</span>,.<span class="dv">14</span>,.<span class="dv">52</span>,.<span class="dv">20</span>,.<span class="dv">22</span>,.<span class="dv">31</span>,.<span class="dv">42</span>,.<span class="dv">39</span>,.<span class="dv">01</span>,.<span class="dv">01</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">07</span>,.<span class="dv">06</span>,.<span class="dv">13</span>,<span class="sc">-</span>.<span class="dv">03</span>,.<span class="dv">06</span>,.<span class="dv">14</span>,.<span class="dv">42</span>,<span class="sc">-</span>.<span class="dv">29</span>,<span class="sc">-</span>.<span class="dv">12</span>,.<span class="dv">24</span>,<span class="sc">-</span>.<span class="dv">06</span>,.<span class="dv">25</span>,.<span class="dv">25</span>,.<span class="dv">38</span>,.<span class="dv">28</span>,.<span class="dv">48</span>,.<span class="dv">18</span>,<span class="sc">-</span>.<span class="dv">01</span>,.<span class="dv">16</span>,.<span class="dv">16</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">28</span>,.<span class="dv">68</span>,.<span class="dv">48</span>,.<span class="dv">06</span>,.<span class="dv">10</span>,.<span class="dv">01</span>,.<span class="dv">12</span>,.<span class="dv">15</span>,<span class="sc">-</span>.<span class="dv">05</span>,.<span class="dv">04</span>,.<span class="dv">02</span>,.<span class="dv">03</span>,.<span class="dv">24</span>,.<span class="dv">11</span>,.<span class="dv">14</span>,.<span class="dv">16</span>,.<span class="dv">31</span>,.<span class="dv">22</span>,.<span class="dv">32</span>,.<span class="dv">09</span>,<span class="sc">-</span>.<span class="dv">01</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">37</span>,.<span class="dv">12</span>,.<span class="dv">18</span>,<span class="sc">-</span>.<span class="dv">20</span>,<span class="sc">-</span>.<span class="dv">15</span>,<span class="sc">-</span>.<span class="dv">22</span>,<span class="sc">-</span>.<span class="dv">08</span>,<span class="sc">-</span>.<span class="dv">23</span>,<span class="sc">-</span>.<span class="dv">11</span>,.<span class="dv">07</span>,.<span class="dv">13</span>,.<span class="dv">18</span>,<span class="sc">-</span>.<span class="dv">07</span>,<span class="dv">0</span>,<span class="sc">-</span>.<span class="dv">10</span>,.<span class="dv">04</span>,<span class="sc">-</span>.<span class="dv">06</span>,<span class="sc">-</span>.<span class="dv">03</span>,.<span class="dv">15</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">54</span>,.<span class="dv">11</span>,.<span class="dv">12</span>,.<span class="dv">07</span>,.<span class="dv">10</span>,.<span class="dv">16</span>,<span class="sc">-</span>.<span class="dv">01</span>,<span class="sc">-</span>.<span class="dv">02</span>,<span class="sc">-</span>.<span class="dv">06</span>,<span class="sc">-</span>.<span class="dv">01</span>,<span class="sc">-</span>.<span class="dv">09</span>,<span class="sc">-</span>.<span class="dv">05</span>,<span class="sc">-</span>.<span class="dv">10</span>,<span class="sc">-</span>.<span class="dv">14</span>,.<span class="dv">06</span>,.<span class="dv">57</span>,.<span class="dv">28</span>,.<span class="dv">17</span>,.<span class="dv">36</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  .<span class="dv">27</span>,<span class="sc">-</span>.<span class="dv">05</span>,.<span class="dv">32</span>,.<span class="dv">21</span>,.<span class="dv">36</span>,.<span class="dv">18</span>,.<span class="dv">05</span>,.<span class="dv">42</span>,.<span class="dv">68</span>,.<span class="dv">26</span>,<span class="sc">-</span>.<span class="dv">05</span>,.<span class="dv">55</span>,.<span class="dv">23</span>,.<span class="dv">04</span>,.<span class="dv">28</span>,<span class="sc">-</span>.<span class="dv">03</span>,<span class="sc">-</span>.<span class="dv">07</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>cormat[<span class="fu">upper.tri</span>(cormat)] <span class="ot">&lt;-</span> <span class="fu">t</span>(cormat)[<span class="fu">upper.tri</span>(cormat)] <span class="co"># mirror lower to upper</span></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Standard deviations from published data</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>sds <span class="ot">&lt;-</span> <span class="fu">diag</span>(<span class="fu">c</span>(<span class="dv">1</span>,.<span class="dv">38</span>,.<span class="dv">73</span>,.<span class="dv">65</span>,.<span class="dv">58</span>,.<span class="dv">78</span>,.<span class="dv">75</span>,.<span class="dv">55</span>,.<span class="dv">59</span>,.<span class="dv">54</span>,.<span class="dv">45</span>,.<span class="dv">74</span>,.<span class="dv">85</span>,.<span class="dv">80</span>,.<span class="dv">57</span>,</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>              .<span class="dv">74</span>,.<span class="dv">69</span>,.<span class="dv">42</span>,.<span class="dv">57</span>,.<span class="dv">63</span>,.<span class="dv">62</span>,.<span class="dv">70</span>,<span class="fl">1.01</span>,.<span class="dv">94</span>,.<span class="dv">65</span>,.<span class="dv">37</span>,.<span class="dv">73</span>,.<span class="dv">40</span>,<span class="dv">1</span>))</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Create covariance matrix covmat with row and column names</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>covmat <span class="ot">&lt;-</span> sds <span class="sc">%*%</span> cormat <span class="sc">%*%</span> sds</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(covmat) <span class="ot">&lt;-</span> <span class="fu">colnames</span>(covmat) <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;FACES&quot;</span>,<span class="st">&quot;Duty&quot;</span>,<span class="st">&quot;Team&quot;</span>,<span class="st">&quot;Hours&quot;</span>,<span class="st">&quot;Absent&quot;</span>,<span class="st">&quot;Effort&quot;</span>,<span class="st">&quot;Sick&quot;</span>,<span class="st">&quot;Quality&quot;</span>,<span class="st">&quot;Family&quot;</span>,</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Community&quot;</span>,<span class="st">&quot;Personal&quot;</span>,<span class="st">&quot;Thoughts&quot;</span>,<span class="st">&quot;SI&quot;</span>,<span class="st">&quot;QI&quot;</span>,<span class="st">&quot;Stress&quot;</span>,<span class="st">&quot;Jobs&quot;</span>,<span class="st">&quot;Costs&quot;</span>,</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Benefits&quot;</span>,<span class="st">&quot;Joblessness&quot;</span>,<span class="st">&quot;Moving&quot;</span>,<span class="st">&quot;Impact&quot;</span>,<span class="st">&quot;Interference&quot;</span>,<span class="st">&quot;V1&quot;</span>,<span class="st">&quot;V2&quot;</span>,</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Prepare&quot;</span>,<span class="st">&quot;Look&quot;</span>,<span class="st">&quot;Intensity&quot;</span>,<span class="st">&quot;Resign&quot;</span>,<span class="st">&quot;Unemployed&quot;</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="step-2-define-the-models" class="section level2">
+<h2>Step 2: Define the models</h2>
+<p>The SEMsens package requires both an original model and a sensitivity
+model that adds the phantom variables. These models are defined SEMsens
+using the lavaan model syntax.</p>
+<p>We first define the original model:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Original model from Hom and Kinicki (2001)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="st">&quot;JSat =~ FACES + Duty + Team</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">  IC =~ Family + Personal + Community</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="st">  JAvoid =~ Quality + Absent + Effort + Sick</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">  WC =~ QI + Thoughts + SI</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">  WEU =~ Stress + Benefits + Impact + Jobs</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">  JSearch =~ Prepare + Look + Intensity</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="st">  CA =~ V1 + V2</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="st">  Turnover =~ Resign</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">  Resign ~~ 0*Resign</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">  UR =~ Unemployed</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">  Unemployed ~~ 0*Unemployed</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="st">  JSat ~ IC</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="st">  JAvoid ~ JSat</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="st">  WC ~ JAvoid + JSat + IC</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="st">  WEU ~ WC + JSat + UR</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="st">  JSearch ~ WEU</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="st">  CA ~ JSearch</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="st">  Turnover ~ CA + WC + UR&quot;</span></span></code></pre></div>
+<p>For the sensitivity model, we use the same model definition as the
+original model but add one phantom variable with paths phantom1,
+phantom2, etc. to each of the latent variables in the original
+model.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sensitivity model</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>sens.model <span class="ot">&lt;-</span> <span class="st">&quot;JSat =~ FACES + Duty + Team</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">  IC =~ Family + Personal + Community</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="st">  JAvoid =~ Quality + Absent + Effort + Sick</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">  WC =~ QI + Thoughts + SI</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="st">  WEU =~ Stress + Benefits + Impact + Jobs</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="st">  JSearch =~ Prepare + Look + Intensity</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="st">  CA =~ V1 + V2</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="st">  Turnover =~ Resign</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="st">  Resign ~~ 0*Resign</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="st">  UR =~ Unemployed</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="st">  Unemployed ~~ 0*Unemployed</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="st">  </span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="st">  JSat ~ IC</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="st">  JAvoid ~ JSat</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="st">  WC ~ JAvoid + JSat + IC</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="st">  WEU ~ WC + JSat + UR</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="st">  JSearch ~ WEU</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="st">  CA ~ JSearch</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="st">  Turnover ~ CA + WC + UR</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="st">  IC ~ phantom1*phantom</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="st">  UR ~ phantom2*phantom</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a><span class="st">  JSat ~ phantom3*phantom</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="st">  JAvoid ~ phantom4*phantom</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="st">  WC ~ phantom5*phantom</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="st">  WEU ~ phantom6*phantom</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="st">  JSearch ~ phantom7*phantom</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="st">  CA ~ phantom8*phantom</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="st">  Turnover ~ phantom9*phantom</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="st">  phantom =~ 0</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="st">  phantom ~~ 1*phantom&quot;</span></span></code></pre></div>
+</div>
+<div id="step-3-identify-paths-of-interest" class="section level2">
+<h2>Step 3: Identify paths of interest</h2>
+<p>Before running the analysis, we need to identify the rows in a lavaan
+parameter table that include the paths we are interested in looking at
+in the analysis. To save space, only the most relevant section of the
+parameter table is displayed below.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ptab <span class="ot">=</span> <span class="fu">lavaanify</span>(<span class="at">model =</span> model, <span class="at">auto =</span> <span class="cn">TRUE</span>, <span class="at">model.type=</span><span class="st">&quot;sem&quot;</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ptab[<span class="dv">26</span><span class="sc">:</span><span class="dv">40</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]</span></code></pre></div>
+<pre><code>##    id        lhs op        rhs
+## 26 26 Unemployed ~~ Unemployed
+## 27 27       JSat  ~         IC
+## 28 28     JAvoid  ~       JSat
+## 29 29         WC  ~     JAvoid
+## 30 30         WC  ~       JSat
+## 31 31         WC  ~         IC
+## 32 32        WEU  ~         WC
+## 33 33        WEU  ~       JSat
+## 34 34        WEU  ~         UR
+## 35 35    JSearch  ~        WEU
+## 36 36         CA  ~    JSearch
+## 37 37   Turnover  ~         CA
+## 38 38   Turnover  ~         WC
+## 39 39   Turnover  ~         UR
+## 40 40      FACES ~~      FACES</code></pre>
+<p>For this example, we are interested in all the paths between latent
+variables. These are located on rows 27 to 39 in the parameter table for
+this model. That information will be used in the next step for the
+analysis.</p>
+</div>
+<div id="step-4-sensitivity-analysis" class="section level2">
+<h2>Step 4: Sensitivity analysis</h2>
+<p>The <code>sa.aco</code> function is used to run the sensitivity
+analysis.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my.sa <span class="ot">&lt;-</span> <span class="fu">sa.aco</span>(<span class="at">model =</span> model, <span class="at">sens.model =</span> sens.model, <span class="at">sample.cov =</span> covmat,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">sample.nobs =</span> <span class="dv">410</span>, <span class="at">opt.fun =</span> <span class="dv">3</span>, <span class="at">paths =</span> <span class="dv">27</span><span class="sc">:</span><span class="dv">39</span>, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">k =</span> <span class="dv">5</span>, <span class="at">max.iter =</span> <span class="dv">20</span>)</span></code></pre></div>
+<p>We specified the original model (<code>model</code>), the sensitivity
+model (<code>sens.model</code>), the covariance matrix
+(<code>sample.cov</code>), the number of observations in the sample
+(<code>sample.nobs</code>), the number of sensitivity parameters
+included (<code>n.of.sens.pars</code>), a preset optimization function
+(<code>opt.fun</code>), the paths from the previous step
+(<code>paths</code>), and a seed for reproducibility
+(<code>seed</code>).</p>
+<p><strong>Note:</strong> We only used <code>k = 5</code> and
+<code>max.iter = 20</code> so the analysis would run quickly for
+illustration purposes. For actual analyses, please specify these
+parameters as larger numbers (e.g., the default values are
+<code>k = 50</code> and <code>max.iter = 1000</code>).</p>
+</div>
+<div id="step-5-results" class="section level2">
+<h2>Step 5: Results</h2>
+<p>The <code>sens.tables</code> function helps summarize the results of
+a sensitivity analysis. We specify <code>path = TRUE</code> to only
+obtain results for the structural paths.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>my.sa.results <span class="ot">=</span> <span class="fu">sens.tables</span>(my.sa, <span class="at">path=</span><span class="cn">TRUE</span>) <span class="co"># get results</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>my.sa.results <span class="ot">=</span> <span class="fu">lapply</span>(my.sa.results, round, <span class="at">digits =</span> <span class="dv">3</span>) <span class="co"># round results (optional)</span></span></code></pre></div>
+<p>The tables contain several categories of results. Each is displayed
+below.</p>
+<p>The <code>sens.summary</code> table contains the estimates and p
+values for each path in the original model as well as the mean, minimum,
+and maximum values for the paths that were estimated during the
+sensitivity analysis.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>my.sa.results<span class="sc">$</span>sens.summary</span></code></pre></div>
+<pre><code>##             model.est model.pvalue mean.est.sens min.est.sens max.est.sens
+## JSat~IC        -0.401        0.000        -0.579       -1.023       -0.336
+## JAvoid~JSat    -0.529        0.000        -0.499       -0.660       -0.129
+## WC~JSat        -0.637        0.000        -0.484       -0.645       -0.270
+## Turnover~UR    -0.065        0.155        -0.075       -0.256        0.129
+## WEU~UR         -0.018        0.575        -0.039       -0.225        0.028
+## WC~JAvoid       0.139        0.034         0.080       -0.046        0.141
+## WEU~JSat       -0.093        0.202         0.112       -1.309        2.226
+## WC~IC           0.144        0.004         0.154       -0.066        0.551
+## Turnover~CA     0.190        0.002         0.211        0.129        0.304
+## Turnover~WC     0.245        0.000         0.414       -0.660        1.628
+## JSearch~WEU     0.883        0.000         0.588        0.032        2.124
+## CA~JSearch      0.520        0.000         0.669        0.167        1.004
+## WEU~WC          0.903        0.000         1.208       -2.875        6.782</code></pre>
+<p>The <code>phan.paths</code> table contains the mean, minimum, and
+maximum of the sensitivity parameters from the analysis</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>my.sa.results<span class="sc">$</span>phan.paths</span></code></pre></div>
+<pre><code>##                  mean.phan min.phan max.phan
+## WEU~phantom         -2.310   -4.965   -0.670
+## JSat~phantom        -0.458   -0.837   -0.047
+## UR~phantom          -0.305   -0.686    0.285
+## CA~phantom          -0.230   -0.481    0.280
+## IC~phantom          -0.180   -0.965    0.813
+## WC~phantom           0.115   -1.103    0.694
+## JAvoid~phantom       0.277   -0.148    0.805
+## JSearch~phantom      0.332   -0.894    1.499
+## Turnover~phantom     0.553   -1.105    1.795</code></pre>
+<p>The <code>phan.min</code> table provides the set of tested
+sensitivity parameter values for each path that resulted in the smallest
+coefficient value for the path.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my.sa.results<span class="sc">$</span>phan.min</span></code></pre></div>
+<pre><code>##             IC~phantom UR~phantom JSat~phantom JAvoid~phantom WC~phantom
+## JSat~IC         -0.965     -0.595       -0.384          0.123      0.409
+## JAvoid~JSat     -0.514      0.285       -0.837         -0.148      0.694
+## WC~JAvoid       -0.514      0.285       -0.837         -0.148      0.694
+## WC~JSat         -0.965     -0.595       -0.384          0.123      0.409
+## WC~IC           -0.295      0.001       -0.497          0.151     -1.103
+## WEU~WC          -0.295      0.001       -0.497          0.151     -1.103
+## WEU~JSat        -0.295      0.001       -0.497          0.151     -1.103
+## WEU~UR           0.060     -0.531       -0.524          0.453      0.169
+## JSearch~WEU     -0.295      0.001       -0.497          0.151     -1.103
+## CA~JSearch      -0.295      0.001       -0.497          0.151     -1.103
+## Turnover~CA     -0.514      0.285       -0.837         -0.148      0.694
+## Turnover~WC     -0.514      0.285       -0.837         -0.148      0.694
+## Turnover~UR      0.813     -0.686       -0.047          0.805      0.408
+##             WEU~phantom JSearch~phantom CA~phantom Turnover~phantom
+## JSat~IC          -0.714           1.499     -0.423           -0.194
+## JAvoid~JSat      -4.965           0.935     -0.389            1.254
+## WC~JAvoid        -4.965           0.935     -0.389            1.254
+## WC~JSat          -0.714           1.499     -0.423           -0.194
+## WC~IC            -3.900          -0.894     -0.481            1.795
+## WEU~WC           -3.900          -0.894     -0.481            1.795
+## WEU~JSat         -3.900          -0.894     -0.481            1.795
+## WEU~UR           -1.301          -0.675      0.280            1.014
+## JSearch~WEU      -3.900          -0.894     -0.481            1.795
+## CA~JSearch       -3.900          -0.894     -0.481            1.795
+## Turnover~CA      -4.965           0.935     -0.389            1.254
+## Turnover~WC      -4.965           0.935     -0.389            1.254
+## Turnover~UR      -0.670           0.794     -0.135           -1.105</code></pre>
+<p>Likewise, the <code>phan.max</code> table provides the set of tested
+sensitivity parameter values for each path that resulted in the
+<em>largest</em> coefficient value for the path.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>my.sa.results<span class="sc">$</span>phan.max</span></code></pre></div>
+<pre><code>##             IC~phantom UR~phantom JSat~phantom JAvoid~phantom WC~phantom
+## JSat~IC          0.060     -0.531       -0.524          0.453      0.169
+## JAvoid~JSat      0.813     -0.686       -0.047          0.805      0.408
+## WC~JAvoid        0.060     -0.531       -0.524          0.453      0.169
+## WC~JSat         -0.295      0.001       -0.497          0.151     -1.103
+## WC~IC           -0.965     -0.595       -0.384          0.123      0.409
+## WEU~WC          -0.514      0.285       -0.837         -0.148      0.694
+## WEU~JSat        -0.514      0.285       -0.837         -0.148      0.694
+## WEU~UR           0.813     -0.686       -0.047          0.805      0.408
+## JSearch~WEU     -0.965     -0.595       -0.384          0.123      0.409
+## CA~JSearch       0.060     -0.531       -0.524          0.453      0.169
+## Turnover~CA      0.813     -0.686       -0.047          0.805      0.408
+## Turnover~WC     -0.295      0.001       -0.497          0.151     -1.103
+## Turnover~UR      0.060     -0.531       -0.524          0.453      0.169
+##             WEU~phantom JSearch~phantom CA~phantom Turnover~phantom
+## JSat~IC          -1.301          -0.675      0.280            1.014
+## JAvoid~JSat      -0.670           0.794     -0.135           -1.105
+## WC~JAvoid        -1.301          -0.675      0.280            1.014
+## WC~JSat          -3.900          -0.894     -0.481            1.795
+## WC~IC            -0.714           1.499     -0.423           -0.194
+## WEU~WC           -4.965           0.935     -0.389            1.254
+## WEU~JSat         -4.965           0.935     -0.389            1.254
+## WEU~UR           -0.670           0.794     -0.135           -1.105
+## JSearch~WEU      -0.714           1.499     -0.423           -0.194
+## CA~JSearch       -1.301          -0.675      0.280            1.014
+## Turnover~CA      -0.670           0.794     -0.135           -1.105
+## Turnover~WC      -3.900          -0.894     -0.481            1.795
+## Turnover~UR      -1.301          -0.675      0.280            1.014</code></pre>
+<p>The final table <code>p.paths</code> provides the sensitivity
+parameters that lead to a change in significance for each path according
+to the significance level specified in the <code>sens.tables</code>
+function. We used the default significance level of .05 for that. The
+first column contains the original p values and the second contains the
+changed p values that are obtained with the listed phantom variable path
+coefficients. The NAs occur when there is no change in p value for any
+of the tested phantom variable path coefficients.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my.sa.results<span class="sc">$</span>p.paths</span></code></pre></div>
+<pre><code>##             p.value p.changed IC~phantom UR~phantom JSat~phantom JAvoid~phantom
+## WEU~UR        0.575     0.000      0.060     -0.531       -0.524          0.453
+## WEU~JSat      0.202     0.032      0.813     -0.686       -0.047          0.805
+## Turnover~UR   0.155     0.048     -0.965     -0.595       -0.384          0.123
+## WC~IC         0.004     0.053      0.813     -0.686       -0.047          0.805
+## JSearch~WEU   0.000     0.430     -0.295      0.001       -0.497          0.151
+## JSat~IC       0.000        NA         NA         NA           NA             NA
+## JAvoid~JSat   0.000        NA         NA         NA           NA             NA
+## WC~JAvoid     0.034        NA         NA         NA           NA             NA
+## WC~JSat       0.000        NA         NA         NA           NA             NA
+## WEU~WC        0.000        NA         NA         NA           NA             NA
+## CA~JSearch    0.000        NA         NA         NA           NA             NA
+## Turnover~CA   0.002        NA         NA         NA           NA             NA
+## Turnover~WC   0.000        NA         NA         NA           NA             NA
+##             WC~phantom WEU~phantom JSearch~phantom CA~phantom Turnover~phantom
+## WEU~UR           0.169      -1.301          -0.675      0.280            1.014
+## WEU~JSat         0.408      -0.670           0.794     -0.135           -1.105
+## Turnover~UR      0.409      -0.714           1.499     -0.423           -0.194
+## WC~IC            0.408      -0.670           0.794     -0.135           -1.105
+## JSearch~WEU     -1.103      -3.900          -0.894     -0.481            1.795
+## JSat~IC             NA          NA              NA         NA               NA
+## JAvoid~JSat         NA          NA              NA         NA               NA
+## WC~JAvoid           NA          NA              NA         NA               NA
+## WC~JSat             NA          NA              NA         NA               NA
+## WEU~WC              NA          NA              NA         NA               NA
+## CA~JSearch          NA          NA              NA         NA               NA
+## Turnover~CA         NA          NA              NA         NA               NA
+## Turnover~WC         NA          NA              NA         NA               NA</code></pre>
+</div>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<p>Leite, W., Shen, Z., Marcoulides, K., Fish, C., &amp; Harring, J.
+(2022). Using ant colony optimization for sensitivity analysis in
+structural equation modeling. Structural Equation Modeling: A
+Multidisciplinary Journal, 29 (1), 47-56.</p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

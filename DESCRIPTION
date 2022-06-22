@@ -1,7 +1,7 @@
 Package: SEMsens
 Type: Package
 Title: A Tool for Sensitivity Analysis in Structural Equation Modeling
-Version: 1.0.3
+Version: 1.0.5
 Authors@R: c(
     person("Walter", "Leite", email = "walter.leite@coe.ufl.edu", role = c( "aut", "cre")),
     person("Zuchao", "Shen", role = "aut"),
@@ -33,9 +33,9 @@ Encoding: UTF-8
 LazyData: true
 Suggests: knitr, rmarkdown
 VignetteBuilder: rmarkdown, knitr
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 NeedsCompilation: no
-Packaged: 2022-04-29 19:00:14 UTC; zucha
+Packaged: 2022-06-22 13:42:22 UTC; zucha
 Author: Walter Leite [aut, cre],
   Zuchao Shen [aut],
   Charles Fisk [aut],
@@ -47,4 +47,4 @@ Author: Walter Leite [aut, cre],
   Huibin Zhang [ctb]
 Maintainer: Walter Leite <walter.leite@coe.ufl.edu>
 Repository: CRAN
-Date/Publication: 2022-04-29 22:40:12 UTC
+Date/Publication: 2022-06-22 15:20:07 UTC

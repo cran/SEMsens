@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Gail Fish (University of Florida) &amp; YongSeok Lee (University of Florida)" />
+
+<meta name="date" content="2022-06-22" />
+
+<title>A sensitivity analysis of predicting continued use of online teacher professional development and the influence of social presence and sociability by Jo A. Smith and Stephen A. Sivo</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">A sensitivity analysis of predicting
+continued use of online teacher professional development and the
+influence of social presence and sociability by Jo A. Smith and Stephen
+A. Sivo</h1>
+<h4 class="author">Gail Fish (University of Florida) &amp; YongSeok Lee
+(University of Florida)</h4>
+<h4 class="date">2022-06-22</h4>
+
+
+
+<p>#####Original Paper: Smith,J.A.,&amp; Sivo,S.A.(2012). Predicting
+continued use of online teacher professional development and the
+influence of social presence and sociability. <em>British Journal of
+Educational Technology, 43</em>(6), 871-882. <a href="doi:10.1111/j.1467-8535.2011.01223.x" class="uri">doi:10.1111/j.1467-8535.2011.01223.x</a></p>
+<div id="sensitivity-analysis-using-semsens" class="section level1">
+<h1>SENSITIVITY ANALYSIS USING SEMsens</h1>
+<p>This document provides a simple example analysis of a path analysis
+dataset, a survey of teachers enrolled in a statewide online reading
+course. The study examines how a Technology Acceptance Model (TAM) could
+predict teachers’ intentions to continue using e-learning for
+professional development based on perceived ease of use and usefulness,
+as well as examine mediating influences of social presence and
+sociability in e-learning professional development.</p>
+<p>The dataset has six manifest variables: Perceived Usefulness (PU),
+Perceived Ease of Use (PEU), Teachers’ Reading Knowledge Assessment
+gains (Gains), Social Presence (SP), Sociability (SOC), and Continuance
+Intention (CI).</p>
+<p>In addition to the <code>SEMsens</code> package, this vignette also
+makes use of <code>lavaan</code>.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Load the packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(SEMsens)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(lavaan)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span></code></pre></div>
+<div id="step-1-original-path-model-estimation" class="section level2">
+<h2>Step 1: Original Path Model &amp; Estimation</h2>
+<p>Here, we reproduce the the correlation matrix found in the article.
+First we create the lower diagonal and then convert to a covariance
+matrix and label the variables with <code>getCov()</code> from
+<code>lavaan</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Set a correlation matrix</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>lower <span class="ot">=</span> <span class="st">&#39;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="st">1.00</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="st">0.68 1.00</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">0.54 0.55 1.00</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="st">0.65 0.63 0.67 1.00</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="st">0.33 0.37 0.68 0.54 1.00</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="st">-0.01 0.00 0.03 -0.04 0.07 1.00&#39;</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#convert to full covariance matrix, using function from lavaan</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>full <span class="ot">=</span> <span class="fu">getCov</span>(lower, <span class="at">sds=</span> <span class="fu">c</span>(<span class="fl">4.61</span>,<span class="fl">5.37</span>,<span class="fl">7.25</span>,<span class="fl">3.44</span>,<span class="fl">8.91</span>,<span class="fl">8.80</span>),</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;PU&quot;</span>, <span class="st">&quot;PEU&quot;</span>, <span class="st">&quot;SP&quot;</span>, <span class="st">&quot;CI&quot;</span>,<span class="st">&quot;SOC&quot;</span>,<span class="st">&quot;Gains&quot;</span>))</span></code></pre></div>
+<p>We next set up the path model from the article, using
+<code>lavaan</code> model syntax with <code>sem</code> function. Through
+this code, we can get the result of (standardized) path coefficients and
+model fit indices. Standardized coefficient and model fit of this test
+almost exactly reproduces the results of the original paper (Smith &amp;
+Sivo,2012). Slight differences are a result of using different
+statistical software (R or LISREL).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Original model</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>lav_model <span class="ot">&lt;-</span>  <span class="st">&#39;SP~SOC</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">Gains~SP</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="st">PU~SP+PEU</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">PEU~SP</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">CI~SP+PU+PEU+SOC</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">Gains ~~ 0*CI </span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the original model with sem function</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>modelFit <span class="ot">&lt;-</span>  <span class="fu">sem</span>(lav_model, <span class="at">sample.nobs=</span><span class="dv">517</span>, <span class="at">sample.cov=</span>full, <span class="at">fixed.x=</span><span class="cn">TRUE</span>, <span class="at">std.lv=</span><span class="cn">TRUE</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelFit, <span class="at">standardized =</span> <span class="cn">TRUE</span>) <span class="co">#look at Std.all</span></span></code></pre></div>
+<pre><code>## lavaan 0.6-11 ended normally after 9 iterations
+## 
+##   Estimator                                         ML
+##   Optimization method                           NLMINB
+##   Number of model parameters                        14
+##                                                       
+##   Number of observations                           517
+##                                                       
+## Model Test User Model:
+##                                                       
+##   Test statistic                                 9.567
+##   Degrees of freedom                                 6
+##   P-value (Chi-square)                           0.144
+## 
+## Parameter Estimates:
+## 
+##   Standard errors                             Standard
+##   Information                                 Expected
+##   Information saturated (h1) model          Structured
+## 
+## Regressions:
+##                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+##   SP ~                                                                  
+##     SOC               0.553    0.026   21.087    0.000    0.553    0.680
+##   Gains ~                                                               
+##     SP                0.036    0.053    0.682    0.495    0.036    0.030
+##   PU ~                                                                  
+##     SP                0.151    0.024    6.404    0.000    0.151    0.238
+##     PEU               0.471    0.032   14.775    0.000    0.471    0.549
+##   PEU ~                                                                 
+##     SP                0.407    0.027   14.974    0.000    0.407    0.550
+##   CI ~                                                                  
+##     SP                0.128    0.020    6.283    0.000    0.128    0.268
+##     PU                0.226    0.029    7.746    0.000    0.226    0.302
+##     PEU               0.134    0.025    5.318    0.000    0.134    0.209
+##     SOC               0.069    0.015    4.769    0.000    0.069    0.179
+## 
+## Covariances:
+##                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+##  .Gains ~~                                                              
+##    .CI                0.000                               0.000    0.000
+## 
+## Variances:
+##                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+##    .SP               28.203    1.754   16.078    0.000   28.203    0.538
+##    .Gains            77.221    4.803   16.078    0.000   77.221    0.999
+##    .PU               10.565    0.657   16.078    0.000   10.565    0.498
+##    .PEU              20.075    1.249   16.078    0.000   20.075    0.697
+##    .CI                4.651    0.289   16.078    0.000    4.651    0.392</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitMeasures</span>(modelFit)</span></code></pre></div>
+<pre><code>##                npar                fmin               chisq                  df 
+##              14.000               0.009               9.567               6.000 
+##              pvalue      baseline.chisq         baseline.df     baseline.pvalue 
+##               0.144            1359.242              15.000               0.000 
+##                 cfi                 tli                nnfi                 rfi 
+##               0.997               0.993               0.993               0.982 
+##                 nfi                pnfi                 ifi                 rni 
+##               0.993               0.397               0.997               0.997 
+##                logl   unrestricted.logl                 aic                 bic 
+##           -7436.961           -7432.177           14901.922           14961.394 
+##              ntotal                bic2               rmsea      rmsea.ci.lower 
+##             517.000           14916.955               0.034               0.000 
+##      rmsea.ci.upper        rmsea.pvalue                 rmr          rmr_nomean 
+##               0.072               0.711               1.038               1.038 
+##                srmr        srmr_bentler srmr_bentler_nomean                crmr 
+##               0.020               0.020               0.020               0.024 
+##         crmr_nomean          srmr_mplus   srmr_mplus_nomean               cn_05 
+##               0.024               0.020               0.020             681.482 
+##               cn_01                 gfi                agfi                pgfi 
+##             909.558               0.994               0.978               0.284 
+##                 mfi                ecvi 
+##               0.997               0.073</code></pre>
+<p>We can get same results by using
+<code>lavannify</code>,<code>lavaan</code> and the
+<code>standardizedsolution</code> functions. These are all in the
+<code>lavaan</code> package and present more focused results for
+standardized path coefficients and their standard error and p-values.
+Depending on users’ research questions, it is possible to select results
+for individual pathways in the model.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>smith_original <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">lavaanify</span>(<span class="at">model =</span> lav_model, <span class="at">auto =</span> <span class="cn">TRUE</span>, <span class="at">model.type =</span> <span class="st">&quot;sem&quot;</span>, <span class="at">fixed.x =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>smith_original <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">lavaan</span>(<span class="at">model =</span> smith_original, <span class="at">sample.cov =</span> full, <span class="at">sample.nobs =</span> <span class="dv">517</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>smith_original_par <span class="ot">&lt;-</span> lavaan<span class="sc">::</span><span class="fu">standardizedSolution</span>(smith_original, <span class="at">type =</span> <span class="st">&quot;std.all&quot;</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>smith_original_par <span class="co">#4th row and 7th column of table : smith_original_par[1:4,1:7]</span></span></code></pre></div>
+<pre><code>##      lhs op   rhs est.std    se       z pvalue ci.lower ci.upper
+## 1     SP  ~   SOC   0.680 0.021  32.801  0.000    0.639    0.721
+## 2  Gains  ~    SP   0.030 0.044   0.683  0.495   -0.056    0.116
+## 3     PU  ~    SP   0.238 0.037   6.492  0.000    0.166    0.310
+## 4     PU  ~   PEU   0.549 0.033  16.453  0.000    0.484    0.615
+## 5    PEU  ~    SP   0.550 0.030  18.226  0.000    0.491    0.609
+## 6     CI  ~    SP   0.268 0.042   6.343  0.000    0.186    0.351
+## 7     CI  ~    PU   0.302 0.038   7.852  0.000    0.227    0.378
+## 8     CI  ~   PEU   0.209 0.039   5.347  0.000    0.132    0.286
+## 9     CI  ~   SOC   0.179 0.037   4.804  0.000    0.106    0.252
+## 10 Gains ~~    CI   0.000 0.000      NA     NA    0.000    0.000
+## 11    SP ~~    SP   0.538 0.028  19.068  0.000    0.482    0.593
+## 12 Gains ~~ Gains   0.999 0.003 378.979  0.000    0.994    1.004
+## 13    PU ~~    PU   0.498 0.031  16.195  0.000    0.438    0.558
+## 14   PEU ~~   PEU   0.697 0.033  21.013  0.000    0.632    0.763
+## 15    CI ~~    CI   0.392 0.026  15.201  0.000    0.342    0.443
+## 16   SOC ~~   SOC   1.000 0.000      NA     NA    1.000    1.000</code></pre>
+</div>
+<div id="step-2-construct-the-sensitivity-model" class="section level2">
+<h2>Step 2: Construct the Sensitivity Model</h2>
+<p>After checking the original path model, we then create the
+sensitivity model using a <strong>Phantom Variable</strong>. A phantom
+variable is modeled with paths to all other variables to see the
+trajectory of estimates in the original model affected by specification
+of the Phantom variable. As shown in the code below, the phantom
+variable follows the normal distribution which has mean of zero and
+variance of one.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sensitivity model, with sensitivity parameters for all variables</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sens_model <span class="ot">&lt;-</span>  <span class="st">&#39;SP~SOC</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="st">    Gains ~ SP</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="st">    PU ~ SP+PEU</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="st">    PEU ~ SP</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="st">    CI ~ SP+PU+PEU+SOC</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="st">    Gains ~~ 0*CI</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="st">    SP ~ phantom1*phantom</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="st">    Gains ~ phantom2*phantom</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="st">    PU ~ phantom3*phantom</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="st">    PEU ~ phantom4*phantom</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="st">    CI ~ phantom5*phantom</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="st">    SOC ~ phantom6*phantom</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="st">    phantom =~ 0  #mean of zero</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="st">    phantom ~~ 1*phantom  # variance of one&#39;</span></span></code></pre></div>
+</div>
+<div id="step-3-conducting-sensitivity-analysis" class="section level2">
+<h2>Step 3: Conducting Sensitivity Analysis</h2>
+<p>Based on the specified <code>sens_model</code>, we can run the
+sensitivity analysis through <code>sa.aco()</code> function in
+<code>SEMsens</code> package. Note that we run with the parameters
+<code>k = 5</code> and <code>max.iter = 20</code> for a simple
+illustration. The default values for these parameters are
+<code>k = 50</code> and <code>max.iter = 1000</code>. For the other
+options, see the paper or vignette of <code>SEMsens</code> package (<a href="https://cran.r-project.org/package=SEMsens" class="uri">https://cran.r-project.org/package=SEMsens</a>).</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>smith_example <span class="ot">&lt;-</span> <span class="fu">sa.aco</span>(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">sample.cov =</span> full,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">sample.nobs =</span> <span class="dv">517</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> lav_model,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">sens.model =</span> sens_model, </span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">opt.fun =</span> <span class="dv">1</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">paths =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>), </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">max.iter =</span> <span class="dv">20</span>, </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">k =</span> <span class="dv">5</span>)</span></code></pre></div>
+<pre><code>## Number of tried evaluations is 1.
+## Number of converged evaluations is 1.
+## Number of tried evaluations is 2.
+## Number of converged evaluations is 2.
+## Number of tried evaluations is 3.
+## Number of converged evaluations is 3.
+## Number of tried evaluations is 4.
+## Number of converged evaluations is 4.
+## Number of tried evaluations is 5.
+## Number of converged evaluations is 5.</code></pre>
+</div>
+<div id="step-4-sensitivity-analysis-results" class="section level2">
+<h2>Step 4: Sensitivity Analysis Results</h2>
+<p>We can get the sensitivity analysis results after 5 iterations. The
+<strong>sens.tables</strong> function helps us to summarize of
+sensitivity analysis. In the smith_tables results, the
+<strong>sens.summary</strong> table contains estimates and p-values for
+each path in the original model information suggested in Step 1. It also
+provides the minimum, mean and maximum path estimates during sensitivity
+analysis.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>smith_tables <span class="ot">&lt;-</span> <span class="fu">sens.tables</span>(smith_example)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>smith_tables<span class="sc">$</span>sens.summary</span></code></pre></div>
+<pre><code>##           model.est model.pvalue mean.est.sens min.est.sens max.est.sens
+## Gains~SP 0.03000001 4.947480e-01    0.03078806   0.02735571   0.03562662
+## CI~SOC   0.17912705 1.553406e-06    0.17525972   0.14255763   0.20699081
+## CI~PEU   0.20913951 8.949240e-08    0.20793924   0.16071079   0.24031659
+## PU~SP    0.23799283 8.462719e-11    0.23152339   0.22321878   0.24179787
+## CI~SP    0.26848140 2.255842e-10    0.27010031   0.22550080   0.32256848
+## CI~PU    0.30228503 3.996803e-15    0.31350603   0.26999750   0.39231625
+## PEU~SP   0.55000000 0.000000e+00    0.54972379   0.54023885   0.56146020
+## PU~PEU   0.54910394 0.000000e+00    0.55356443   0.53608380   0.57792956
+## SP~SOC   0.68000000 0.000000e+00    0.68091945   0.67523652   0.68849064</code></pre>
+<p>The result of <strong>phan.paths</strong> suggests the minimum, mean
+and maximum value of sensitivity parameters which were formed in the
+relationship between phantom variable and each variables in the path
+model during the iteration of Ant Colony Optimization (ACO).</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>smith_tables<span class="sc">$</span>phan.paths</span></code></pre></div>
+<pre><code>##                  mean.phan    min.phan  max.phan
+## PEU~phantom   -0.032628286 -0.16322067 0.1521077
+## SOC~phantom    0.001431526 -0.08418588 0.1103978
+## SP~phantom     0.002450675 -0.06472979 0.1227683
+## Gains~phantom  0.003651090 -0.02906461 0.0630220
+## CI~phantom     0.017121906 -0.17295276 0.2147725
+## PU~phantom     0.036459926 -0.21132376 0.1887766</code></pre>
+<p>The table of <strong>phan.min</strong> indicates the sensitivity
+parameters for each path that led to smallest size of path estimates
+during the iteration process of ACO.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>smith_tables<span class="sc">$</span>phan.min</span></code></pre></div>
+<pre><code>##           SP~phantom Gains~phantom  PU~phantom   PEU~phantom  CI~phantom
+## SP~SOC    0.05161516   -0.02637793  0.11714527 -0.0008575855  0.12632124
+## Gains~SP  0.12276830    0.03659312  0.05607790 -0.1632206676 -0.17060386
+## PU~SP     0.05161516   -0.02637793  0.11714527 -0.0008575855  0.12632124
+## PU~PEU   -0.06426463   -0.02591714 -0.21132376 -0.0438425624  0.21477253
+## PEU~SP   -0.03313566    0.06302200  0.18877664 -0.1073283518  0.08807237
+## CI~SP    -0.06472979   -0.02906461  0.03162358  0.1521077372 -0.17295276
+## CI~PU    -0.03313566    0.06302200  0.18877664 -0.1073283518  0.08807237
+## CI~PEU    0.12276830    0.03659312  0.05607790 -0.1632206676 -0.17060386
+## CI~SOC    0.12276830    0.03659312  0.05607790 -0.1632206676 -0.17060386
+##          SOC~phantom
+## SP~SOC    0.11039776
+## Gains~SP -0.07264936
+## PU~SP     0.11039776
+## PU~PEU   -0.03585607
+## PEU~SP   -0.08418588
+## CI~SP     0.08945118
+## CI~PU    -0.08418588
+## CI~PEU   -0.07264936
+## CI~SOC   -0.07264936</code></pre>
+<p>Similar to phan.min case, <strong>phan.max</strong> table provides
+the sensitivity parameters for each path that resulted in the largest
+size of path estimates during the process of ACO.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>smith_tables<span class="sc">$</span>phan.max</span></code></pre></div>
+<pre><code>##           SP~phantom Gains~phantom  PU~phantom PEU~phantom  CI~phantom
+## SP~SOC    0.12276830    0.03659312  0.05607790 -0.16322067 -0.17060386
+## Gains~SP -0.03313566    0.06302200  0.18877664 -0.10732835  0.08807237
+## PU~SP    -0.06472979   -0.02906461  0.03162358  0.15210774 -0.17295276
+## PU~PEU   -0.03313566    0.06302200  0.18877664 -0.10732835  0.08807237
+## PEU~SP    0.12276830    0.03659312  0.05607790 -0.16322067 -0.17060386
+## CI~SP     0.12276830    0.03659312  0.05607790 -0.16322067 -0.17060386
+## CI~PU    -0.06426463   -0.02591714 -0.21132376 -0.04384256  0.21477253
+## CI~PEU   -0.03313566    0.06302200  0.18877664 -0.10732835  0.08807237
+## CI~SOC   -0.06472979   -0.02906461  0.03162358  0.15210774 -0.17295276
+##          SOC~phantom
+## SP~SOC   -0.07264936
+## Gains~SP -0.08418588
+## PU~SP     0.08945118
+## PU~PEU   -0.08418588
+## PEU~SP   -0.07264936
+## CI~SP    -0.07264936
+## CI~PU    -0.03585607
+## CI~PEU   -0.08418588
+## CI~SOC    0.08945118</code></pre>
+<p>The final <strong>p.paths</strong> table covers not only the p-values
+of original model’s path estimates at the first column (default
+significance level: 0.05) but the final p-value of each path estimates
+that reverse the null-hypothesis decision of original path estimates.
+From the third column of table, sensitivity parameters are suggested
+that leads to the change of p-value. An <strong>NA</strong> result in
+the table occurs if there is no change in p-value and meaningful
+sensitivity parameters that changed p-value in the <code>sa.aco</code>
+function.</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>smith_tables<span class="sc">$</span>p.paths</span></code></pre></div>
+<pre><code>##               p.value p.changed SP~phantom Gains~phantom PU~phantom PEU~phantom
+## SP~SOC   0.000000e+00        NA         NA            NA         NA          NA
+## Gains~SP 4.947480e-01        NA         NA            NA         NA          NA
+## PU~SP    8.462719e-11        NA         NA            NA         NA          NA
+## PU~PEU   0.000000e+00        NA         NA            NA         NA          NA
+## PEU~SP   0.000000e+00        NA         NA            NA         NA          NA
+## CI~SP    2.255842e-10        NA         NA            NA         NA          NA
+## CI~PU    3.996803e-15        NA         NA            NA         NA          NA
+## CI~PEU   8.949240e-08        NA         NA            NA         NA          NA
+## CI~SOC   1.553406e-06        NA         NA            NA         NA          NA
+##          CI~phantom SOC~phantom
+## SP~SOC           NA          NA
+## Gains~SP         NA          NA
+## PU~SP            NA          NA
+## PU~PEU           NA          NA
+## PEU~SP           NA          NA
+## CI~SP            NA          NA
+## CI~PU            NA          NA
+## CI~PEU           NA          NA
+## CI~SOC           NA          NA</code></pre>
+</div>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<p>Leite, W., Shen, Z., Marcoulides, K., Fish, C., &amp; Harring, J.
+(2022). Using ant colony optimization for sensitivity analysis in
+structural equation modeling. Structural Equation Modeling: A
+Multidisciplinary Journal, 29 (1), 47-56.</p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

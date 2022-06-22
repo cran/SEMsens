@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Walter Leite (University of Florida) &amp; Zuchao Shen (University of Florida)" />
+
+<meta name="date" content="2022-06-22" />
+
+<title>Package ‘SEMsens’</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Package ‘SEMsens’</h1>
+<h4 class="author">Walter Leite (University of Florida) &amp; Zuchao
+Shen (University of Florida)</h4>
+<h4 class="date">2022-06-22</h4>
+
+
+
+<p>An analysis based on structural equation modeling may suffer from the
+impact of a potential missing confounder that may change its conclusions
+(Harring, McNeish, &amp; Hancock, 2017). This package is a tool to
+evaluate the sensitivity of structural equation models to potential
+missing confounders using the Ant Colony Optimization (ACO; Colorni,
+Dorigo, &amp; Maniezzo, 1992; Dorigo &amp; Stützle, 2004; Socha &amp;
+Dorigo, 2008) algorithm. The reference for the current package is:
+Leite, W., Shen, Z., Marcoulides, K., Fish, C., &amp; Harring, J.
+(2022). Using ant colony optimization for sensitivity analysis in
+structural equation modeling. Structural Equation Modeling: A
+Multidisciplinary Journal, 29 (1), 47-56.</p>
+<p>The current version includes three main functions and they are</p>
+<ul>
+<li><p><em>gen.sens.pars</em> function: This function generates a set of
+required sensitivity parameters according to the rank of object
+function, with which the method has been developed by Socha &amp; Dorigo
+(2008).</p></li>
+<li><p><em>sa.aco</em> function: This function automatically performs
+the search for an omitted confounder in structural equation modeling
+using the ACO algorithm</p></li>
+<li><p><em>sens.table</em> function: This function provides five summary
+tables of results produced in the <em>sa.aco</em> function.</p></li>
+</ul>
+<p>Next, we use an example to illustrate how to perform sensitivity
+analysis in structural equation modeling.</p>
+<div id="function-sa.aco" class="section level2">
+<h2>1. Function <em>sa.aco</em></h2>
+<p>Given a data set (or variance covariance matrix) and an analytic
+model, this function searches an omitted confounder to optimize the
+objective function. <em>sa.aco</em> function calls
+<em>gen.sens.pars</em> function to perform the algorithm together.</p>
+<p>We need the following information/arguments to perform the search</p>
+<ul>
+<li>data: The data set used for an analysis. If there is no data
+available, use covariance matrix instead.</li>
+<li>sample.cov: Covariance matrix.</li>
+<li>sample.nobs: Number of observations for covariance matrix.</li>
+<li>model: The analytic model of interest.</li>
+<li>sens.model: Sensitivity analysis model template for structural
+equation modeling with a phantom variable. This is the model of interest
+with a phantom variable and sensitivity parameters added. See the
+example provided.</li>
+<li>opt.fun: Customized or preset object function for optimization.</li>
+<li>……</li>
+</ul>
+<p>To see more arguments, please run ?sa.aco in R or RStudio.</p>
+<div id="an-exmaple" class="section level3">
+<h3>An exmaple</h3>
+<p>The example is from: Kim, Y. S. G., &amp; Schatschneider, C. (2017).
+Expanding the developmental models of writing: A direct and indirect
+effects model of developmental writing (DIEW). Journal of Educational
+psychology, 109(1), 35-50.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load lavaan and SEMsens packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(lavaan)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(SEMsens)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># STEP 1: Prepare data:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Lower diagonal correlation matrix in the study by Kim &amp; Schatschneider (2017)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>lower <span class="ot">=</span> <span class="st">&#39;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="st">1.00</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">.40 1.00</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="st">.40 .64 1.00</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="st">.41 .66 .61 1.00</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="st">.42 .52 .53 .61 1.00</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="st">.34 .50 .46 .53 .48 1.00</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="st">.42 .47 .41 .43 .47 .55 1.00</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="st">.39 .46 .39 .30 .21 .30 .37 1.00</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="st">.24 .31 .30 .31 .26 .32 .27 .56 1.00</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="st">.33 .35 .35 .40 .31 .25 .35 .51 .42 1.00</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="st">.30 .42 .36 .32 .24 .37 .43 .44 .37 .49 1.00&#39;</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to full covariance matrix</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>sample.cov <span class="ot">=</span> <span class="fu">getCov</span>(lower, <span class="at">sds =</span> <span class="fu">c</span>(<span class="fl">5.64</span>,<span class="fl">14.68</span>,<span class="fl">6.57</span>,<span class="fl">6.07</span>,<span class="fl">3.39</span>,<span class="fl">10.16</span>,<span class="fl">6.11</span>,<span class="fl">4.91</span>,<span class="fl">15.59</span>,<span class="fl">0.96</span>,<span class="fl">0.99</span>),</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>              <span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;Working_memory&quot;</span>,</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;Vocabulary&quot;</span>,</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;Grammar&quot;</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;Inference&quot;</span>,</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;ToM&quot;</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;TNL&quot;</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;Expository&quot;</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;Spelling&quot;</span>,</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;Sentence_copying&quot;</span>,</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;One_day&quot;</span>,</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;Castle&quot;</span>))</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="co"># STEP 2: Set up analytic model and sensitivity anaysis model</span></span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="co"># The original analytic model</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span><span class="st">&#39;Vocabulary~Working_memory</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="st">  Grammar~Working_memory</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="st">  Inference~Vocabulary+Grammar+Working_memory</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="st">  ToM~Vocabulary+Grammar+Working_memory</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="st">  Spelling~Working_memory</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="st">  Sentence_copying~Working_memory</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="st">  Discourse~Inference+ToM+Vocabulary+Grammar+Working_memory</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="st">  Writing~Spelling+Sentence_copying+Discourse</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="st">  Discourse=~TNL+Expository</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="st">  Writing=~One_day+Castle</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a><span class="st">  Vocabulary~~Grammar</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="st">  Grammar~~Sentence_copying</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="st">  Vocabulary~~Sentence_copying</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="st">  Grammar~~Spelling</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="st">  Vocabulary~~Spelling</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="st">  Inference~~ToM</span></span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="st">  Discourse~~Sentence_copying</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="st">  Discourse~~Spelling</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a><span class="st">  Spelling~~Sentence_copying&#39;</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>  <span class="co"># A sensitivity analysis model template, which additionally includes paths</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>  <span class="co">#  from a phantom variable to a set of variables (= number of sensitivity parameters)</span></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>  <span class="co">#   in the analytic model.</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>sens.model <span class="ot">&lt;-</span> <span class="st">&#39;Vocabulary~Working_memory</span></span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="st">  Grammar~Working_memory</span></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="st">  Inference~Vocabulary+Grammar+Working_memory</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="st">  ToM~Vocabulary+Grammar+Working_memory</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="st">  Spelling~Working_memory</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="st">  Sentence_copying~Working_memory</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="st">  Discourse~Inference+ToM+Vocabulary+Grammar+Working_memory</span></span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="st">  Writing~Spelling+Sentence_copying+Discourse</span></span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="st">  Discourse=~TNL+Expository</span></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="st">  Writing=~One_day+Castle</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="st">  Vocabulary~~Grammar</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="st">  Grammar~~Sentence_copying</span></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="st">  Vocabulary~~Sentence_copying</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a><span class="st">  Grammar~~Spelling</span></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="st">  Vocabulary~~Spelling</span></span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="st">  Inference~~ToM</span></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="st">  Discourse~~Sentence_copying</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="st">  Discourse~~Spelling</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="st">  Spelling~~Sentence_copying</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a><span class="st">  Working_memory ~ phantom1*phantom</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="st">  Grammar ~ phantom2*phantom</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="st">  Vocabulary ~ phantom3*phantom</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="st">  ToM ~ phantom4*phantom</span></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="st">  Inference ~ phantom5*phantom</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="st">  Spelling ~ phantom6*phantom</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="st">  Sentence_copying  ~ phantom7*phantom</span></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a><span class="st">  Discourse ~ phantom8*phantom</span></span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a><span class="st">  Writing ~ phantom9*phantom</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="st">  phantom =~ 0 # added for mean of zero</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="st">  phantom ~~ 1*phantom&#39;</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a><span class="co"># STEP 3: Set up the paths of interest to be evaluated in sensitivity analysis.</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>  paths <span class="ot">&lt;-</span> <span class="st">&#39;Vocabulary~Working_memory</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a><span class="st">  Grammar~Working_memory</span></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a><span class="st">  Inference~Vocabulary+Grammar+Working_memory</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a><span class="st">  ToM~Vocabulary+Grammar+Working_memory</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="st">  Spelling~Working_memory</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="st">  Sentence_copying~Working_memory</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="st">  Discourse~Inference+ToM+Vocabulary+Grammar+Working_memory</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="st">  Writing~Spelling+Sentence_copying+Discourse&#39;</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>  <span class="co"># STEP 4: Perform sensitivity analysis.</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>my.sa <span class="ot">&lt;-</span><span class="fu">sa.aco</span>(<span class="at">model =</span> model, <span class="at">sens.model =</span> sens.model, <span class="at">sample.cov =</span> sample.cov,</span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>               <span class="at">sample.nobs =</span> <span class="dv">193</span>, <span class="at">k =</span> <span class="dv">50</span>, <span class="at">max.value=</span> <span class="dv">2000</span>, <span class="at">max.iter =</span> <span class="dv">100</span>,</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>               <span class="at">opt.fun =</span> <span class="dv">4</span>, <span class="do">## from significant to just significant</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>               <span class="at">paths =</span> paths, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="co"># We set up a max iteration of 100 and solution archive length of 50 for </span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="co"># illustration purpose. Please specify a larger number of iteration (e.g., 1000),</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a><span class="co">#  and a larger k (e.g., 100).</span></span></code></pre></div>
+</div>
+</div>
+<div id="function-sens.tables" class="section level2">
+<h2>2. Function <em>sens.tables</em></h2>
+<p><em>sens.tables</em> function can help summarize the sensitivity
+analysis results. Beyond this function, investigators always can
+summarize the results by accessing to the results in <em>sa.aco</em>
+function.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my.table <span class="ot">&lt;-</span> <span class="fu">sens.tables</span>(my.sa)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Table 1: Summary of the sensitivity analysis for each path</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>my.table[[<span class="dv">1</span>]]</span></code></pre></div>
+<pre><code>##                                 model.est model.pvalue mean.est.sens
+## Discourse~Grammar               0.1003703 2.544519e-01     0.1052304
+## Inference~Working_memory        0.1245455 2.598216e-02     0.1232723
+## Writing~Sentence_copying        0.1719948 4.222710e-02     0.1633071
+## Discourse~Working_memory        0.1888038 7.941219e-03     0.1910799
+## Discourse~Inference             0.1943264 3.608645e-02     0.1920310
+## ToM~Working_memory              0.2036364 1.096483e-03     0.2030261
+## Sentence_copying~Working_memory 0.2399999 3.306180e-04     0.2401460
+## ToM~Vocabulary                  0.2565656 6.016058e-04     0.2540932
+## Discourse~ToM                   0.2610613 1.360093e-03     0.2545997
+## Discourse~Vocabulary            0.2589070 4.345386e-03     0.2615377
+## ToM~Grammar                     0.2843434 1.345400e-04     0.2878169
+## Inference~Grammar               0.2873737 1.336915e-05     0.2894558
+## Spelling~Working_memory         0.3899999 2.976197e-11     0.3883753
+## Writing~Spelling                0.3759830 3.442786e-05     0.3886019
+## Grammar~Working_memory          0.3999999 5.308198e-12     0.3979180
+## Vocabulary~Working_memory       0.3999999 5.308198e-12     0.3996722
+## Inference~Vocabulary            0.4262626 3.005818e-11     0.4261592
+## Writing~Discourse               0.4504663 3.396553e-07     0.4355599
+##                                 min.est.sens max.est.sens
+## Discourse~Grammar                 0.04912704    0.1774544
+## Inference~Working_memory          0.10477421    0.1485761
+## Writing~Sentence_copying          0.05199882    0.2657367
+## Discourse~Working_memory          0.14529692    0.2331204
+## Discourse~Inference               0.15029004    0.2484007
+## ToM~Working_memory                0.17420102    0.2505132
+## Sentence_copying~Working_memory   0.23129571    0.2588857
+## ToM~Vocabulary                    0.22454770    0.3059992
+## Discourse~ToM                     0.15889535    0.3087243
+## Discourse~Vocabulary              0.23408924    0.3120485
+## ToM~Grammar                       0.21758721    0.3477721
+## Inference~Grammar                 0.23936198    0.3261455
+## Spelling~Working_memory           0.36602307    0.4141131
+## Writing~Spelling                  0.19253896    0.6603765
+## Grammar~Working_memory            0.36081953    0.4178667
+## Vocabulary~Working_memory         0.38836436    0.4096268
+## Inference~Vocabulary              0.40745780    0.4641450
+## Writing~Discourse                 0.16872738    0.5776849</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Table 2:  Summary of the sensitivity parameters</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>my.table[[<span class="dv">2</span>]]</span></code></pre></div>
+<pre><code>##                              mean.phan    min.phan   max.phan
+## Grammar~phantom          -0.0255901298 -0.19855864 0.14923981
+## Working_memory~phantom   -0.0116100689 -0.21192127 0.16501694
+## Inference~phantom        -0.0059654784 -0.15852757 0.19673890
+## Vocabulary~phantom        0.0009162615 -0.07989683 0.06497973
+## Sentence_copying~phantom  0.0040785197 -0.05962908 0.11357489
+## Discourse~phantom         0.0302226186 -0.12647184 0.24583688
+## Spelling~phantom          0.0366678782 -0.19658642 0.24672188
+## ToM~phantom               0.0561965145 -0.23155307 0.49606813
+## Writing~phantom           0.1132356278 -0.52889818 0.61827105</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Table 3: The sensitivity parameters lead to the minimum coefficient for each</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>my.table[[<span class="dv">3</span>]]</span></code></pre></div>
+<pre><code>##                                 Working_memory~phantom Grammar~phantom
+## Vocabulary~Working_memory                 -0.211921268     -0.18415235
+## Grammar~Working_memory                    -0.211921268     -0.18415235
+## Inference~Vocabulary                       0.002184957     -0.19855864
+## Inference~Grammar                         -0.110365605     -0.15220596
+## Inference~Working_memory                  -0.167003237     -0.04988583
+## ToM~Vocabulary                            -0.030085236     -0.12832087
+## ToM~Grammar                               -0.110365605     -0.15220596
+## ToM~Working_memory                        -0.167003237     -0.04988583
+## Spelling~Working_memory                    0.152931730     -0.01137375
+## Sentence_copying~Working_memory           -0.155173551      0.08682558
+## Discourse~Inference                        0.044223231     -0.06027779
+## Discourse~ToM                             -0.034499544     -0.13024128
+## Discourse~Vocabulary                       0.051240582     -0.06690173
+## Discourse~Grammar                         -0.120907356      0.14923981
+## Discourse~Working_memory                   0.165016936     -0.01754155
+## Writing~Spelling                           0.048004382     -0.02181512
+## Writing~Sentence_copying                   0.072626707      0.11784237
+## Writing~Discourse                          0.072626707      0.11784237
+##                                 Vocabulary~phantom ToM~phantom
+## Vocabulary~Working_memory             -0.054220461  0.22938668
+## Grammar~Working_memory                -0.054220461  0.22938668
+## Inference~Vocabulary                  -0.030296701  0.20987620
+## Inference~Grammar                      0.051535666 -0.21725287
+## Inference~Working_memory              -0.030364651 -0.22577041
+## ToM~Vocabulary                         0.003831129  0.27028636
+## ToM~Grammar                            0.051535666 -0.21725287
+## ToM~Working_memory                    -0.030364651 -0.22577041
+## Spelling~Working_memory                0.049251697 -0.11155276
+## Sentence_copying~Working_memory       -0.011157983  0.28069048
+## Discourse~Inference                   -0.035560127 -0.08384902
+## Discourse~ToM                         -0.079896827  0.49606813
+## Discourse~Vocabulary                   0.062516527 -0.20132409
+## Discourse~Grammar                     -0.013843073 -0.18486429
+## Discourse~Working_memory              -0.017716484 -0.19524466
+## Writing~Spelling                      -0.064244453  0.14765876
+## Writing~Sentence_copying              -0.023845171  0.27678824
+## Writing~Discourse                     -0.023845171  0.27678824
+##                                 Inference~phantom Spelling~phantom
+## Vocabulary~Working_memory              0.11169709       0.11546808
+## Grammar~Working_memory                 0.11169709       0.11546808
+## Inference~Vocabulary                   0.12562746       0.15355763
+## Inference~Grammar                     -0.15852757       0.18009840
+## Inference~Working_memory              -0.15021823      -0.05282820
+## ToM~Vocabulary                         0.06902098       0.02181626
+## ToM~Grammar                           -0.15852757       0.18009840
+## ToM~Working_memory                    -0.15021823      -0.05282820
+## Spelling~Working_memory               -0.09672352       0.17233148
+## Sentence_copying~Working_memory       -0.07186973       0.14099539
+## Discourse~Inference                    0.12930466       0.19994834
+## Discourse~ToM                          0.14159692       0.24672188
+## Discourse~Vocabulary                  -0.02696729      -0.10090585
+## Discourse~Grammar                     -0.00735754       0.01807200
+## Discourse~Working_memory              -0.14682888       0.06457722
+## Writing~Spelling                      -0.09555416       0.20318504
+## Writing~Sentence_copying               0.16155105      -0.18908332
+## Writing~Discourse                      0.16155105      -0.18908332
+##                                 Sentence_copying~phantom Discourse~phantom
+## Vocabulary~Working_memory                     0.08826528        0.24583688
+## Grammar~Working_memory                        0.08826528        0.24583688
+## Inference~Vocabulary                          0.05705421        0.10077127
+## Inference~Grammar                            -0.02665071       -0.08985596
+## Inference~Working_memory                     -0.02098849       -0.08802815
+## ToM~Vocabulary                               -0.03303541        0.07442881
+## ToM~Grammar                                  -0.02665071       -0.08985596
+## ToM~Working_memory                           -0.02098849       -0.08802815
+## Spelling~Working_memory                      -0.05756797       -0.02387311
+## Sentence_copying~Working_memory              -0.05369555        0.10337791
+## Discourse~Inference                           0.02990099        0.13270063
+## Discourse~ToM                                 0.11357489        0.17226044
+## Discourse~Vocabulary                         -0.05219069        0.08786791
+## Discourse~Grammar                            -0.02210510        0.13456352
+## Discourse~Working_memory                      0.01005041        0.13126727
+## Writing~Spelling                              0.05236181        0.05720109
+## Writing~Sentence_copying                      0.05069574        0.08586779
+## Writing~Discourse                             0.05069574        0.08586779
+##                                 Writing~phantom
+## Vocabulary~Working_memory           -0.12163204
+## Grammar~Working_memory              -0.12163204
+## Inference~Vocabulary                 0.08132341
+## Inference~Grammar                   -0.28691915
+## Inference~Working_memory             0.36057655
+## ToM~Vocabulary                       0.41217884
+## ToM~Grammar                         -0.28691915
+## ToM~Working_memory                   0.36057655
+## Spelling~Working_memory             -0.12680418
+## Sentence_copying~Working_memory     -0.08211608
+## Discourse~Inference                  0.11588441
+## Discourse~ToM                        0.21492898
+## Discourse~Vocabulary                 0.07410964
+## Discourse~Grammar                    0.08140368
+## Discourse~Working_memory             0.30589957
+## Writing~Spelling                     0.61827105
+## Writing~Sentence_copying             0.60389707
+## Writing~Discourse                    0.60389707</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Table 4: The sensitivity parameters lead to the maximum coefficient for each path</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>my.table[[<span class="dv">4</span>]]</span></code></pre></div>
+<pre><code>##                                 Working_memory~phantom Grammar~phantom
+## Vocabulary~Working_memory                 -0.176061341      0.03160994
+## Grammar~Working_memory                    -0.120907356      0.14923981
+## Inference~Vocabulary                      -0.110365605     -0.15220596
+## Inference~Grammar                          0.002184957     -0.19855864
+## Inference~Working_memory                   0.165016936     -0.01754155
+## ToM~Vocabulary                            -0.110365605     -0.15220596
+## ToM~Grammar                                0.002184957     -0.19855864
+## ToM~Working_memory                        -0.155173551      0.08682558
+## Spelling~Working_memory                   -0.176061341      0.03160994
+## Sentence_copying~Working_memory           -0.211921268     -0.18415235
+## Discourse~Inference                       -0.014368362     -0.02012266
+## Discourse~ToM                             -0.120907356      0.14923981
+## Discourse~Vocabulary                      -0.110365605     -0.15220596
+## Discourse~Grammar                         -0.211921268     -0.18415235
+## Discourse~Working_memory                  -0.211921268     -0.18415235
+## Writing~Spelling                           0.072626707      0.11784237
+## Writing~Sentence_copying                  -0.138008251     -0.05072568
+## Writing~Discourse                         -0.167003237     -0.04988583
+##                                 Vocabulary~phantom ToM~phantom
+## Vocabulary~Working_memory              0.055384298   0.1217345
+## Grammar~Working_memory                -0.013843073  -0.1848643
+## Inference~Vocabulary                   0.051535666  -0.2172529
+## Inference~Grammar                     -0.030296701   0.2098762
+## Inference~Working_memory              -0.017716484  -0.1952447
+## ToM~Vocabulary                         0.051535666  -0.2172529
+## ToM~Grammar                           -0.030296701   0.2098762
+## ToM~Working_memory                    -0.011157983   0.2806905
+## Spelling~Working_memory                0.055384298   0.1217345
+## Sentence_copying~Working_memory       -0.054220461   0.2293867
+## Discourse~Inference                    0.002323414   0.2029898
+## Discourse~ToM                         -0.013843073  -0.1848643
+## Discourse~Vocabulary                   0.051535666  -0.2172529
+## Discourse~Grammar                     -0.054220461   0.2293867
+## Discourse~Working_memory              -0.054220461   0.2293867
+## Writing~Spelling                      -0.023845171   0.2767882
+## Writing~Sentence_copying               0.046036288  -0.1319380
+## Writing~Discourse                     -0.030364651  -0.2257704
+##                                 Inference~phantom Spelling~phantom
+## Vocabulary~Working_memory             -0.07860246       0.14301228
+## Grammar~Working_memory                -0.00735754       0.01807200
+## Inference~Vocabulary                  -0.15852757       0.18009840
+## Inference~Grammar                      0.12562746       0.15355763
+## Inference~Working_memory              -0.14682888       0.06457722
+## ToM~Vocabulary                        -0.15852757       0.18009840
+## ToM~Grammar                            0.12562746       0.15355763
+## ToM~Working_memory                    -0.07186973       0.14099539
+## Spelling~Working_memory               -0.07860246       0.14301228
+## Sentence_copying~Working_memory        0.11169709       0.11546808
+## Discourse~Inference                   -0.14558684       0.02211563
+## Discourse~ToM                         -0.00735754       0.01807200
+## Discourse~Vocabulary                  -0.15852757       0.18009840
+## Discourse~Grammar                      0.11169709       0.11546808
+## Discourse~Working_memory               0.11169709       0.11546808
+## Writing~Spelling                       0.16155105      -0.18908332
+## Writing~Sentence_copying               0.02871137       0.13761525
+## Writing~Discourse                     -0.15021823      -0.05282820
+##                                 Sentence_copying~phantom Discourse~phantom
+## Vocabulary~Working_memory                    -0.02140238        0.02093407
+## Grammar~Working_memory                       -0.02210510        0.13456352
+## Inference~Vocabulary                         -0.02665071       -0.08985596
+## Inference~Grammar                             0.05705421        0.10077127
+## Inference~Working_memory                      0.01005041        0.13126727
+## ToM~Vocabulary                               -0.02665071       -0.08985596
+## ToM~Grammar                                   0.05705421        0.10077127
+## ToM~Working_memory                           -0.05369555        0.10337791
+## Spelling~Working_memory                      -0.02140238        0.02093407
+## Sentence_copying~Working_memory               0.08826528        0.24583688
+## Discourse~Inference                           0.02421053        0.04225371
+## Discourse~ToM                                -0.02210510        0.13456352
+## Discourse~Vocabulary                         -0.02665071       -0.08985596
+## Discourse~Grammar                             0.08826528        0.24583688
+## Discourse~Working_memory                      0.08826528        0.24583688
+## Writing~Spelling                              0.05069574        0.08586779
+## Writing~Sentence_copying                     -0.05513577        0.05556959
+## Writing~Discourse                            -0.02098849       -0.08802815
+##                                 Writing~phantom
+## Vocabulary~Working_memory           -0.19619587
+## Grammar~Working_memory               0.08140368
+## Inference~Vocabulary                -0.28691915
+## Inference~Grammar                    0.08132341
+## Inference~Working_memory             0.30589957
+## ToM~Vocabulary                      -0.28691915
+## ToM~Grammar                          0.08132341
+## ToM~Working_memory                  -0.08211608
+## Spelling~Working_memory             -0.19619587
+## Sentence_copying~Working_memory     -0.12163204
+## Discourse~Inference                  0.44354405
+## Discourse~ToM                        0.08140368
+## Discourse~Vocabulary                -0.28691915
+## Discourse~Grammar                   -0.12163204
+## Discourse~Working_memory            -0.12163204
+## Writing~Spelling                     0.60389707
+## Writing~Sentence_copying             0.57441944
+## Writing~Discourse                    0.36057655</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Table 5: The sensitivity parameters lead to change in significance for each path</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>my.table[[<span class="dv">5</span>]]</span></code></pre></div>
+<pre><code>##                                      p.value  p.changed Working_memory~phantom
+## Discourse~Grammar               2.544519e-01 0.04361667            -0.21192127
+## Writing~Sentence_copying        4.222710e-02 0.05085436            -0.08329305
+## Discourse~Inference             3.608645e-02 0.05138185            -0.05379439
+## Inference~Working_memory        2.598216e-02 0.05154444            -0.17606134
+## Writing~Discourse               3.396553e-07 0.06126915             0.07262671
+## Vocabulary~Working_memory       5.308198e-12         NA                     NA
+## Grammar~Working_memory          5.308198e-12         NA                     NA
+## Inference~Vocabulary            3.005818e-11         NA                     NA
+## Inference~Grammar               1.336915e-05         NA                     NA
+## ToM~Vocabulary                  6.016058e-04         NA                     NA
+## ToM~Grammar                     1.345400e-04         NA                     NA
+## ToM~Working_memory              1.096483e-03         NA                     NA
+## Spelling~Working_memory         2.976197e-11         NA                     NA
+## Sentence_copying~Working_memory 3.306180e-04         NA                     NA
+## Discourse~ToM                   1.360093e-03         NA                     NA
+## Discourse~Vocabulary            4.345386e-03         NA                     NA
+## Discourse~Working_memory        7.941219e-03         NA                     NA
+## Writing~Spelling                3.442786e-05         NA                     NA
+##                                 Grammar~phantom Vocabulary~phantom ToM~phantom
+## Discourse~Grammar                  -0.184152355        -0.05422046  0.22938668
+## Writing~Sentence_copying            0.009402667         0.02524991 -0.06890207
+## Discourse~Inference                -0.113046928        -0.01528202  0.25107119
+## Inference~Working_memory            0.031609938         0.05538430  0.12173446
+## Writing~Discourse                   0.117842375        -0.02384517  0.27678824
+## Vocabulary~Working_memory                    NA                 NA          NA
+## Grammar~Working_memory                       NA                 NA          NA
+## Inference~Vocabulary                         NA                 NA          NA
+## Inference~Grammar                            NA                 NA          NA
+## ToM~Vocabulary                               NA                 NA          NA
+## ToM~Grammar                                  NA                 NA          NA
+## ToM~Working_memory                           NA                 NA          NA
+## Spelling~Working_memory                      NA                 NA          NA
+## Sentence_copying~Working_memory              NA                 NA          NA
+## Discourse~ToM                                NA                 NA          NA
+## Discourse~Vocabulary                         NA                 NA          NA
+## Discourse~Working_memory                     NA                 NA          NA
+## Writing~Spelling                             NA                 NA          NA
+##                                 Inference~phantom Spelling~phantom
+## Discourse~Grammar                      0.11169709        0.1154681
+## Writing~Sentence_copying               0.15064797       -0.1555506
+## Discourse~Inference                    0.10060722        0.1050860
+## Inference~Working_memory              -0.07860246        0.1430123
+## Writing~Discourse                      0.16155105       -0.1890833
+## Vocabulary~Working_memory                      NA               NA
+## Grammar~Working_memory                         NA               NA
+## Inference~Vocabulary                           NA               NA
+## Inference~Grammar                              NA               NA
+## ToM~Vocabulary                                 NA               NA
+## ToM~Grammar                                    NA               NA
+## ToM~Working_memory                             NA               NA
+## Spelling~Working_memory                        NA               NA
+## Sentence_copying~Working_memory                NA               NA
+## Discourse~ToM                                  NA               NA
+## Discourse~Vocabulary                           NA               NA
+## Discourse~Working_memory                       NA               NA
+## Writing~Spelling                               NA               NA
+##                                 Sentence_copying~phantom Discourse~phantom
+## Discourse~Grammar                             0.08826528       0.245836878
+## Writing~Sentence_copying                     -0.05921337       0.001210933
+## Discourse~Inference                           0.05885676       0.132617696
+## Inference~Working_memory                     -0.02140238       0.020934066
+## Writing~Discourse                             0.05069574       0.085867787
+## Vocabulary~Working_memory                             NA                NA
+## Grammar~Working_memory                                NA                NA
+## Inference~Vocabulary                                  NA                NA
+## Inference~Grammar                                     NA                NA
+## ToM~Vocabulary                                        NA                NA
+## ToM~Grammar                                           NA                NA
+## ToM~Working_memory                                    NA                NA
+## Spelling~Working_memory                               NA                NA
+## Sentence_copying~Working_memory                       NA                NA
+## Discourse~ToM                                         NA                NA
+## Discourse~Vocabulary                                  NA                NA
+## Discourse~Working_memory                              NA                NA
+## Writing~Spelling                                      NA                NA
+##                                 Writing~phantom
+## Discourse~Grammar                    -0.1216320
+## Writing~Sentence_copying              0.2289633
+## Discourse~Inference                   0.2951056
+## Inference~Working_memory             -0.1961959
+## Writing~Discourse                     0.6038971
+## Vocabulary~Working_memory                    NA
+## Grammar~Working_memory                       NA
+## Inference~Vocabulary                         NA
+## Inference~Grammar                            NA
+## ToM~Vocabulary                               NA
+## ToM~Grammar                                  NA
+## ToM~Working_memory                           NA
+## Spelling~Working_memory                      NA
+## Sentence_copying~Working_memory              NA
+## Discourse~ToM                                NA
+## Discourse~Vocabulary                         NA
+## Discourse~Working_memory                     NA
+## Writing~Spelling                             NA</code></pre>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

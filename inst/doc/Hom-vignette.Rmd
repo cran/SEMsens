@@ -1,18 +1,11 @@
 ---
 title: "A Sensitivity Analysis of Toward a Greater Understanding of How Dissatisfaction Drives Employee Turnover by Peter W. Hom and Angelo J. Kinicki" 
-
 author: "Eric Wright (University of Florida) & Sanaz Nazari (University of Florida)" 
-
 date: "`r Sys.Date()`" 
-
-output:
-  pdf_document:
-    fig_caption: no
-    
-
+output: rmarkdown::html_vignette
 vignette: > 
 
-  %\VignetteIndexEntry{Hom & Kinicki 2001} 
+  %\VignetteIndexEntry{A Sensitivity Analysis of Toward a Greater Understanding of How Dissatisfaction Drives Employee Turnover by Peter W. Hom and Angelo J. Kinicki} 
 
   %\VignetteEngine{knitr::rmarkdown} 
 
@@ -221,7 +214,7 @@ my.sa.results$p.paths
 ```
 
 # References
-Leite, W.,  Shen, Z., Marcoulides, K., Fish, C., & Harring, J. (in press). 
+Leite, W.,  Shen, Z., Marcoulides, K., Fish, C., & Harring, J. (2022). 
     Using ant colony optimization for sensitivity analysis in 
     structural equation modeling. 
-    Structural Equation Modeling: A Multidisciplinary Journal. 
+    Structural Equation Modeling: A Multidisciplinary Journal, 29 (1), 47-56. 

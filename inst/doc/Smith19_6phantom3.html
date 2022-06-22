@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Jia Quan (University of Florida) &amp; Huibin Zhang (University of Florida)" />
+
+<meta name="date" content="2022-06-22" />
+
+<title>A Sensitivity Analysis of a Model for Parenting Risk and Resilience, Social-emotional Readiness, and Reading Achievement in Kindergarten Children from Low-income Families Model by Smith-Adcock, Leite, Kaya and Amatea</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">A Sensitivity Analysis of a Model for
+Parenting Risk and Resilience, Social-emotional Readiness, and Reading
+Achievement in Kindergarten Children from Low-income Families Model by
+Smith-Adcock, Leite, Kaya and Amatea</h1>
+<h4 class="author">Jia Quan (University of Florida) &amp; Huibin Zhang
+(University of Florida)</h4>
+<h4 class="date">2022-06-22</h4>
+
+
+
+<p><strong>BASED ON PAPER:</strong> A Model for Parenting Risk and
+Resilience, Social-emotional Readiness, and Reading Achievement in
+Kindergarten Children from Low-income Families Model</p>
+<p>Author(s): Sondra Smith-Adcock, Walter Leite, Yasemine Kaya, &amp;
+Ellen Amatea.</p>
+<p><strong>Source:</strong> Journal of Child and Family Studies, vol
+28(Oct., 2019), pp. 2826-2841</p>
+<p>Published by: Springer Nature in Journal of Child and Family studies,
+<a href="doi:10.1007/s10826-019-01462-0" class="uri">doi:10.1007/s10826-019-01462-0</a></p>
+<div id="sensitivity-analysis-using-semsens" class="section level1">
+<h1>SENSITIVITY ANALYSIS USING SEMsens</h1>
+<p>This example sensitivity analysis uses the published data and model
+from Smith-Adcock, Leite, Kaya &amp; Amatea(2019). We use the original
+data with categorical variables, set up the lavaan models for their
+original model and the sensitivity model, run the analysis, and view the
+results.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load lavaan and SEMsens packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(lavaan)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">require</span>(SEMsens)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span></code></pre></div>
+<div id="step-1-load-data-with-names-and-indicate-categorical-variables" class="section level2">
+<h2>Step 1 : Load data with names and indicate categorical
+variables</h2>
+<p>Smith-Adcock et. al (2019) shared the raw data and codebook, so we
+load the data with their names, and create names for categorical
+variables.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>smith10.use <span class="ot">&lt;-</span> <span class="fu">data</span>(smith19.use, <span class="at">package =</span> <span class="st">&quot;SEMsens&quot;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#Indicate the ordinal variables and then factorize these variables</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>factornames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;P2BEPARN&quot;</span>, <span class="st">&quot;P2CHDOES&quot;</span>,<span class="st">&quot;P2HRDWRM&quot;</span>,<span class="st">&quot;P2FLTRAP&quot;</span>,<span class="st">&quot;P2FEELAN&quot;</span>,<span class="st">&quot;P2CHHARD&quot;</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;P2MOREWK&quot;</span>, <span class="st">&quot;P2HITCHO&quot;</span>,<span class="st">&quot;P2HITAPO&quot;</span>,<span class="st">&quot;P2HITPRV&quot;</span>,<span class="st">&quot;P2HITWAR&quot;</span>,<span class="st">&quot;P2ATTENB&quot;</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;P2ATTENP&quot;</span>, <span class="st">&quot;P2PARADV&quot;</span>,<span class="st">&quot;P2PARGRP&quot;</span>,<span class="st">&quot;P2ATTENS&quot;</span>,<span class="st">&quot;P2VOLUNT&quot;</span>,<span class="st">&quot;P2FUNDRS&quot;</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;P2TVRULE&quot;</span>, <span class="st">&quot;P2TVRUL3&quot;</span>,<span class="st">&quot;P2TVRUL2&quot;</span>,<span class="st">&quot;P1TELLST&quot;</span>,<span class="st">&quot;P1SINGSO&quot;</span>,<span class="st">&quot;P1HELPAR&quot;</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;P1CHORES&quot;</span>, <span class="st">&quot;P1GAMES&quot;</span>,<span class="st">&quot;P1NATURE&quot;</span>,<span class="st">&quot;P1BUILD&quot;</span>,<span class="st">&quot;P1SPORT&quot;</span>,<span class="st">&quot;P2LIBRAR&quot;</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;P2CONCRT&quot;</span>, <span class="st">&quot;P2MUSEUM&quot;</span>,<span class="st">&quot;P2ZOO&quot;</span>)</span></code></pre></div>
+</div>
+<div id="step-2-define-the-models" class="section level2">
+<h2>Step 2: Define the models</h2>
+<p>The SEMsens package requires both an original model and a sensitivity
+model using the lavaan model syntax. We first mimic the original Mplus
+model based on the article, and then adding phantom variables (phantom1,
+phantom2, etc.) for every latent variable into that model to create
+sensitivity model.</p>
+<p><strong>Note:</strong> Since we have categorical variables in the
+model, while the <code>lavaan</code> package did not allow for multiple
+imputation for missing data with categorical variables, so we have a
+close mimic model, but not a perfect replication of the model in the
+original article.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#A model mimicked from the original model in Smith-Adcock et al. (2019). </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="st">&quot;   </span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="st">           # regressions</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="st">          C2RSCALE~T2LEARN+T2EXTERN+T2INTERN+T2CONTRO+T2INTERP+f1+f2+f3+f4+f5+f6</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="st">          T2LEARN~f1 +f2 +f3 +f4 +f5 +f6</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="st">          T2EXTERN~f1 +f2 +f3 +f4 +f5 +f6</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">          T2INTERN~f1 +f2 +f3 +f4 +f5 +f6</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="st">          T2CONTRO~f1 +f2 +f3 +f4 +f5 +f6</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="st">          T2INTERP~f1 +f2 +f3 +f4 +f5 +f6</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">           # latent variables</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">          f1=~P2BEPARN+P2CHDOES+P2HRDWRM+P2FLTRAP+P2FEELAN+P2CHHARD+P2MOREWK</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">          f2=~P2HITCHO+P2HITAPO+P2HITPRV+P2HITWAR</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="st">          f3=~P2ATTENB+P2ATTENP+P2PARADV+P2PARGRP+P2ATTENS+P2VOLUNT+P2FUNDRS</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="st">          f4=~P2TVRULE+P2TVRUL3+P2TVRUL2</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="st">          f5=~P1TELLST+P1SINGSO+P1HELPAR+P1CHORES+P1GAMES+P1NATURE+P1BUILD+P1SPORT</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="st">          f6=~P2LIBRAR+P2CONCRT+P2MUSEUM+P2ZOO</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="st">            </span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="st">            # residual correlations</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="st">          T2LEARN ~~ T2EXTERN+T2INTERN+T2CONTRO+T2INTERP</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="st">          T2EXTERN ~~ T2INTERN+T2CONTRO+T2INTERP</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="st">          T2INTERN ~~ T2CONTRO+T2INTERP</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="st">          T2CONTRO ~~ T2INTERP</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="st">          f1 ~~ f2+f3+f4+f5+f6</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="st">          f2 ~~ f3+f4+f5+f6</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="st">          f3 ~~ f4+f5+f6</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="st">          f4 ~~ f5+f6</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="st">          f5 ~~ f6</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="st">         &quot;</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co">#The sensitivity model </span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">#This sensitivity model used 6 phantom variables for a quicker result</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>sens.model1 <span class="ot">&lt;-</span> <span class="st">&#39;</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="st">            # regressions</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="st">          C2RSCALE~T2LEARN+T2EXTERN+T2INTERN+T2CONTRO+T2INTERP+f1+f2+f3+f4+f5+f6</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="st">          T2LEARN~f1 +f2 +f3 +f4 +f5 +f6</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="st">          T2EXTERN~f1 +f2 +f3 +f4 +f5 +f6</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="st">          T2INTERN~f1 +f2 +f3 +f4 +f5 +f6</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="st">          T2CONTRO~f1 +f2 +f3 +f4 +f5 +f6</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="st">          T2INTERP~f1 +f2 +f3 +f4 +f5 +f6</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="st">            # latent variable definitions</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="st">          f1=~P2BEPARN+P2CHDOES+P2HRDWRM+P2FLTRAP+P2FEELAN+P2CHHARD+P2MOREWK</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="st">          f2=~P2HITCHO+P2HITAPO+P2HITPRV+P2HITWAR</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="st">          f3=~P2ATTENB+P2ATTENP+P2PARADV+P2PARGRP+P2ATTENS+P2VOLUNT+P2FUNDRS</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="st">          f4=~P2TVRULE+P2TVRUL3+P2TVRUL2</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="st">          f5=~P1TELLST+P1SINGSO+P1HELPAR+P1CHORES+P1GAMES+P1NATURE+P1BUILD+P1SPORT</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a><span class="st">          f6=~P2LIBRAR+P2CONCRT+P2MUSEUM+P2ZOO</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a><span class="st">            # residual correlations</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="st">          T2LEARN ~~ T2EXTERN+T2INTERN+T2CONTRO+T2INTERP</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="st">          T2EXTERN ~~ T2INTERN+T2CONTRO+T2INTERP</span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a><span class="st">          T2INTERN ~~ T2CONTRO+T2INTERP</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="st">          T2CONTRO ~~ T2INTERP</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="st">          f1 ~~ f2+f3+f4+f5+f6</span></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="st">          f2 ~~ f3+f4+f5+f6</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="st">          f3 ~~ f4+f5+f6</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="st">          f4 ~~ f5+f6</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="st">          f5 ~~ f6</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="st">          </span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="st">            # phantom variables </span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="st">          T2LEARN ~ phantom1*phantom</span></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="st">          T2EXTERN ~ phantom2*phantom</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a><span class="st">          C2RSCALE ~ phantom3*phantom</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="st">          </span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a><span class="st">          f3 ~ phantom4*phantom</span></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a><span class="st">          f4 ~ phantom5*phantom</span></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="st">          f5 ~ phantom6*phantom</span></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a><span class="st">          phantom =~ 0   # added for mean of zero</span></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a><span class="st">          phantom ~~ 1*phantom   # added for unit variance</span></span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a><span class="st">          &#39;</span></span></code></pre></div>
+</div>
+<div id="step-3-identify-paths-of-interest" class="section level2">
+<h2>Step 3: Identify paths of interest</h2>
+<p>Before running the analysis, it is recommended to identify the rows
+in the lavaan parameter table that include the paths we are interested
+in looking at in the analysis. The rows that we are interested will be
+used for the next step.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>old.model <span class="ot">=</span> model1</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>old.out  <span class="ot">=</span> <span class="fu">sem</span>(<span class="at">model =</span> model1, <span class="at">data =</span> smith19.use, <span class="at">estimator=</span><span class="st">&quot;WLSMV&quot;</span>,<span class="at">ordered =</span> factornames)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(old.out, <span class="at">standardized=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## lavaan 0.6-11 ended normally after 213 iterations
+## 
+##   Estimator                                       DWLS
+##   Optimization method                           NLMINB
+##   Number of model parameters                       174
+##                                                       
+##                                                   Used       Total
+##   Number of observations                          2466        3444
+##                                                                   
+## Model Test User Model:
+##                                               Standard      Robust
+##   Test Statistic                              1250.335    1283.613
+##   Degrees of freedom                               642         642
+##   P-value (Chi-square)                           0.000       0.000
+##   Scaling correction factor                                  1.123
+##   Shift parameter                                          170.602
+##        simple second-order correction                             
+## 
+## Parameter Estimates:
+## 
+##   Standard errors                           Robust.sem
+##   Information                                 Expected
+##   Information saturated (h1) model        Unstructured
+## 
+## Latent Variables:
+##                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+##   f1 =~                                                                 
+##     P2BEPARN          1.000                               0.544    0.544
+##     P2CHDOES          1.267    0.062   20.337    0.000    0.690    0.690
+##     P2HRDWRM          0.889    0.059   15.004    0.000    0.484    0.484
+##     P2FLTRAP          1.306    0.066   19.707    0.000    0.711    0.711
+##     P2FEELAN          1.161    0.062   18.712    0.000    0.632    0.632
+##     P2CHHARD          1.353    0.073   18.616    0.000    0.737    0.737
+##     P2MOREWK          1.214    0.060   20.309    0.000    0.661    0.661
+##   f2 =~                                                                 
+##     P2HITCHO          1.000                               0.768    0.768
+##     P2HITAPO          0.943    0.062   15.244    0.000    0.724    0.724
+##     P2HITPRV          0.775    0.052   14.778    0.000    0.595    0.595
+##     P2HITWAR          0.951    0.068   13.961    0.000    0.730    0.730
+##   f3 =~                                                                 
+##     P2ATTENB          1.000                               0.564    0.564
+##     P2ATTENP          0.869    0.075   11.636    0.000    0.490    0.490
+##     P2PARADV          0.691    0.096    7.230    0.000    0.390    0.390
+##     P2PARGRP          0.669    0.074    9.043    0.000    0.377    0.377
+##     P2ATTENS          1.102    0.083   13.305    0.000    0.621    0.621
+##     P2VOLUNT          1.110    0.084   13.266    0.000    0.626    0.626
+##     P2FUNDRS          0.928    0.077   12.090    0.000    0.523    0.523
+##   f4 =~                                                                 
+##     P2TVRULE          1.000                               0.831    0.831
+##     P2TVRUL3          0.923    0.049   18.812    0.000    0.767    0.767
+##     P2TVRUL2          0.969    0.056   17.397    0.000    0.805    0.805
+##   f5 =~                                                                 
+##     P1TELLST          1.000                               0.585    0.585
+##     P1SINGSO          0.849    0.045   18.743    0.000    0.496    0.496
+##     P1HELPAR          0.904    0.044   20.671    0.000    0.528    0.528
+##     P1CHORES          0.710    0.047   15.210    0.000    0.415    0.415
+##     P1GAMES           1.024    0.045   22.755    0.000    0.599    0.599
+##     P1NATURE          0.944    0.045   20.986    0.000    0.552    0.552
+##     P1BUILD           0.916    0.043   21.075    0.000    0.536    0.536
+##     P1SPORT           0.821    0.043   19.015    0.000    0.480    0.480
+##   f6 =~                                                                 
+##     P2LIBRAR          1.000                               0.593    0.593
+##     P2CONCRT          0.936    0.081   11.560    0.000    0.555    0.555
+##     P2MUSEUM          1.031    0.085   12.126    0.000    0.611    0.611
+##     P2ZOO             0.858    0.077   11.196    0.000    0.508    0.508
+## 
+## Regressions:
+##                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+##   C2RSCALE ~                                                            
+##     T2LEARN           6.046    0.290   20.841    0.000    6.046    0.485
+##     T2EXTERN          0.589    0.363    1.623    0.105    0.589    0.045
+##     T2INTERN          0.058    0.306    0.190    0.849    0.058    0.004
+##     T2CONTRO         -1.077    0.481   -2.237    0.025   -1.077   -0.079
+##     T2INTERP         -0.340    0.395   -0.862    0.389   -0.340   -0.025
+##     f1               -0.271    0.396   -0.685    0.494   -0.148   -0.017
+##     f2               -0.540    0.320   -1.688    0.091   -0.415   -0.048
+##     f3                2.306    0.532    4.338    0.000    1.301    0.150
+##     f4                0.458    0.278    1.646    0.100    0.381    0.044
+##     f5                0.026    0.401    0.064    0.949    0.015    0.002
+##     f6               -0.964    0.630   -1.529    0.126   -0.571   -0.066
+##   T2LEARN ~                                                             
+##     f1               -0.149    0.033   -4.522    0.000   -0.081   -0.116
+##     f2               -0.035    0.028   -1.254    0.210   -0.027   -0.038
+##     f3                0.137    0.048    2.847    0.004    0.077    0.111
+##     f4                0.004    0.025    0.180    0.857    0.004    0.005
+##     f5                0.050    0.033    1.506    0.132    0.029    0.042
+##     f6               -0.036    0.052   -0.684    0.494   -0.021   -0.031
+##   T2EXTERN ~                                                            
+##     f1                0.195    0.031    6.260    0.000    0.106    0.158
+##     f2                0.030    0.026    1.145    0.252    0.023    0.035
+##     f3               -0.148    0.045   -3.268    0.001   -0.084   -0.125
+##     f4                0.010    0.024    0.416    0.677    0.008    0.012
+##     f5                0.036    0.033    1.093    0.274    0.021    0.031
+##     f6                0.032    0.052    0.616    0.538    0.019    0.028
+##   T2INTERN ~                                                            
+##     f1                0.007    0.026    0.251    0.802    0.004    0.006
+##     f2                0.032    0.022    1.448    0.148    0.025    0.045
+##     f3               -0.053    0.036   -1.469    0.142   -0.030   -0.055
+##     f4                0.009    0.019    0.482    0.630    0.008    0.014
+##     f5               -0.001    0.026   -0.054    0.957   -0.001   -0.002
+##     f6               -0.030    0.040   -0.757    0.449   -0.018   -0.033
+##   T2CONTRO ~                                                            
+##     f1               -0.168    0.030   -5.616    0.000   -0.091   -0.145
+##     f2               -0.017    0.025   -0.679    0.497   -0.013   -0.021
+##     f3                0.134    0.044    3.061    0.002    0.076    0.120
+##     f4               -0.000    0.023   -0.005    0.996   -0.000   -0.000
+##     f5               -0.004    0.031   -0.125    0.900   -0.002   -0.004
+##     f6               -0.057    0.050   -1.147    0.252   -0.034   -0.053
+##   T2INTERP ~                                                            
+##     f1               -0.160    0.030   -5.351    0.000   -0.087   -0.137
+##     f2               -0.020    0.025   -0.814    0.415   -0.016   -0.025
+##     f3                0.176    0.043    4.056    0.000    0.100    0.157
+##     f4               -0.003    0.023   -0.131    0.896   -0.002   -0.004
+##     f5                0.021    0.030    0.675    0.500    0.012    0.019
+##     f6               -0.062    0.047   -1.317    0.188   -0.037   -0.058
+## 
+## Covariances:
+##                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+##  .T2LEARN ~~                                                            
+##    .T2EXTERN         -0.213    0.011  -19.226    0.000   -0.213   -0.474
+##    .T2INTERN         -0.126    0.008  -15.626    0.000   -0.126   -0.338
+##    .T2CONTRO          0.273    0.013   21.404    0.000    0.273    0.640
+##    .T2INTERP          0.294    0.013   22.440    0.000    0.294    0.690
+##  .T2EXTERN ~~                                                           
+##    .T2INTERN          0.097    0.007   14.364    0.000    0.097    0.271
+##    .T2CONTRO         -0.285    0.011  -25.661    0.000   -0.285   -0.700
+##    .T2INTERP         -0.235    0.010  -22.582    0.000   -0.235   -0.579
+##  .T2INTERN ~~                                                           
+##    .T2CONTRO         -0.085    0.007  -11.986    0.000   -0.085   -0.252
+##    .T2INTERP         -0.109    0.007  -15.324    0.000   -0.109   -0.323
+##  .T2CONTRO ~~                                                           
+##    .T2INTERP          0.301    0.012   24.684    0.000    0.301    0.780
+##   f1 ~~                                                                 
+##     f2                0.038    0.015    2.596    0.009    0.090    0.090
+##     f3               -0.048    0.010   -4.903    0.000   -0.156   -0.156
+##     f4               -0.015    0.015   -1.005    0.315   -0.033   -0.033
+##     f5               -0.064    0.009   -6.772    0.000   -0.201   -0.201
+##     f6               -0.038    0.012   -3.128    0.002   -0.119   -0.119
+##   f2 ~~                                                                 
+##     f3                0.082    0.016    5.055    0.000    0.190    0.190
+##     f4                0.112    0.025    4.559    0.000    0.176    0.176
+##     f5                0.016    0.014    1.080    0.280    0.035    0.035
+##     f6                0.029    0.018    1.639    0.101    0.064    0.064
+##   f3 ~~                                                                 
+##     f4                0.105    0.018    5.975    0.000    0.224    0.224
+##     f5                0.083    0.011    7.360    0.000    0.250    0.250
+##     f6                0.171    0.017    9.952    0.000    0.511    0.511
+##   f4 ~~                                                                 
+##     f5                0.073    0.015    4.763    0.000    0.151    0.151
+##     f6                0.142    0.021    6.844    0.000    0.289    0.289
+##   f5 ~~                                                                 
+##     f6                0.138    0.014    9.651    0.000    0.398    0.398
+## 
+## Intercepts:
+##                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+##    .P2BEPARN          0.000                               0.000    0.000
+##    .P2CHDOES          0.000                               0.000    0.000
+##    .P2HRDWRM          0.000                               0.000    0.000
+##    .P2FLTRAP          0.000                               0.000    0.000
+##    .P2FEELAN          0.000                               0.000    0.000
+##    .P2CHHARD          0.000                               0.000    0.000
+##    .P2MOREWK          0.000                               0.000    0.000
+##    .P2HITCHO          0.000                               0.000    0.000
+##    .P2HITAPO          0.000                               0.000    0.000
+##    .P2HITPRV          0.000                               0.000    0.000
+##    .P2HITWAR          0.000                               0.000    0.000
+##    .P2ATTENB          0.000                               0.000    0.000
+##    .P2ATTENP          0.000                               0.000    0.000
+##    .P2PARADV          0.000                               0.000    0.000
+##    .P2PARGRP          0.000                               0.000    0.000
+##    .P2ATTENS          0.000                               0.000    0.000
+##    .P2VOLUNT          0.000                               0.000    0.000
+##    .P2FUNDRS          0.000                               0.000    0.000
+##    .P2TVRULE          0.000                               0.000    0.000
+##    .P2TVRUL3          0.000                               0.000    0.000
+##    .P2TVRUL2          0.000                               0.000    0.000
+##    .P1TELLST          0.000                               0.000    0.000
+##    .P1SINGSO          0.000                               0.000    0.000
+##    .P1HELPAR          0.000                               0.000    0.000
+##    .P1CHORES          0.000                               0.000    0.000
+##    .P1GAMES           0.000                               0.000    0.000
+##    .P1NATURE          0.000                               0.000    0.000
+##    .P1BUILD           0.000                               0.000    0.000
+##    .P1SPORT           0.000                               0.000    0.000
+##    .P2LIBRAR          0.000                               0.000    0.000
+##    .P2CONCRT          0.000                               0.000    0.000
+##    .P2MUSEUM          0.000                               0.000    0.000
+##    .P2ZOO             0.000                               0.000    0.000
+##    .C2RSCALE         13.381    1.714    7.805    0.000   13.381    1.541
+##    .T2LEARN           3.006    0.015  205.268    0.000    3.006    4.313
+##    .T2EXTERN          1.716    0.017   99.092    0.000    1.716    2.566
+##    .T2INTERN          1.620    0.014  119.690    0.000    1.620    2.958
+##    .T2CONTRO          3.102    0.014  229.397    0.000    3.102    4.901
+##    .T2INTERP          3.037    0.013  232.253    0.000    3.037    4.787
+##     f1                0.000                               0.000    0.000
+##     f2                0.000                               0.000    0.000
+##     f3                0.000                               0.000    0.000
+##     f4                0.000                               0.000    0.000
+##     f5                0.000                               0.000    0.000
+##     f6                0.000                               0.000    0.000
+## 
+## Thresholds:
+##                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+##     P2BEPARN|t1      -0.642    0.027  -23.588    0.000   -0.642   -0.642
+##     P2BEPARN|t2       0.043    0.025    1.691    0.091    0.043    0.043
+##     P2BEPARN|t3       0.282    0.026   11.019    0.000    0.282    0.282
+##     P2CHDOES|t1      -0.174    0.025   -6.842    0.000   -0.174   -0.174
+##     P2CHDOES|t2       1.063    0.031   34.090    0.000    1.063    1.063
+##     P2CHDOES|t3       1.392    0.036   38.149    0.000    1.392    1.392
+##     P2HRDWRM|t1       0.581    0.027   21.635    0.000    0.581    0.581
+##     P2HRDWRM|t2       1.236    0.034   36.709    0.000    1.236    1.236
+##     P2HRDWRM|t3       1.634    0.042   38.668    0.000    1.634    1.634
+##     P2FLTRAP|t1       0.864    0.029   29.805    0.000    0.864    0.864
+##     P2FLTRAP|t2       1.445    0.038   38.437    0.000    1.445    1.445
+##     P2FLTRAP|t3       1.713    0.045   38.415    0.000    1.713    1.713
+##     P2FEELAN|t1       0.626    0.027   23.082    0.000    0.626    0.626
+##     P2FEELAN|t2       1.899    0.051   37.073    0.000    1.899    1.899
+##     P2FEELAN|t3       2.352    0.077   30.470    0.000    2.352    2.352
+##     P2CHHARD|t1       1.177    0.033   35.937    0.000    1.177    1.177
+##     P2CHHARD|t2       1.749    0.046   38.233    0.000    1.749    1.749
+##     P2CHHARD|t3       2.110    0.061   34.479    0.000    2.110    2.110
+##     P2MOREWK|t1       0.630    0.027   23.199    0.000    0.630    0.630
+##     P2MOREWK|t2       1.269    0.034   37.090    0.000    1.269    1.269
+##     P2MOREWK|t3       1.558    0.040   38.722    0.000    1.558    1.558
+##     P2HITCHO|t1       1.351    0.036   37.852    0.000    1.351    1.351
+##     P2HITAPO|t1       0.574    0.027   21.400    0.000    0.574    0.574
+##     P2HITPRV|t1       0.439    0.026   16.773    0.000    0.439    0.439
+##     P2HITWAR|t1       1.086    0.031   34.509    0.000    1.086    1.086
+##     P2ATTENB|t1      -0.159    0.025   -6.279    0.000   -0.159   -0.159
+##     P2ATTENP|t1       0.656    0.027   24.015    0.000    0.656    0.656
+##     P2PARADV|t1       1.630    0.042   38.675    0.000    1.630    1.630
+##     P2PARGRP|t1      -0.666    0.027  -24.324    0.000   -0.666   -0.666
+##     P2ATTENS|t1       0.004    0.025    0.161    0.872    0.004    0.004
+##     P2VOLUNT|t1       0.610    0.027   22.575    0.000    0.610    0.610
+##     P2FUNDRS|t1       0.221    0.025    8.691    0.000    0.221    0.221
+##     P2TVRULE|t1      -0.971    0.030  -32.271    0.000   -0.971   -0.971
+##     P2TVRUL3|t1      -0.027    0.025   -1.087    0.277   -0.027   -0.027
+##     P2TVRUL2|t1      -0.923    0.030  -31.214    0.000   -0.923   -0.923
+##     P1TELLST|t1      -1.311    0.035  -37.514    0.000   -1.311   -1.311
+##     P1TELLST|t2       0.035    0.025    1.369    0.171    0.035    0.035
+##     P1TELLST|t3       0.735    0.028   26.361    0.000    0.735    0.735
+##     P1SINGSO|t1      -1.457    0.038  -38.487    0.000   -1.457   -1.457
+##     P1SINGSO|t2      -0.464    0.026  -17.687    0.000   -0.464   -0.464
+##     P1SINGSO|t3       0.102    0.025    4.026    0.000    0.102    0.102
+##     P1HELPAR|t1      -1.181    0.033  -35.995    0.000   -1.181   -1.181
+##     P1HELPAR|t2       0.042    0.025    1.651    0.099    0.042    0.042
+##     P1HELPAR|t3       0.744    0.028   26.627    0.000    0.744    0.744
+##     P1CHORES|t1      -1.608    0.042  -38.709    0.000   -1.608   -1.608
+##     P1CHORES|t2      -0.639    0.027  -23.471    0.000   -0.639   -0.639
+##     P1CHORES|t3      -0.124    0.025   -4.911    0.000   -0.124   -0.124
+##     P1GAMES|t1       -1.512    0.039  -38.659    0.000   -1.512   -1.512
+##     P1GAMES|t2       -0.119    0.025   -4.710    0.000   -0.119   -0.119
+##     P1GAMES|t3        0.700    0.028   25.327    0.000    0.700    0.700
+##     P1NATURE|t1      -0.476    0.026  -18.084    0.000   -0.476   -0.476
+##     P1NATURE|t2       0.700    0.028   25.327    0.000    0.700    0.700
+##     P1NATURE|t3       1.358    0.036   37.911    0.000    1.358    1.358
+##     P1BUILD|t1       -0.763    0.028  -27.158    0.000   -0.763   -0.763
+##     P1BUILD|t2        0.358    0.026   13.862    0.000    0.358    0.358
+##     P1BUILD|t3        1.022    0.031   33.330    0.000    1.022    1.022
+##     P1SPORT|t1       -1.109    0.032  -34.887    0.000   -1.109   -1.109
+##     P1SPORT|t2       -0.054    0.025   -2.134    0.033   -0.054   -0.054
+##     P1SPORT|t3        0.626    0.027   23.082    0.000    0.626    0.626
+##     P2LIBRAR|t1       0.268    0.026   10.497    0.000    0.268    0.268
+##     P2CONCRT|t1       0.534    0.027   20.062    0.000    0.534    0.534
+##     P2MUSEUM|t1       0.829    0.029   28.920    0.000    0.829    0.829
+##     P2ZOO|t1          0.375    0.026   14.461    0.000    0.375    0.375
+## 
+## Variances:
+##                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+##    .P2BEPARN          0.704                               0.704    0.704
+##    .P2CHDOES          0.524                               0.524    0.524
+##    .P2HRDWRM          0.766                               0.766    0.766
+##    .P2FLTRAP          0.494                               0.494    0.494
+##    .P2FEELAN          0.601                               0.601    0.601
+##    .P2CHHARD          0.457                               0.457    0.457
+##    .P2MOREWK          0.563                               0.563    0.563
+##    .P2HITCHO          0.411                               0.411    0.411
+##    .P2HITAPO          0.476                               0.476    0.476
+##    .P2HITPRV          0.646                               0.646    0.646
+##    .P2HITWAR          0.467                               0.467    0.467
+##    .P2ATTENB          0.682                               0.682    0.682
+##    .P2ATTENP          0.760                               0.760    0.760
+##    .P2PARADV          0.848                               0.848    0.848
+##    .P2PARGRP          0.858                               0.858    0.858
+##    .P2ATTENS          0.614                               0.614    0.614
+##    .P2VOLUNT          0.608                               0.608    0.608
+##    .P2FUNDRS          0.726                               0.726    0.726
+##    .P2TVRULE          0.309                               0.309    0.309
+##    .P2TVRUL3          0.412                               0.412    0.412
+##    .P2TVRUL2          0.352                               0.352    0.352
+##    .P1TELLST          0.658                               0.658    0.658
+##    .P1SINGSO          0.754                               0.754    0.754
+##    .P1HELPAR          0.721                               0.721    0.721
+##    .P1CHORES          0.828                               0.828    0.828
+##    .P1GAMES           0.641                               0.641    0.641
+##    .P1NATURE          0.696                               0.696    0.696
+##    .P1BUILD           0.713                               0.713    0.713
+##    .P1SPORT           0.769                               0.769    0.769
+##    .P2LIBRAR          0.649                               0.649    0.649
+##    .P2CONCRT          0.692                               0.692    0.692
+##    .P2MUSEUM          0.626                               0.626    0.626
+##    .P2ZOO             0.741                               0.741    0.741
+##    .C2RSCALE         60.494    1.537   39.371    0.000   60.494    0.803
+##    .T2LEARN           0.470    0.018   26.106    0.000    0.470    0.968
+##    .T2EXTERN          0.429    0.013   32.729    0.000    0.429    0.959
+##    .T2INTERN          0.298    0.008   38.491    0.000    0.298    0.993
+##    .T2CONTRO          0.387    0.014   27.726    0.000    0.387    0.965
+##    .T2INTERP          0.385    0.014   27.826    0.000    0.385    0.956
+##     f1                0.296    0.024   12.551    0.000    1.000    1.000
+##     f2                0.589    0.061    9.696    0.000    1.000    1.000
+##     f3                0.318    0.034    9.248    0.000    1.000    1.000
+##     f4                0.691    0.049   13.969    0.000    1.000    1.000
+##     f5                0.342    0.022   15.270    0.000    1.000    1.000
+##     f6                0.351    0.039    8.903    0.000    1.000    1.000
+## 
+## Scales y*:
+##                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+##     P2BEPARN          1.000                               1.000    1.000
+##     P2CHDOES          1.000                               1.000    1.000
+##     P2HRDWRM          1.000                               1.000    1.000
+##     P2FLTRAP          1.000                               1.000    1.000
+##     P2FEELAN          1.000                               1.000    1.000
+##     P2CHHARD          1.000                               1.000    1.000
+##     P2MOREWK          1.000                               1.000    1.000
+##     P2HITCHO          1.000                               1.000    1.000
+##     P2HITAPO          1.000                               1.000    1.000
+##     P2HITPRV          1.000                               1.000    1.000
+##     P2HITWAR          1.000                               1.000    1.000
+##     P2ATTENB          1.000                               1.000    1.000
+##     P2ATTENP          1.000                               1.000    1.000
+##     P2PARADV          1.000                               1.000    1.000
+##     P2PARGRP          1.000                               1.000    1.000
+##     P2ATTENS          1.000                               1.000    1.000
+##     P2VOLUNT          1.000                               1.000    1.000
+##     P2FUNDRS          1.000                               1.000    1.000
+##     P2TVRULE          1.000                               1.000    1.000
+##     P2TVRUL3          1.000                               1.000    1.000
+##     P2TVRUL2          1.000                               1.000    1.000
+##     P1TELLST          1.000                               1.000    1.000
+##     P1SINGSO          1.000                               1.000    1.000
+##     P1HELPAR          1.000                               1.000    1.000
+##     P1CHORES          1.000                               1.000    1.000
+##     P1GAMES           1.000                               1.000    1.000
+##     P1NATURE          1.000                               1.000    1.000
+##     P1BUILD           1.000                               1.000    1.000
+##     P1SPORT           1.000                               1.000    1.000
+##     P2LIBRAR          1.000                               1.000    1.000
+##     P2CONCRT          1.000                               1.000    1.000
+##     P2MUSEUM          1.000                               1.000    1.000
+##     P2ZOO             1.000                               1.000    1.000</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>old.model.par <span class="ot">&lt;-</span> <span class="fu">standardizedSolution</span>(old.out,<span class="at">type =</span> <span class="st">&quot;std.all&quot;</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>old.model.par</span></code></pre></div>
+<pre><code>##          lhs  op      rhs est.std    se       z pvalue ci.lower ci.upper
+## 1   C2RSCALE   ~  T2LEARN   0.485 0.023  21.425  0.000    0.441    0.530
+## 2   C2RSCALE   ~ T2EXTERN   0.045 0.028   1.622  0.105   -0.009    0.100
+## 3   C2RSCALE   ~ T2INTERN   0.004 0.019   0.190  0.849   -0.034    0.042
+## 4   C2RSCALE   ~ T2CONTRO  -0.079 0.035  -2.226  0.026   -0.148   -0.009
+## 5   C2RSCALE   ~ T2INTERP  -0.025 0.029  -0.862  0.388   -0.081    0.032
+## 6   C2RSCALE   ~       f1  -0.017 0.025  -0.685  0.493   -0.066    0.032
+## 7   C2RSCALE   ~       f2  -0.048 0.028  -1.692  0.091   -0.103    0.008
+## 8   C2RSCALE   ~       f3   0.150 0.033   4.478  0.000    0.084    0.215
+## 9   C2RSCALE   ~       f4   0.044 0.027   1.651  0.099   -0.008    0.096
+## 10  C2RSCALE   ~       f5   0.002 0.027   0.064  0.949   -0.051    0.055
+## 11  C2RSCALE   ~       f6  -0.066 0.043  -1.535  0.125   -0.150    0.018
+## 12   T2LEARN   ~       f1  -0.116 0.025  -4.636  0.000   -0.165   -0.067
+## 13   T2LEARN   ~       f2  -0.038 0.030  -1.255  0.210   -0.098    0.022
+## 14   T2LEARN   ~       f3   0.111 0.038   2.901  0.004    0.036    0.185
+## 15   T2LEARN   ~       f4   0.005 0.030   0.180  0.857   -0.053    0.063
+## 16   T2LEARN   ~       f5   0.042 0.028   1.506  0.132   -0.013    0.097
+## 17   T2LEARN   ~       f6  -0.031 0.045  -0.685  0.493   -0.118    0.057
+## 18  T2EXTERN   ~       f1   0.158 0.024   6.518  0.000    0.111    0.206
+## 19  T2EXTERN   ~       f2   0.035 0.030   1.146  0.252   -0.025    0.094
+## 20  T2EXTERN   ~       f3  -0.125 0.038  -3.336  0.001   -0.199   -0.052
+## 21  T2EXTERN   ~       f4   0.012 0.029   0.416  0.677   -0.046    0.070
+## 22  T2EXTERN   ~       f5   0.031 0.028   1.096  0.273   -0.025    0.087
+## 23  T2EXTERN   ~       f6   0.028 0.046   0.617  0.538   -0.062    0.118
+## 24  T2INTERN   ~       f1   0.006 0.026   0.251  0.802   -0.044    0.057
+## 25  T2INTERN   ~       f2   0.045 0.031   1.452  0.147   -0.016    0.105
+## 26  T2INTERN   ~       f3  -0.055 0.037  -1.476  0.140   -0.127    0.018
+## 27  T2INTERN   ~       f4   0.014 0.029   0.482  0.630   -0.042    0.070
+## 28  T2INTERN   ~       f5  -0.002 0.028  -0.054  0.957   -0.057    0.054
+## 29  T2INTERN   ~       f6  -0.033 0.043  -0.758  0.449   -0.118    0.052
+## 30  T2CONTRO   ~       f1  -0.145 0.025  -5.826  0.000   -0.193   -0.096
+## 31  T2CONTRO   ~       f2  -0.021 0.030  -0.679  0.497   -0.080    0.039
+## 32  T2CONTRO   ~       f3   0.120 0.038   3.130  0.002    0.045    0.195
+## 33  T2CONTRO   ~       f4   0.000 0.030  -0.005  0.996   -0.059    0.059
+## 34  T2CONTRO   ~       f5  -0.004 0.029  -0.125  0.900   -0.060    0.053
+## 35  T2CONTRO   ~       f6  -0.053 0.046  -1.150  0.250   -0.144    0.038
+## 36  T2INTERP   ~       f1  -0.137 0.025  -5.529  0.000   -0.186   -0.089
+## 37  T2INTERP   ~       f2  -0.025 0.030  -0.814  0.416   -0.084    0.035
+## 38  T2INTERP   ~       f3   0.157 0.037   4.210  0.000    0.084    0.230
+## 39  T2INTERP   ~       f4  -0.004 0.030  -0.131  0.896   -0.062    0.055
+## 40  T2INTERP   ~       f5   0.019 0.028   0.675  0.500   -0.036    0.074
+## 41  T2INTERP   ~       f6  -0.058 0.044  -1.324  0.185   -0.144    0.028
+## 42        f1  =~ P2BEPARN   0.544 0.022  25.101  0.000    0.502    0.587
+## 43        f1  =~ P2CHDOES   0.690 0.019  36.425  0.000    0.653    0.727
+## 44        f1  =~ P2HRDWRM   0.484 0.026  18.369  0.000    0.433    0.536
+## 45        f1  =~ P2FLTRAP   0.711 0.023  30.642  0.000    0.666    0.757
+## 46        f1  =~ P2FEELAN   0.632 0.023  27.515  0.000    0.587    0.677
+## 47        f1  =~ P2CHHARD   0.737 0.026  28.233  0.000    0.686    0.788
+## 48        f1  =~ P2MOREWK   0.661 0.022  30.009  0.000    0.618    0.704
+## 49        f2  =~ P2HITCHO   0.768 0.040  19.391  0.000    0.690    0.845
+## 50        f2  =~ P2HITAPO   0.724 0.026  27.769  0.000    0.673    0.775
+## 51        f2  =~ P2HITPRV   0.595 0.028  21.461  0.000    0.541    0.650
+## 52        f2  =~ P2HITWAR   0.730 0.034  21.364  0.000    0.663    0.797
+## 53        f3  =~ P2ATTENB   0.564 0.030  18.497  0.000    0.504    0.624
+## 54        f3  =~ P2ATTENP   0.490 0.033  14.971  0.000    0.426    0.554
+## 55        f3  =~ P2PARADV   0.390 0.049   7.947  0.000    0.293    0.486
+## 56        f3  =~ P2PARGRP   0.377 0.036  10.349  0.000    0.306    0.449
+## 57        f3  =~ P2ATTENS   0.621 0.029  21.247  0.000    0.564    0.679
+## 58        f3  =~ P2VOLUNT   0.626 0.031  20.400  0.000    0.566    0.686
+## 59        f3  =~ P2FUNDRS   0.523 0.031  17.105  0.000    0.463    0.583
+## 60        f4  =~ P2TVRULE   0.831 0.030  27.938  0.000    0.773    0.889
+## 61        f4  =~ P2TVRUL3   0.767 0.025  30.268  0.000    0.717    0.817
+## 62        f4  =~ P2TVRUL2   0.805 0.030  26.967  0.000    0.747    0.864
+## 63        f5  =~ P1TELLST   0.585 0.019  30.540  0.000    0.547    0.622
+## 64        f5  =~ P1SINGSO   0.496 0.021  23.154  0.000    0.454    0.538
+## 65        f5  =~ P1HELPAR   0.528 0.020  26.965  0.000    0.490    0.567
+## 66        f5  =~ P1CHORES   0.415 0.023  17.675  0.000    0.369    0.461
+## 67        f5  =~  P1GAMES   0.599 0.019  31.491  0.000    0.562    0.636
+## 68        f5  =~ P1NATURE   0.552 0.020  27.965  0.000    0.513    0.590
+## 69        f5  =~  P1BUILD   0.536 0.019  27.846  0.000    0.498    0.573
+## 70        f5  =~  P1SPORT   0.480 0.020  23.556  0.000    0.440    0.520
+## 71        f6  =~ P2LIBRAR   0.593 0.033  17.806  0.000    0.528    0.658
+## 72        f6  =~ P2CONCRT   0.555 0.034  16.295  0.000    0.488    0.621
+## 73        f6  =~ P2MUSEUM   0.611 0.034  17.999  0.000    0.545    0.678
+## 74        f6  =~    P2ZOO   0.508 0.033  15.355  0.000    0.444    0.573
+## 75   T2LEARN  ~~ T2EXTERN  -0.474 0.015 -31.483  0.000   -0.503   -0.444
+## 76   T2LEARN  ~~ T2INTERN  -0.338 0.017 -19.877  0.000   -0.371   -0.305
+## 77   T2LEARN  ~~ T2CONTRO   0.640 0.012  53.526  0.000    0.617    0.664
+## 78   T2LEARN  ~~ T2INTERP   0.690 0.011  63.190  0.000    0.669    0.712
+## 79  T2EXTERN  ~~ T2INTERN   0.271 0.016  16.707  0.000    0.239    0.303
+## 80  T2EXTERN  ~~ T2CONTRO  -0.700 0.010 -71.226  0.000   -0.719   -0.680
+## 81  T2EXTERN  ~~ T2INTERP  -0.579 0.013 -44.553  0.000   -0.605   -0.554
+## 82  T2INTERN  ~~ T2CONTRO  -0.252 0.019 -13.476  0.000   -0.289   -0.215
+## 83  T2INTERN  ~~ T2INTERP  -0.323 0.017 -18.685  0.000   -0.357   -0.290
+## 84  T2CONTRO  ~~ T2INTERP   0.780 0.008  99.334  0.000    0.765    0.795
+## 85        f1  ~~       f2   0.090 0.034   2.647  0.008    0.023    0.157
+## 86        f1  ~~       f3  -0.156 0.031  -5.120  0.000   -0.216   -0.096
+## 87        f1  ~~       f4  -0.033 0.033  -1.006  0.314   -0.099    0.032
+## 88        f1  ~~       f5  -0.201 0.028  -7.248  0.000   -0.255   -0.147
+## 89        f1  ~~       f6  -0.119 0.037  -3.170  0.002   -0.192   -0.045
+## 90        f2  ~~       f3   0.190 0.035   5.347  0.000    0.120    0.259
+## 91        f2  ~~       f4   0.176 0.037   4.773  0.000    0.103    0.248
+## 92        f2  ~~       f5   0.035 0.032   1.084  0.278   -0.028    0.098
+## 93        f2  ~~       f6   0.064 0.039   1.648  0.099   -0.012    0.141
+## 94        f3  ~~       f4   0.224 0.034   6.586  0.000    0.157    0.290
+## 95        f3  ~~       f5   0.250 0.030   8.359  0.000    0.192    0.309
+## 96        f3  ~~       f6   0.511 0.035  14.490  0.000    0.442    0.580
+## 97        f4  ~~       f5   0.151 0.031   4.892  0.000    0.090    0.211
+## 98        f4  ~~       f6   0.289 0.038   7.524  0.000    0.214    0.364
+## 99        f5  ~~       f6   0.398 0.033  12.069  0.000    0.333    0.462
+## 100 P2BEPARN   |       t1  -0.642 0.027 -23.588  0.000   -0.696   -0.589
+## 101 P2BEPARN   |       t2   0.043 0.025   1.691  0.091   -0.007    0.092
+## 102 P2BEPARN   |       t3   0.282 0.026  11.019  0.000    0.232    0.332
+## 103 P2CHDOES   |       t1  -0.174 0.025  -6.842  0.000   -0.223   -0.124
+## 104 P2CHDOES   |       t2   1.063 0.031  34.090  0.000    1.002    1.124
+## 105 P2CHDOES   |       t3   1.392 0.036  38.149  0.000    1.321    1.464
+## 106 P2HRDWRM   |       t1   0.581 0.027  21.635  0.000    0.528    0.634
+## 107 P2HRDWRM   |       t2   1.236 0.034  36.709  0.000    1.170    1.302
+## 108 P2HRDWRM   |       t3   1.634 0.042  38.668  0.000    1.551    1.717
+## 109 P2FLTRAP   |       t1   0.864 0.029  29.805  0.000    0.807    0.921
+## 110 P2FLTRAP   |       t2   1.445 0.038  38.437  0.000    1.371    1.519
+## 111 P2FLTRAP   |       t3   1.713 0.045  38.415  0.000    1.625    1.800
+## 112 P2FEELAN   |       t1   0.626 0.027  23.082  0.000    0.573    0.679
+## 113 P2FEELAN   |       t2   1.899 0.051  37.073  0.000    1.798    1.999
+## 114 P2FEELAN   |       t3   2.352 0.077  30.470  0.000    2.201    2.504
+## 115 P2CHHARD   |       t1   1.177 0.033  35.937  0.000    1.113    1.241
+## 116 P2CHHARD   |       t2   1.749 0.046  38.233  0.000    1.659    1.839
+## 117 P2CHHARD   |       t3   2.110 0.061  34.479  0.000    1.990    2.230
+## 118 P2MOREWK   |       t1   0.630 0.027  23.199  0.000    0.577    0.683
+## 119 P2MOREWK   |       t2   1.269 0.034  37.090  0.000    1.202    1.336
+## 120 P2MOREWK   |       t3   1.558 0.040  38.722  0.000    1.479    1.637
+## 121 P2HITCHO   |       t1   1.351 0.036  37.852  0.000    1.281    1.421
+## 122 P2HITAPO   |       t1   0.574 0.027  21.400  0.000    0.521    0.626
+## 123 P2HITPRV   |       t1   0.439 0.026  16.773  0.000    0.387    0.490
+## 124 P2HITWAR   |       t1   1.086 0.031  34.509  0.000    1.025    1.148
+## 125 P2ATTENB   |       t1  -0.159 0.025  -6.279  0.000   -0.209   -0.110
+## 126 P2ATTENP   |       t1   0.656 0.027  24.015  0.000    0.603    0.710
+## 127 P2PARADV   |       t1   1.630 0.042  38.675  0.000    1.548    1.713
+## 128 P2PARGRP   |       t1  -0.666 0.027 -24.324  0.000   -0.720   -0.613
+## 129 P2ATTENS   |       t1   0.004 0.025   0.161  0.872   -0.045    0.054
+## 130 P2VOLUNT   |       t1   0.610 0.027  22.575  0.000    0.557    0.663
+## 131 P2FUNDRS   |       t1   0.221 0.025   8.691  0.000    0.171    0.271
+## 132 P2TVRULE   |       t1  -0.971 0.030 -32.271  0.000   -1.030   -0.912
+## 133 P2TVRUL3   |       t1  -0.027 0.025  -1.087  0.277   -0.077    0.022
+## 134 P2TVRUL2   |       t1  -0.923 0.030 -31.214  0.000   -0.981   -0.865
+## 135 P1TELLST   |       t1  -1.311 0.035 -37.514  0.000   -1.380   -1.243
+## 136 P1TELLST   |       t2   0.035 0.025   1.369  0.171   -0.015    0.084
+## 137 P1TELLST   |       t3   0.735 0.028  26.361  0.000    0.680    0.790
+## 138 P1SINGSO   |       t1  -1.457 0.038 -38.487  0.000   -1.531   -1.383
+## 139 P1SINGSO   |       t2  -0.464 0.026 -17.687  0.000   -0.516   -0.413
+## 140 P1SINGSO   |       t3   0.102 0.025   4.026  0.000    0.052    0.151
+## 141 P1HELPAR   |       t1  -1.181 0.033 -35.995  0.000   -1.245   -1.117
+## 142 P1HELPAR   |       t2   0.042 0.025   1.651  0.099   -0.008    0.091
+## 143 P1HELPAR   |       t3   0.744 0.028  26.627  0.000    0.690    0.799
+## 144 P1CHORES   |       t1  -1.608 0.042 -38.709  0.000   -1.689   -1.526
+## 145 P1CHORES   |       t2  -0.639 0.027 -23.471  0.000   -0.692   -0.585
+## 146 P1CHORES   |       t3  -0.124 0.025  -4.911  0.000   -0.174   -0.075
+## 147  P1GAMES   |       t1  -1.512 0.039 -38.659  0.000   -1.588   -1.435
+## 148  P1GAMES   |       t2  -0.119 0.025  -4.710  0.000   -0.169   -0.070
+## 149  P1GAMES   |       t3   0.700 0.028  25.327  0.000    0.645    0.754
+## 150 P1NATURE   |       t1  -0.476 0.026 -18.084  0.000   -0.527   -0.424
+## 151 P1NATURE   |       t2   0.700 0.028  25.327  0.000    0.645    0.754
+## 152 P1NATURE   |       t3   1.358 0.036  37.911  0.000    1.288    1.429
+## 153  P1BUILD   |       t1  -0.763 0.028 -27.158  0.000   -0.818   -0.708
+## 154  P1BUILD   |       t2   0.358 0.026  13.862  0.000    0.308    0.409
+## 155  P1BUILD   |       t3   1.022 0.031  33.330  0.000    0.962    1.083
+## 156  P1SPORT   |       t1  -1.109 0.032 -34.887  0.000   -1.171   -1.046
+## 157  P1SPORT   |       t2  -0.054 0.025  -2.134  0.033   -0.103   -0.004
+## 158  P1SPORT   |       t3   0.626 0.027  23.082  0.000    0.573    0.679
+## 159 P2LIBRAR   |       t1   0.268 0.026  10.497  0.000    0.218    0.319
+## 160 P2CONCRT   |       t1   0.534 0.027  20.062  0.000    0.481    0.586
+## 161 P2MUSEUM   |       t1   0.829 0.029  28.920  0.000    0.773    0.885
+## 162    P2ZOO   |       t1   0.375 0.026  14.461  0.000    0.324    0.425
+## 163 P2BEPARN  ~~ P2BEPARN   0.704 0.024  29.802  0.000    0.657    0.750
+## 164 P2CHDOES  ~~ P2CHDOES   0.524 0.026  20.052  0.000    0.473    0.575
+## 165 P2HRDWRM  ~~ P2HRDWRM   0.766 0.026  29.988  0.000    0.716    0.816
+## 166 P2FLTRAP  ~~ P2FLTRAP   0.494 0.033  14.970  0.000    0.430    0.559
+## 167 P2FEELAN  ~~ P2FEELAN   0.601 0.029  20.680  0.000    0.544    0.657
+## 168 P2CHHARD  ~~ P2CHHARD   0.457 0.038  11.897  0.000    0.382    0.533
+## 169 P2MOREWK  ~~ P2MOREWK   0.563 0.029  19.344  0.000    0.506    0.620
+## 170 P2HITCHO  ~~ P2HITCHO   0.411 0.061   6.756  0.000    0.292    0.530
+## 171 P2HITAPO  ~~ P2HITAPO   0.476 0.038  12.623  0.000    0.402    0.550
+## 172 P2HITPRV  ~~ P2HITPRV   0.646 0.033  19.545  0.000    0.581    0.710
+## 173 P2HITWAR  ~~ P2HITWAR   0.467 0.050   9.355  0.000    0.369    0.565
+## 174 P2ATTENB  ~~ P2ATTENB   0.682 0.034  19.823  0.000    0.614    0.749
+## 175 P2ATTENP  ~~ P2ATTENP   0.760 0.032  23.689  0.000    0.697    0.823
+## 176 P2PARADV  ~~ P2PARADV   0.848 0.038  22.217  0.000    0.773    0.923
+## 177 P2PARGRP  ~~ P2PARGRP   0.858 0.028  31.179  0.000    0.804    0.912
+## 178 P2ATTENS  ~~ P2ATTENS   0.614 0.036  16.884  0.000    0.543    0.685
+## 179 P2VOLUNT  ~~ P2VOLUNT   0.608 0.038  15.819  0.000    0.533    0.683
+## 180 P2FUNDRS  ~~ P2FUNDRS   0.726 0.032  22.685  0.000    0.663    0.789
+## 181 P2TVRULE  ~~ P2TVRULE   0.309 0.049   6.252  0.000    0.212    0.406
+## 182 P2TVRUL3  ~~ P2TVRUL3   0.412 0.039  10.602  0.000    0.336    0.488
+## 183 P2TVRUL2  ~~ P2TVRUL2   0.352 0.048   7.320  0.000    0.258    0.446
+## 184 P1TELLST  ~~ P1TELLST   0.658 0.022  29.408  0.000    0.614    0.702
+## 185 P1SINGSO  ~~ P1SINGSO   0.754 0.021  35.457  0.000    0.712    0.796
+## 186 P1HELPAR  ~~ P1HELPAR   0.721 0.021  34.842  0.000    0.680    0.762
+## 187 P1CHORES  ~~ P1CHORES   0.828 0.019  42.483  0.000    0.790    0.866
+## 188  P1GAMES  ~~  P1GAMES   0.641 0.023  28.149  0.000    0.597    0.686
+## 189 P1NATURE  ~~ P1NATURE   0.696 0.022  31.941  0.000    0.653    0.738
+## 190  P1BUILD  ~~  P1BUILD   0.713 0.021  34.595  0.000    0.673    0.753
+## 191  P1SPORT  ~~  P1SPORT   0.769 0.020  39.295  0.000    0.731    0.808
+## 192 P2LIBRAR  ~~ P2LIBRAR   0.649 0.039  16.427  0.000    0.571    0.726
+## 193 P2CONCRT  ~~ P2CONCRT   0.692 0.038  18.333  0.000    0.618    0.766
+## 194 P2MUSEUM  ~~ P2MUSEUM   0.626 0.042  15.095  0.000    0.545    0.708
+## 195    P2ZOO  ~~    P2ZOO   0.741 0.034  22.019  0.000    0.675    0.807
+## 196 C2RSCALE  ~~ C2RSCALE   0.803 0.014  57.073  0.000    0.775    0.830
+## 197  T2LEARN  ~~  T2LEARN   0.968 0.009 107.076  0.000    0.950    0.985
+## 198 T2EXTERN  ~~ T2EXTERN   0.959 0.010  95.652  0.000    0.939    0.978
+## 199 T2INTERN  ~~ T2INTERN   0.993 0.005 216.996  0.000    0.984    1.002
+## 200 T2CONTRO  ~~ T2CONTRO   0.965 0.010  99.939  0.000    0.946    0.984
+## 201 T2INTERP  ~~ T2INTERP   0.956 0.011  88.494  0.000    0.935    0.977
+## 202       f1  ~~       f1   1.000 0.000      NA     NA    1.000    1.000
+## 203       f2  ~~       f2   1.000 0.000      NA     NA    1.000    1.000
+## 204       f3  ~~       f3   1.000 0.000      NA     NA    1.000    1.000
+## 205       f4  ~~       f4   1.000 0.000      NA     NA    1.000    1.000
+## 206       f5  ~~       f5   1.000 0.000      NA     NA    1.000    1.000
+## 207       f6  ~~       f6   1.000 0.000      NA     NA    1.000    1.000
+## 208 P2BEPARN ~*~ P2BEPARN   1.000 0.000      NA     NA    1.000    1.000
+## 209 P2CHDOES ~*~ P2CHDOES   1.000 0.000      NA     NA    1.000    1.000
+## 210 P2HRDWRM ~*~ P2HRDWRM   1.000 0.000      NA     NA    1.000    1.000
+## 211 P2FLTRAP ~*~ P2FLTRAP   1.000 0.000      NA     NA    1.000    1.000
+## 212 P2FEELAN ~*~ P2FEELAN   1.000 0.000      NA     NA    1.000    1.000
+## 213 P2CHHARD ~*~ P2CHHARD   1.000 0.000      NA     NA    1.000    1.000
+## 214 P2MOREWK ~*~ P2MOREWK   1.000 0.000      NA     NA    1.000    1.000
+## 215 P2HITCHO ~*~ P2HITCHO   1.000 0.000      NA     NA    1.000    1.000
+## 216 P2HITAPO ~*~ P2HITAPO   1.000 0.000      NA     NA    1.000    1.000
+## 217 P2HITPRV ~*~ P2HITPRV   1.000 0.000      NA     NA    1.000    1.000
+## 218 P2HITWAR ~*~ P2HITWAR   1.000 0.000      NA     NA    1.000    1.000
+## 219 P2ATTENB ~*~ P2ATTENB   1.000 0.000      NA     NA    1.000    1.000
+## 220 P2ATTENP ~*~ P2ATTENP   1.000 0.000      NA     NA    1.000    1.000
+## 221 P2PARADV ~*~ P2PARADV   1.000 0.000      NA     NA    1.000    1.000
+## 222 P2PARGRP ~*~ P2PARGRP   1.000 0.000      NA     NA    1.000    1.000
+## 223 P2ATTENS ~*~ P2ATTENS   1.000 0.000      NA     NA    1.000    1.000
+## 224 P2VOLUNT ~*~ P2VOLUNT   1.000 0.000      NA     NA    1.000    1.000
+## 225 P2FUNDRS ~*~ P2FUNDRS   1.000 0.000      NA     NA    1.000    1.000
+## 226 P2TVRULE ~*~ P2TVRULE   1.000 0.000      NA     NA    1.000    1.000
+## 227 P2TVRUL3 ~*~ P2TVRUL3   1.000 0.000      NA     NA    1.000    1.000
+## 228 P2TVRUL2 ~*~ P2TVRUL2   1.000 0.000      NA     NA    1.000    1.000
+## 229 P1TELLST ~*~ P1TELLST   1.000 0.000      NA     NA    1.000    1.000
+## 230 P1SINGSO ~*~ P1SINGSO   1.000 0.000      NA     NA    1.000    1.000
+## 231 P1HELPAR ~*~ P1HELPAR   1.000 0.000      NA     NA    1.000    1.000
+## 232 P1CHORES ~*~ P1CHORES   1.000 0.000      NA     NA    1.000    1.000
+## 233  P1GAMES ~*~  P1GAMES   1.000 0.000      NA     NA    1.000    1.000
+## 234 P1NATURE ~*~ P1NATURE   1.000 0.000      NA     NA    1.000    1.000
+## 235  P1BUILD ~*~  P1BUILD   1.000 0.000      NA     NA    1.000    1.000
+## 236  P1SPORT ~*~  P1SPORT   1.000 0.000      NA     NA    1.000    1.000
+## 237 P2LIBRAR ~*~ P2LIBRAR   1.000 0.000      NA     NA    1.000    1.000
+## 238 P2CONCRT ~*~ P2CONCRT   1.000 0.000      NA     NA    1.000    1.000
+## 239 P2MUSEUM ~*~ P2MUSEUM   1.000 0.000      NA     NA    1.000    1.000
+## 240    P2ZOO ~*~    P2ZOO   1.000 0.000      NA     NA    1.000    1.000
+## 241 P2BEPARN  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 242 P2CHDOES  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 243 P2HRDWRM  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 244 P2FLTRAP  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 245 P2FEELAN  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 246 P2CHHARD  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 247 P2MOREWK  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 248 P2HITCHO  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 249 P2HITAPO  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 250 P2HITPRV  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 251 P2HITWAR  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 252 P2ATTENB  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 253 P2ATTENP  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 254 P2PARADV  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 255 P2PARGRP  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 256 P2ATTENS  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 257 P2VOLUNT  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 258 P2FUNDRS  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 259 P2TVRULE  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 260 P2TVRUL3  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 261 P2TVRUL2  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 262 P1TELLST  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 263 P1SINGSO  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 264 P1HELPAR  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 265 P1CHORES  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 266  P1GAMES  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 267 P1NATURE  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 268  P1BUILD  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 269  P1SPORT  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 270 P2LIBRAR  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 271 P2CONCRT  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 272 P2MUSEUM  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 273    P2ZOO  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 274 C2RSCALE  ~1            1.541 0.202   7.623  0.000    1.145    1.938
+## 275  T2LEARN  ~1            4.313 0.079  54.326  0.000    4.158    4.469
+## 276 T2EXTERN  ~1            2.566 0.058  43.978  0.000    2.451    2.680
+## 277 T2INTERN  ~1            2.958 0.056  52.695  0.000    2.848    3.068
+## 278 T2CONTRO  ~1            4.901 0.083  58.795  0.000    4.737    5.064
+## 279 T2INTERP  ~1            4.787 0.084  57.248  0.000    4.623    4.950
+## 280       f1  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 281       f2  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 282       f3  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 283       f4  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 284       f5  ~1            0.000 0.000      NA     NA    0.000    0.000
+## 285       f6  ~1            0.000 0.000      NA     NA    0.000    0.000</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#The lines that we are interested are line 1 to line 11</span></span></code></pre></div>
+</div>
+<div id="step-4-run-sensitivity-analysis-with-the-semsen-package" class="section level2">
+<h2>Step 4: Run sensitivity analysis with the SEMsen package</h2>
+<p>In the SEMsen package, the <code>sa.aco</code> function is used to
+run the sensitivity analysis. The original model is complicated, and for
+illustration purpose, we analyzed 6 phantom variables, and paths for the
+<code>C2RSCALE</code>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>my.sa1 <span class="ot">&lt;-</span> <span class="fu">sa.aco</span>(<span class="at">data=</span> smith19.use,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">model =</span> model1,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">sens.model =</span> sens.model1,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">k =</span> <span class="dv">10</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">opt.fun =</span> <span class="fu">quote</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">abs</span>(new.par<span class="sc">$</span>pvalue[<span class="dv">9</span>]<span class="sc">-</span><span class="fl">0.05</span>)),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">rate.of.conv =</span> .<span class="dv">05</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">paths =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">11</span>),</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">seed=</span><span class="dv">119</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">max.iter =</span> <span class="dv">100</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                 <span class="at">estimator=</span><span class="st">&quot;WLSMV&quot;</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>                 <span class="at">ordered =</span> factornames)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#15 out of 175 evaluations converged. </span></span></code></pre></div>
+<p>In the sa.aco function, we specified the data(<code>data</code>) we
+are using, original model (<code>model1</code>), the sensitivity model
+(<code>sens.model1</code>), the optimization function
+(<code>opt.fun</code>), the convergence rate threshold
+(<code>rate.of.conv</code>)the paths that we are interested from the
+previous step (<code>paths</code>), a seed for reproducibility
+(<code>seed</code>), the estimator we used to conduct the analysis
+(<code>estimator</code>;using the <code>lavaan</code> package format),
+and the variables that are ordinal(<code>ordered</code>; using the
+<code>lavaan</code> package format).</p>
+<p><strong>Note:</strong> We only used <code>k = 10</code> and
+<code>max.iter = 100</code> so the analysis would run quickly for
+illustration purposes. For actual analyses, please specify these
+parameters as larger numbers (e.g., default value of
+<code>k = 100</code> and <code>max.iter = 1000</code>). In addition, the
+convergence rate is set to be (<code>rate.of.conv = .05</code>) in this
+example as the model is complicated. An error message may show up like
+below:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#error message </span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Error in sa.aco(data= smith19.use,</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#                  model = model1,</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co">#                  sens.model = sens.model1,</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co">#                  k = 10,rate.of.conv = .1, : </span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co">#                   </span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="co">#                 Sensitivity analysis models do not reach the specified convergence rate. </span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co">#                 Please set a lower convergence rate threshold (i.e., rate. of. conv) or </span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#                 reduce model complexicity)</span></span></code></pre></div>
+</div>
+<div id="step-5-results" class="section level2">
+<h2>Step 5: Results</h2>
+<p>The <code>sens.tables</code> function helps summarize the results of
+a sensitivity analysis.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>my.sa.table <span class="ot">=</span> <span class="fu">sens.tables</span>(my.sa1) <span class="co"># get results</span></span></code></pre></div>
+<p>The <code>sens.summary</code> table provides estimates and p-values
+for each path in the original model. The <code>phan.paths</code> table
+provides the minimum, mean and maximum value of sensitivity parameters
+that we described in our sensitivity model at Step 2. The
+<code>phan.min</code> table provides the sensitivity parameters lead to
+the minimum coefficient for each path from <code>sa.aco</code>. The
+<code>phan.max</code> table provides the sensitivity parameters lead to
+the maximum coefficient for each path estimates from
+<code>sa.aco</code>. The <code>p.paths</code> table provides sensitivity
+parameters lead to change in significance foe each path. The
+<code>NA</code> indicates there is no change in p-value and meaningful
+sensitivity parameters that can change p-value.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>my.sa.table<span class="sc">$</span>sens.summary</span></code></pre></div>
+<pre><code>##                       model.est model.pvalue mean.est.sens  min.est.sens
+## T2CONTRO~f1       -0.1445446263 5.672534e-09 -0.1445445513 -0.1445453225
+## T2INTERP~f1       -0.1372948697 3.220701e-08 -0.1372944661 -0.1372950392
+## T2LEARN~f1        -0.1161465928 3.557464e-06 -0.1110832468 -0.2609898707
+## C2RSCALE~T2CONTRO -0.0785269002 2.599748e-02 -0.0753318919 -0.1004213881
+## C2RSCALE~f6       -0.0658091048 1.247915e-01 -0.0593832142 -0.1107343431
+## T2INTERP~f6       -0.0582568971 1.854210e-01 -0.0582647493 -0.0583085157
+## T2INTERN~f3       -0.0546445782 1.400257e-01 -0.0546438300 -0.0546451212
+## T2CONTRO~f6       -0.0533439553 2.502683e-01 -0.0533369842 -0.0533699567
+## C2RSCALE~f2       -0.0478053252 9.044476e-02 -0.0469410164 -0.0650719618
+## T2EXTERN~f6        0.0283456107 5.375607e-01 -0.0452896434 -0.8440902468
+## T2LEARN~f4         0.0053384171 8.568420e-01 -0.0422538655 -0.6815210545
+## T2LEARN~f6        -0.0305375590 4.931428e-01 -0.0397184257 -0.8642471071
+## T2LEARN~f2        -0.0382625825 2.096279e-01 -0.0376372197 -0.2273087662
+## T2INTERN~f6       -0.0327797770 4.486623e-01 -0.0327804185 -0.0327849972
+## T2INTERP~f2       -0.0246496948 4.157732e-01 -0.0246527957 -0.0246712634
+## C2RSCALE~T2INTERP -0.0248810443 3.884874e-01 -0.0237905506 -0.0557040649
+## T2EXTERN~f3       -0.1251606892 8.509256e-04 -0.0220709380 -0.5981441959
+## T2CONTRO~f2       -0.0207138567 4.969758e-01 -0.0207105641 -0.0207202900
+## C2RSCALE~f1       -0.0169880165 4.933816e-01 -0.0195577234 -0.0388915254
+## C2RSCALE~f5        0.0017189063 9.492271e-01 -0.0113484705 -0.0989397759
+## T2INTERP~f4       -0.0039044391 8.959249e-01 -0.0039022435 -0.0039045852
+## T2CONTRO~f5       -0.0036095049 9.003702e-01 -0.0036100114 -0.0036175548
+## T2INTERN~f5       -0.0015122973 9.570646e-01 -0.0015122455 -0.0015127834
+## T2CONTRO~f4       -0.0001404092 9.962962e-01 -0.0001425849 -0.0001592474
+## C2RSCALE~T2INTERN  0.0036770123 8.490658e-01  0.0030015383 -0.0072204190
+## T2INTERN~f1        0.0064944410 8.020084e-01  0.0064945100  0.0064943042
+## T2EXTERN~f2        0.0347198310 2.518782e-01  0.0103434105 -0.1631032684
+## T2INTERN~f4        0.0137869556 6.299069e-01  0.0137871852  0.0137867874
+## T2INTERP~f5        0.0188911241 4.996183e-01  0.0188921184  0.0188908153
+## C2RSCALE~f4        0.0438501902 9.878833e-02  0.0418164692 -0.0350299147
+## T2INTERN~f2        0.0447558098 1.466241e-01  0.0447555307  0.0447537609
+## C2RSCALE~T2EXTERN  0.0454009043 1.047413e-01  0.0490681985  0.0268152023
+## T2LEARN~f5         0.0421933914 1.319447e-01  0.0498815401 -0.5054167960
+## T2EXTERN~f4        0.0122678817 6.774808e-01  0.0507932861 -0.5303015652
+## T2EXTERN~f5        0.0311271634 2.730746e-01  0.0650823756 -0.2997877071
+## T2CONTRO~f3        0.1197561322 1.749667e-03  0.1197477775  0.1196844296
+## C2RSCALE~f3        0.1498234539 7.525736e-06  0.1480770913  0.0657390418
+## T2LEARN~f3         0.1106045344 3.715749e-03  0.1506356077 -0.4881633895
+## T2INTERP~f3        0.1568265729 2.557126e-05  0.1568349314  0.1568259576
+## T2EXTERN~f1        0.1583809130 7.146328e-11  0.1760751862  0.0439651742
+## C2RSCALE~T2LEARN   0.4853128580 0.000000e+00  0.4828125863  0.4318415842
+##                    max.est.sens
+## T2CONTRO~f1       -0.1445425972
+## T2INTERP~f1       -0.1372919437
+## T2LEARN~f1         0.1419114735
+## C2RSCALE~T2CONTRO -0.0348539196
+## C2RSCALE~f6        0.0078880074
+## T2INTERP~f6       -0.0582561794
+## T2INTERN~f3       -0.0546391116
+## T2CONTRO~f6       -0.0532773618
+## C2RSCALE~f2       -0.0224232440
+## T2EXTERN~f6        0.5336562364
+## T2LEARN~f4         0.4278551493
+## T2LEARN~f6         0.6091549553
+## T2LEARN~f2         0.1825455390
+## T2INTERN~f6       -0.0327783434
+## T2INTERP~f2       -0.0246493892
+## C2RSCALE~T2INTERP  0.0016133701
+## T2EXTERN~f3        0.4450368117
+## T2CONTRO~f2       -0.0206871256
+## C2RSCALE~f1       -0.0079199773
+## C2RSCALE~f5        0.0509632547
+## T2INTERP~f4       -0.0038897621
+## T2CONTRO~f5       -0.0036036597
+## T2INTERN~f5       -0.0015116692
+## T2CONTRO~f4       -0.0001353881
+## C2RSCALE~T2INTERN  0.0128769548
+## T2INTERN~f1        0.0064948260
+## T2EXTERN~f2        0.2091424014
+## T2INTERN~f4        0.0137885043
+## T2INTERP~f5        0.0188972207
+## C2RSCALE~f4        0.0985734639
+## T2INTERN~f2        0.0447559818
+## C2RSCALE~T2EXTERN  0.0991216923
+## T2LEARN~f5         1.2390163456
+## T2EXTERN~f4        0.5835144174
+## T2EXTERN~f5        1.2834450825
+## T2CONTRO~f3        0.1197768658
+## C2RSCALE~f3        0.1985251435
+## T2LEARN~f3         1.0027244773
+## T2INTERP~f3        0.1568834567
+## T2EXTERN~f1        0.4284066793
+## C2RSCALE~T2LEARN   0.5530986059</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>my.sa.table<span class="sc">$</span>phan.paths</span></code></pre></div>
+<pre><code>##                    mean.phan   min.phan  max.phan
+## T2EXTERN~phantom -0.23241566 -1.3517301 0.5478649
+## T2LEARN~phantom  -0.17684069 -1.2918587 0.6248955
+## f5~phantom       -0.02110502 -0.3992532 0.7794786
+## C2RSCALE~phantom  0.00684393 -0.1119661 0.1082448
+## f4~phantom        0.13047824 -0.7186094 0.5766870
+## f3~phantom        0.27881719 -0.5192671 0.6243018</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>my.sa.table<span class="sc">$</span>phan.min</span></code></pre></div>
+<pre><code>##                   T2LEARN~phantom T2EXTERN~phantom C2RSCALE~phantom  f3~phantom
+## C2RSCALE~T2LEARN       0.55218125       -0.4747524     0.0525956099 -0.07833205
+## C2RSCALE~T2EXTERN     -0.04070211       -0.2690685    -0.0468532735  0.30651642
+## C2RSCALE~T2INTERN      0.55218125       -0.4747524     0.0525956099 -0.07833205
+## C2RSCALE~T2CONTRO     -1.05580059        0.1057519     0.0990550986  0.57939657
+## C2RSCALE~T2INTERP     -1.05580059        0.1057519     0.0990550986  0.57939657
+## C2RSCALE~f1           -1.29185870       -1.3517301     0.1082448198  0.33840983
+## C2RSCALE~f2           -0.24734577        0.3501010     0.0719601880 -0.51926712
+## C2RSCALE~f3           -1.05580059        0.1057519     0.0990550986  0.57939657
+## C2RSCALE~f4           -0.97205864       -0.7678565    -0.1119660675 -0.47950875
+## C2RSCALE~f5           -1.29185870       -1.3517301     0.1082448198  0.33840983
+## C2RSCALE~f6           -0.24734577        0.3501010     0.0719601880 -0.51926712
+## T2LEARN~f1            -0.97205864       -0.7678565    -0.1119660675 -0.47950875
+## T2LEARN~f2            -1.29185870       -1.3517301     0.1082448198  0.33840983
+## T2LEARN~f3            -0.97205864       -0.7678565    -0.1119660675 -0.47950875
+## T2LEARN~f4            -0.97205864       -0.7678565    -0.1119660675 -0.47950875
+## T2LEARN~f5            -1.05580059        0.1057519     0.0990550986  0.57939657
+## T2LEARN~f6            -1.29185870       -1.3517301     0.1082448198  0.33840983
+## T2EXTERN~f1           -0.97205864       -0.7678565    -0.1119660675 -0.47950875
+## T2EXTERN~f2           -1.29185870       -1.3517301     0.1082448198  0.33840983
+## T2EXTERN~f3           -0.97205864       -0.7678565    -0.1119660675 -0.47950875
+## T2EXTERN~f4           -0.97205864       -0.7678565    -0.1119660675 -0.47950875
+## T2EXTERN~f5           -0.97205864       -0.7678565    -0.1119660675 -0.47950875
+## T2EXTERN~f6           -1.29185870       -1.3517301     0.1082448198  0.33840983
+## T2INTERN~f1           -1.29185870       -1.3517301     0.1082448198  0.33840983
+## T2INTERN~f2           -0.31730618        0.3385820     0.0005171162  0.20901534
+## T2INTERN~f3           -1.29185870       -1.3517301     0.1082448198  0.33840983
+## T2INTERN~f4           -1.29185870       -1.3517301     0.1082448198  0.33840983
+## T2INTERN~f5           -1.29185870       -1.3517301     0.1082448198  0.33840983
+## T2INTERN~f6           -0.31730618        0.3385820     0.0005171162  0.20901534
+## T2CONTRO~f1           -0.31730618        0.3385820     0.0005171162  0.20901534
+## T2CONTRO~f2           -1.29185870       -1.3517301     0.1082448198  0.33840983
+## T2CONTRO~f3           -0.31730618        0.3385820     0.0005171162  0.20901534
+## T2CONTRO~f4           -0.31730618        0.3385820     0.0005171162  0.20901534
+## T2CONTRO~f5           -0.31730618        0.3385820     0.0005171162  0.20901534
+## T2CONTRO~f6           -1.29185870       -1.3517301     0.1082448198  0.33840983
+## T2INTERP~f1           -0.37615240       -0.2219899    -0.0342680283  0.58754335
+## T2INTERP~f2           -0.31730618        0.3385820     0.0005171162  0.20901534
+## T2INTERP~f3            0.55218125       -0.4747524     0.0525956099 -0.07833205
+## T2INTERP~f4            0.62489554       -0.9184887     0.0904980088  0.45849095
+## T2INTERP~f5           -0.04070211       -0.2690685    -0.0468532735  0.30651642
+## T2INTERP~f6           -0.31730618        0.3385820     0.0005171162  0.20901534
+##                    f4~phantom  f5~phantom
+## C2RSCALE~T2LEARN  -0.26408850  0.20684082
+## C2RSCALE~T2EXTERN -0.05317235 -0.34366777
+## C2RSCALE~T2INTERN -0.26408850  0.20684082
+## C2RSCALE~T2CONTRO  0.04555417 -0.39925324
+## C2RSCALE~T2INTERP  0.04555417 -0.39925324
+## C2RSCALE~f1        0.34219070  0.77947860
+## C2RSCALE~f2       -0.71860936 -0.22442134
+## C2RSCALE~f3        0.04555417 -0.39925324
+## C2RSCALE~f4       -0.67428477 -0.39220692
+## C2RSCALE~f5        0.34219070  0.77947860
+## C2RSCALE~f6       -0.71860936 -0.22442134
+## T2LEARN~f1        -0.67428477 -0.39220692
+## T2LEARN~f2         0.34219070  0.77947860
+## T2LEARN~f3        -0.67428477 -0.39220692
+## T2LEARN~f4        -0.67428477 -0.39220692
+## T2LEARN~f5         0.04555417 -0.39925324
+## T2LEARN~f6         0.34219070  0.77947860
+## T2EXTERN~f1       -0.67428477 -0.39220692
+## T2EXTERN~f2        0.34219070  0.77947860
+## T2EXTERN~f3       -0.67428477 -0.39220692
+## T2EXTERN~f4       -0.67428477 -0.39220692
+## T2EXTERN~f5       -0.67428477 -0.39220692
+## T2EXTERN~f6        0.34219070  0.77947860
+## T2INTERN~f1        0.34219070  0.77947860
+## T2INTERN~f2        0.20038571  0.18558215
+## T2INTERN~f3        0.34219070  0.77947860
+## T2INTERN~f4        0.34219070  0.77947860
+## T2INTERN~f5        0.34219070  0.77947860
+## T2INTERN~f6        0.20038571  0.18558215
+## T2CONTRO~f1        0.20038571  0.18558215
+## T2CONTRO~f2        0.34219070  0.77947860
+## T2CONTRO~f3        0.20038571  0.18558215
+## T2CONTRO~f4        0.20038571  0.18558215
+## T2CONTRO~f5        0.20038571  0.18558215
+## T2CONTRO~f6        0.34219070  0.77947860
+## T2INTERP~f1        0.26334431 -0.04515809
+## T2INTERP~f2        0.20038571  0.18558215
+## T2INTERP~f3       -0.26408850  0.20684082
+## T2INTERP~f4        0.57668697 -0.18007001
+## T2INTERP~f5       -0.05317235 -0.34366777
+## T2INTERP~f6        0.20038571  0.18558215</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>my.sa.table<span class="sc">$</span>phan.max</span></code></pre></div>
+<pre><code>##                   T2LEARN~phantom T2EXTERN~phantom C2RSCALE~phantom  f3~phantom
+## C2RSCALE~T2LEARN       -1.0558006        0.1057519     0.0990550986  0.57939657
+## C2RSCALE~T2EXTERN       0.6248955       -0.9184887     0.0904980088  0.45849095
+## C2RSCALE~T2INTERN      -1.0558006        0.1057519     0.0990550986  0.57939657
+## C2RSCALE~T2CONTRO       0.6248955       -0.9184887     0.0904980088  0.45849095
+## C2RSCALE~T2INTERP       0.5521812       -0.4747524     0.0525956099 -0.07833205
+## C2RSCALE~f1            -0.2473458        0.3501010     0.0719601880 -0.51926712
+## C2RSCALE~f2            -0.9720586       -0.7678565    -0.1119660675 -0.47950875
+## C2RSCALE~f3            -0.2473458        0.3501010     0.0719601880 -0.51926712
+## C2RSCALE~f4            -0.2473458        0.3501010     0.0719601880 -0.51926712
+## C2RSCALE~f5            -1.0558006        0.1057519     0.0990550986  0.57939657
+## C2RSCALE~f6            -0.9720586       -0.7678565    -0.1119660675 -0.47950875
+## T2LEARN~f1             -1.2918587       -1.3517301     0.1082448198  0.33840983
+## T2LEARN~f2             -0.9720586       -0.7678565    -0.1119660675 -0.47950875
+## T2LEARN~f3             -1.0558006        0.1057519     0.0990550986  0.57939657
+## T2LEARN~f4             -1.2918587       -1.3517301     0.1082448198  0.33840983
+## T2LEARN~f5             -1.2918587       -1.3517301     0.1082448198  0.33840983
+## T2LEARN~f6             -0.9720586       -0.7678565    -0.1119660675 -0.47950875
+## T2EXTERN~f1            -1.2918587       -1.3517301     0.1082448198  0.33840983
+## T2EXTERN~f2            -0.9720586       -0.7678565    -0.1119660675 -0.47950875
+## T2EXTERN~f3            -1.2918587       -1.3517301     0.1082448198  0.33840983
+## T2EXTERN~f4             0.6248955       -0.9184887     0.0904980088  0.45849095
+## T2EXTERN~f5            -1.2918587       -1.3517301     0.1082448198  0.33840983
+## T2EXTERN~f6            -0.9720586       -0.7678565    -0.1119660675 -0.47950875
+## T2INTERN~f1            -0.3173062        0.3385820     0.0005171162  0.20901534
+## T2INTERN~f2            -1.2918587       -1.3517301     0.1082448198  0.33840983
+## T2INTERN~f3            -0.3173062        0.3385820     0.0005171162  0.20901534
+## T2INTERN~f4            -0.3173062        0.3385820     0.0005171162  0.20901534
+## T2INTERN~f5            -0.3173062        0.3385820     0.0005171162  0.20901534
+## T2INTERN~f6            -1.2918587       -1.3517301     0.1082448198  0.33840983
+## T2CONTRO~f1            -1.2918587       -1.3517301     0.1082448198  0.33840983
+## T2CONTRO~f2            -0.3173062        0.3385820     0.0005171162  0.20901534
+## T2CONTRO~f3            -1.2918587       -1.3517301     0.1082448198  0.33840983
+## T2CONTRO~f4            -1.2918587       -1.3517301     0.1082448198  0.33840983
+## T2CONTRO~f5            -1.2918587       -1.3517301     0.1082448198  0.33840983
+## T2CONTRO~f6            -0.3173062        0.3385820     0.0005171162  0.20901534
+## T2INTERP~f1            -0.3173062        0.3385820     0.0005171162  0.20901534
+## T2INTERP~f2             0.5521812       -0.4747524     0.0525956099 -0.07833205
+## T2INTERP~f3            -0.3173062        0.3385820     0.0005171162  0.20901534
+## T2INTERP~f4            -0.3173062        0.3385820     0.0005171162  0.20901534
+## T2INTERP~f5            -0.3173062        0.3385820     0.0005171162  0.20901534
+## T2INTERP~f6             0.2764462        0.3808589     0.0499169125  0.23533817
+##                    f4~phantom f5~phantom
+## C2RSCALE~T2LEARN   0.04555417 -0.3992532
+## C2RSCALE~T2EXTERN  0.57668697 -0.1800700
+## C2RSCALE~T2INTERN  0.04555417 -0.3992532
+## C2RSCALE~T2CONTRO  0.57668697 -0.1800700
+## C2RSCALE~T2INTERP -0.26408850  0.2068408
+## C2RSCALE~f1       -0.71860936 -0.2244213
+## C2RSCALE~f2       -0.67428477 -0.3922069
+## C2RSCALE~f3       -0.71860936 -0.2244213
+## C2RSCALE~f4       -0.71860936 -0.2244213
+## C2RSCALE~f5        0.04555417 -0.3992532
+## C2RSCALE~f6       -0.67428477 -0.3922069
+## T2LEARN~f1         0.34219070  0.7794786
+## T2LEARN~f2        -0.67428477 -0.3922069
+## T2LEARN~f3         0.04555417 -0.3992532
+## T2LEARN~f4         0.34219070  0.7794786
+## T2LEARN~f5         0.34219070  0.7794786
+## T2LEARN~f6        -0.67428477 -0.3922069
+## T2EXTERN~f1        0.34219070  0.7794786
+## T2EXTERN~f2       -0.67428477 -0.3922069
+## T2EXTERN~f3        0.34219070  0.7794786
+## T2EXTERN~f4        0.57668697 -0.1800700
+## T2EXTERN~f5        0.34219070  0.7794786
+## T2EXTERN~f6       -0.67428477 -0.3922069
+## T2INTERN~f1        0.20038571  0.1855821
+## T2INTERN~f2        0.34219070  0.7794786
+## T2INTERN~f3        0.20038571  0.1855821
+## T2INTERN~f4        0.20038571  0.1855821
+## T2INTERN~f5        0.20038571  0.1855821
+## T2INTERN~f6        0.34219070  0.7794786
+## T2CONTRO~f1        0.34219070  0.7794786
+## T2CONTRO~f2        0.20038571  0.1855821
+## T2CONTRO~f3        0.34219070  0.7794786
+## T2CONTRO~f4        0.34219070  0.7794786
+## T2CONTRO~f5        0.34219070  0.7794786
+## T2CONTRO~f6        0.20038571  0.1855821
+## T2INTERP~f1        0.20038571  0.1855821
+## T2INTERP~f2       -0.26408850  0.2068408
+## T2INTERP~f3        0.20038571  0.1855821
+## T2INTERP~f4        0.20038571  0.1855821
+## T2INTERP~f5        0.20038571  0.1855821
+## T2INTERP~f6        0.46095003  0.5284704</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>my.sa.table<span class="sc">$</span>p.paths</span></code></pre></div>
+<pre><code>##                        p.value    p.changed T2LEARN~phantom T2EXTERN~phantom
+## C2RSCALE~f5       9.492271e-01 0.0002804033      -1.2918587     -1.351730085
+## C2RSCALE~T2EXTERN 1.047413e-01 0.0075055104       0.2699275      0.547864851
+## T2LEARN~f5        1.319447e-01 0.0105797885       0.1868681      0.004585214
+## T2EXTERN~f6       5.375607e-01 0.0128454029      -0.3173062      0.338581972
+## T2EXTERN~f5       2.730746e-01 0.0137743468      -0.2454073     -0.546981432
+## T2LEARN~f6        4.931428e-01 0.0199000254       0.2764462      0.380858850
+## T2EXTERN~f4       6.774808e-01 0.0227129668      -0.3761524     -0.221989930
+## T2LEARN~f4        8.568420e-01 0.0236271337       0.1868681      0.004585214
+## T2LEARN~f2        2.096279e-01 0.0373372490      -0.3173062      0.338581972
+## C2RSCALE~f2       9.044476e-02 0.0460107125       0.1868681      0.004585214
+## C2RSCALE~f6       1.247915e-01 0.0489983864       0.2699275      0.547864851
+## C2RSCALE~f4       9.878833e-02 0.0492902306      -0.3761524     -0.221989930
+## T2EXTERN~f2       2.518782e-01 0.0494754271       0.5521812     -0.474752423
+## C2RSCALE~f3       7.525736e-06 0.0512910622      -1.0558006      0.105751894
+## C2RSCALE~T2CONTRO 2.599748e-02 0.0717371949       0.2699275      0.547864851
+## T2EXTERN~f3       8.509256e-04 0.1433011796      -0.3761524     -0.221989930
+## T2LEARN~f3        3.715749e-03 0.1633065843      -0.2473458      0.350101035
+## T2EXTERN~f1       7.146328e-11 0.2607842095      -0.9720586     -0.767856540
+## C2RSCALE~T2LEARN  0.000000e+00           NA              NA               NA
+## C2RSCALE~T2INTERN 8.490658e-01           NA              NA               NA
+## C2RSCALE~T2INTERP 3.884874e-01           NA              NA               NA
+## C2RSCALE~f1       4.933816e-01           NA              NA               NA
+## T2LEARN~f1        3.557464e-06           NA              NA               NA
+## T2INTERN~f1       8.020084e-01           NA              NA               NA
+## T2INTERN~f2       1.466241e-01           NA              NA               NA
+## T2INTERN~f3       1.400257e-01           NA              NA               NA
+## T2INTERN~f4       6.299069e-01           NA              NA               NA
+## T2INTERN~f5       9.570646e-01           NA              NA               NA
+## T2INTERN~f6       4.486623e-01           NA              NA               NA
+## T2CONTRO~f1       5.672534e-09           NA              NA               NA
+## T2CONTRO~f2       4.969758e-01           NA              NA               NA
+## T2CONTRO~f3       1.749667e-03           NA              NA               NA
+## T2CONTRO~f4       9.962962e-01           NA              NA               NA
+## T2CONTRO~f5       9.003702e-01           NA              NA               NA
+## T2CONTRO~f6       2.502683e-01           NA              NA               NA
+## T2INTERP~f1       3.220701e-08           NA              NA               NA
+## T2INTERP~f2       4.157732e-01           NA              NA               NA
+## T2INTERP~f3       2.557126e-05           NA              NA               NA
+## T2INTERP~f4       8.959249e-01           NA              NA               NA
+## T2INTERP~f5       4.996183e-01           NA              NA               NA
+## T2INTERP~f6       1.854210e-01           NA              NA               NA
+##                   C2RSCALE~phantom  f3~phantom  f4~phantom  f5~phantom
+## C2RSCALE~f5           0.1082448198  0.33840983  0.34219070  0.77947860
+## C2RSCALE~T2EXTERN    -0.0800522058  0.42483437  0.49088616 -0.34633287
+## T2LEARN~f5           -0.0471767154  0.57246992  0.38514600 -0.09567508
+## T2EXTERN~f6           0.0005171162  0.20901534  0.20038571  0.18558215
+## T2EXTERN~f5          -0.0192800832  0.58987744  0.44088352 -0.13340756
+## T2LEARN~f6            0.0499169125  0.23533817  0.46095003  0.52847043
+## T2EXTERN~f4          -0.0342680283  0.58754335  0.26334431 -0.04515809
+## T2LEARN~f4           -0.0471767154  0.57246992  0.38514600 -0.09567508
+## T2LEARN~f2            0.0005171162  0.20901534  0.20038571  0.18558215
+## C2RSCALE~f2          -0.0471767154  0.57246992  0.38514600 -0.09567508
+## C2RSCALE~f6          -0.0800522058  0.42483437  0.49088616 -0.34633287
+## C2RSCALE~f4          -0.0342680283  0.58754335  0.26334431 -0.04515809
+## T2EXTERN~f2           0.0525956099 -0.07833205 -0.26408850  0.20684082
+## C2RSCALE~f3           0.0990550986  0.57939657  0.04555417 -0.39925324
+## C2RSCALE~T2CONTRO    -0.0800522058  0.42483437  0.49088616 -0.34633287
+## T2EXTERN~f3          -0.0342680283  0.58754335  0.26334431 -0.04515809
+## T2LEARN~f3            0.0719601880 -0.51926712 -0.71860936 -0.22442134
+## T2EXTERN~f1          -0.1119660675 -0.47950875 -0.67428477 -0.39220692
+## C2RSCALE~T2LEARN                NA          NA          NA          NA
+## C2RSCALE~T2INTERN               NA          NA          NA          NA
+## C2RSCALE~T2INTERP               NA          NA          NA          NA
+## C2RSCALE~f1                     NA          NA          NA          NA
+## T2LEARN~f1                      NA          NA          NA          NA
+## T2INTERN~f1                     NA          NA          NA          NA
+## T2INTERN~f2                     NA          NA          NA          NA
+## T2INTERN~f3                     NA          NA          NA          NA
+## T2INTERN~f4                     NA          NA          NA          NA
+## T2INTERN~f5                     NA          NA          NA          NA
+## T2INTERN~f6                     NA          NA          NA          NA
+## T2CONTRO~f1                     NA          NA          NA          NA
+## T2CONTRO~f2                     NA          NA          NA          NA
+## T2CONTRO~f3                     NA          NA          NA          NA
+## T2CONTRO~f4                     NA          NA          NA          NA
+## T2CONTRO~f5                     NA          NA          NA          NA
+## T2CONTRO~f6                     NA          NA          NA          NA
+## T2INTERP~f1                     NA          NA          NA          NA
+## T2INTERP~f2                     NA          NA          NA          NA
+## T2INTERP~f3                     NA          NA          NA          NA
+## T2INTERP~f4                     NA          NA          NA          NA
+## T2INTERP~f5                     NA          NA          NA          NA
+## T2INTERP~f6                     NA          NA          NA          NA</code></pre>
+</div>
+</div>
+<div id="references" class="section level1">
+<h1>References</h1>
+<p>Leite, W., Shen, Z., Marcoulides, K., Fish, C., &amp; Harring, J.
+(2022). Using ant colony optimization for sensitivity analysis in
+structural equation modeling. Structural Equation Modeling: A
+Multidisciplinary Journal, 29 (1), 47-56.</p>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

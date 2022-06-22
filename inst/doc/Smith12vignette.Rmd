@@ -1,17 +1,11 @@
 ---
-title: "A sensitivity analysis of predicting continued use of online teacher professional development and the influence of social presence and sociability by  Jo A. Smith and Stephen A. Sivo"
-
+title: "A sensitivity analysis of predicting continued use of online teacher professional development and the influence of social presence and sociability by Jo A. Smith and Stephen A. Sivo"
 author: "Gail Fish (University of Florida) & YongSeok Lee (University of Florida)"
-
 date: "`r Sys.Date()`"
-
-output:
-  pdf_document:
-    fig_caption: no
-
+output: rmarkdown::html_vignette
 vignette: > 
 
-  %\VignetteIndexEntry{Smith & Sivo 2012} 
+  %\VignetteIndexEntry{A sensitivity analysis of predicting continued use of online teacher professional development and the influence of social presence and sociability by Jo A. Smith and Stephen A. Sivo} 
 
   %\VignetteEngine{knitr::rmarkdown} 
 
@@ -104,7 +98,7 @@ sens_model <-  'SP~SOC
 
 ## Step 3: Conducting Sensitivity Analysis
 
-Based on the specified `sens_model`, we can run the sensitivity analysis through `sa.aco()` function in `SEMsens` package. Note that we run with the parameters `k = 5` and `max.iter = 20` for a simple illustration. The default values for these parameters are `k = 50` and `max.iter = 1000`. For the other options, see the paper or vignette of `SEMsens` package (https://cran.r-project.org/web/packages/SEMsens/index.html). 
+Based on the specified `sens_model`, we can run the sensitivity analysis through `sa.aco()` function in `SEMsens` package. Note that we run with the parameters `k = 5` and `max.iter = 20` for a simple illustration. The default values for these parameters are `k = 50` and `max.iter = 1000`. For the other options, see the paper or vignette of `SEMsens` package (https://cran.r-project.org/package=SEMsens). 
 
 ```{r}
 smith_example <- sa.aco(
@@ -149,7 +143,7 @@ smith_tables$p.paths
 
 
 # References
-Leite, W.,  Shen, Z., Marcoulides, K., Fish, C., & Harring, J. (in press). 
+Leite, W.,  Shen, Z., Marcoulides, K., Fish, C., & Harring, J. (2022). 
     Using ant colony optimization for sensitivity analysis in 
     structural equation modeling. 
-    Structural Equation Modeling: A Multidisciplinary Journal. 
+    Structural Equation Modeling: A Multidisciplinary Journal, 29 (1), 47-56. 

@@ -2,14 +2,14 @@
 title: "Package 'SEMsens'"
 author: "Walter Leite (University of Florida) & Zuchao Shen (University of Florida)"
 date: "`r Sys.Date()`"
-output: pdf_document
+output: rmarkdown::html_vignette
 
 vignette: >
   %\VignetteIndexEntry{Package 'SEMsens'}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-An analysis based on structural equation modeling may suffer from the impact of a potential missing confounder that may change its conclusions (Harring, McNeish, & Hancock, 2017). This package is a tool to evaluate the sensitivity of structural equation models to potential missing confounders using the Ant Colony Optimization (ACO; Colorni, Dorigo, & Maniezzo, 1992; Dorigo & Stützle, 2004; Socha & Dorigo, 2008) algorithm. The reference for the current package is: Leite, W., Shen, Z., Marcoulides, K., Fish, C., & Harring, J. (in press). Using ant colony optimization for sensitivity analysis in structural equation modeling. Structural Equation Modeling: A Multidisciplinary Journal.
+An analysis based on structural equation modeling may suffer from the impact of a potential missing confounder that may change its conclusions (Harring, McNeish, & Hancock, 2017). This package is a tool to evaluate the sensitivity of structural equation models to potential missing confounders using the Ant Colony Optimization (ACO; Colorni, Dorigo, & Maniezzo, 1992; Dorigo & Stützle, 2004; Socha & Dorigo, 2008) algorithm. The reference for the current package is: Leite, W., Shen, Z., Marcoulides, K., Fish, C., & Harring, J. (2022). Using ant colony optimization for sensitivity analysis in structural equation modeling. Structural Equation Modeling: A Multidisciplinary Journal, 29 (1), 47-56.
 
 
 The current version includes three main functions and they are
