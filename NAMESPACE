@@ -2,4 +2,5 @@
 
 export(gen.sens.pars)
 export(sa.aco)
+export(sa.sa)
 export(sens.tables)

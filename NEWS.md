@@ -1,4 +1,6 @@
-
+ Changes in version 1.2.5
+==============
+Added sensitivity analysis using simulated annealing
 
    Changes in version 1.0.5
 ==============

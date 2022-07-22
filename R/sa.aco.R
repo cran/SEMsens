@@ -148,7 +148,7 @@
 #' my.sa <- sa.aco(data, model = model, sens.model = sens.model,
 #'                 opt.fun = 3, k = 5, #p-value
 #'                 paths = paths,
-#'                 max.iter = 30)
+#'                 max.iter = 10)
 #' #Note, please specify larger numbers for k (e.g., 100) and max.iter (e.g., 1000)
 #'
 #' # Step 5: Summarize sensitivity analysis results.
