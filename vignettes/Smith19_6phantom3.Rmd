@@ -147,7 +147,7 @@ old.model.par
 #The lines that we are interested are line 1 to line 11
 ```
 
-## Step 4: Run sensitivity analysis with the SEMsen package
+## Step 4: Run sensitivity analysis with the SEMsens package
 In the SEMsen package, the `sa.aco` function is used to run the sensitivity analysis.
 The original model is complicated, and for illustration purpose, we analyzed 6 phantom variables, and paths for the `C2RSCALE`. 
 ```{r eval=FALSE, message=FALSE, warning=FALSE }
